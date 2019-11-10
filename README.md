@@ -3,3 +3,6 @@
 
 Analysis Report 1st iteration link:
 https://docs.google.com/document/d/1i_DiTBA48i65-LXcFDKfEWn0m-1uijHwtVrXt4JgGbI/edit?usp=sharing
+
+Design Report 1st iteration link:
+https://docs.google.com/document/d/17qxk9jtB4U1Z_PFU2h0M8sVIl0sDQF0OTWSbh4F9Fv8/edit?usp=sharing
