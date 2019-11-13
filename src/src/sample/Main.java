@@ -1,8 +1,10 @@
 package sample;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import sample.Manager.ScreenManager;
 import sample.Screen.MainScreen;
 import sample.Screen.SplashScreen;
@@ -11,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
-    private static Stage primaryStage;
 
 
     @Override
@@ -23,9 +24,10 @@ public class Main extends Application {
 
         primaryStage.setScene(appScene);
         primaryStage.setTitle("Defenders");
-        this.primaryStage = primaryStage;
-        this.primaryStage.show();
-//        appScene.setRoot(mainScreen.display());
+        primaryStage.show();
+        PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
+        delay.setOnFinished( event -> primaryStage.setScene(new Scene(screenManager.setScreen(mainScreen))));
+        delay.play();
     }
 
 
