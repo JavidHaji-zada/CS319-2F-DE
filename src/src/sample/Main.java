@@ -9,7 +9,6 @@ import sample.Manager.ScreenManager;
 import sample.Screen.MainScreen;
 import sample.Screen.SplashScreen;
 
-import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
@@ -17,8 +16,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        SplashScreen splashScreen = new SplashScreen();
-        MainScreen mainScreen = new MainScreen();
+        SplashScreen splashScreen = new SplashScreen(primaryStage);
+        MainScreen mainScreen = new MainScreen(primaryStage);
         ScreenManager screenManager = new ScreenManager();
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
 
