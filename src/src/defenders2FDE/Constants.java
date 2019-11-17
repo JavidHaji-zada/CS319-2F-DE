@@ -1,18 +1,10 @@
 package defenders2FDE;
 
+import javafx.stage.Screen;
+
 public class Constants {
-    public final int WIDTH = 800;
-    public final int HEIGHT = 600;
+    public static final double SCREEN_WIDTH = Screen.getPrimary().getBounds().getMaxX();
+    public static final double SCREEN_HEIGHT = Screen.getPrimary().getBounds().getMaxY();
 
-    public Constants(){
-
-    }
-
-    public int getWIDTH() {
-        return WIDTH;
-    }
-
-    public int getHEIGHT(){
-        return HEIGHT;
-    }
-}
+    public static final int SS_WIDTH = (int) Screen.getPrimary().getBounds().getMaxX() / 36;
+    public static final int SS_HEIGHT = (int) Screen.getPrimary().getBounds().getMaxX() / 36;}

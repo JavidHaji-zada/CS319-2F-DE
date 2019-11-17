@@ -9,6 +9,7 @@ import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.Screen.SplashScreen;
 
 
+
 public class Main extends Application {
 
     @Override
@@ -19,6 +20,10 @@ public class Main extends Application {
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
 
         primaryStage.setScene(appScene);
+
+        primaryStage.setResizable(false);
+        primaryStage.setFullScreen(true);
+        primaryStage.setMaximized(true);
         primaryStage.setTitle("Defenders");
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));

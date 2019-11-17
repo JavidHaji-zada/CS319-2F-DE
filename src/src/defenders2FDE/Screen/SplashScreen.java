@@ -1,5 +1,6 @@
 package defenders2FDE.Screen;
 
+import defenders2FDE.Constants;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -11,13 +12,14 @@ public class SplashScreen extends Screen{
 
 
     private Stage primaryStage;
+
     public SplashScreen(Stage primaryStage){
         this.primaryStage = primaryStage;
     }
 
     @Override
     public Pane display(){
-         setPrefSize(600,800);
+         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
          setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
          Label title = new Label("Welcome NIBBA !");
          title.setTextFill(Color.WHITE);
@@ -27,6 +29,7 @@ public class SplashScreen extends Screen{
 
 
          getChildren().add(title);
+         primaryStage.setFullScreen(true);
          return this;
     }
 }
