@@ -1,18 +1,15 @@
-package sample;
+package defenders2FDE;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import sample.Manager.ScreenManager;
-import sample.Screen.MainScreen;
-import sample.Screen.SplashScreen;
+import defenders2FDE.Manager.ScreenManager;
+import defenders2FDE.Screen.SplashScreen;
 
 
 public class Main extends Application {
-
-
 
     @Override
     public void start(Stage primaryStage) throws Exception{

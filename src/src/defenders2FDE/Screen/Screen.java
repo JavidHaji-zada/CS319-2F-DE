@@ -1,4 +1,4 @@
-package sample.Screen;
+package defenders2FDE.Screen;
 
 import javafx.scene.layout.Pane;
 

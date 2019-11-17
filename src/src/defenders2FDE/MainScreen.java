@@ -1,9 +1,9 @@
-package sample.Screen;
+package defenders2FDE;
 
+import defenders2FDE.Screen.Screen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -12,7 +12,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
-public class MainScreen extends Screen{
+public class MainScreen extends Screen {
 
     private Stage primaryStage;
 
