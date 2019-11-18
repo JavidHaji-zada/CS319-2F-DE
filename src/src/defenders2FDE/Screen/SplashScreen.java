@@ -21,7 +21,7 @@ public class SplashScreen extends Screen{
     public Pane display(){
          setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
          setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
-         Label title = new Label("Welcome NIBBA !");
+         Label title = new Label("Welcome to DEFENDERS !");
          title.setTextFill(Color.WHITE);
          title.setFont(new Font("Arial", 48));
          title.layoutXProperty().bind(widthProperty().subtract(title.widthProperty()).divide(2));
@@ -29,7 +29,6 @@ public class SplashScreen extends Screen{
 
 
          getChildren().add(title);
-         primaryStage.setFullScreen(true);
          return this;
     }
 }

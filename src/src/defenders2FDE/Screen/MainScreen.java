@@ -1,10 +1,13 @@
 package defenders2FDE.Screen;
 
+import defenders2FDE.Constants;
+import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.Screen.Screen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -22,7 +25,7 @@ public class MainScreen extends Screen {
 
     @Override
     public Pane display(){
-        setPrefSize(500,650);
+        setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         Label title = new Label("Defenders");
         title.setTextFill(Color.WHITE);
@@ -35,6 +38,9 @@ public class MainScreen extends Screen {
         modesButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                Scene gameScene = new Scene(new ScreenManager().setScreen(new GameScreenDemo(primaryStage)));
+                gameScene.getRoot().requestFocus();
+                primaryStage.setScene(gameScene);
                 System.out.println("game modes button working");
             }
         });
@@ -99,7 +105,7 @@ public class MainScreen extends Screen {
             b++;
         }
         gridPaneButton.setVgap(20);
-        gridPaneButton.setMinSize(500, 650);
+        gridPaneButton.setMinSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
 
 
         //gridPaneButton.widthProperty()(modesButton, HPos.CENTER);

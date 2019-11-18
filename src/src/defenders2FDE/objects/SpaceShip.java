@@ -15,24 +15,29 @@ public class SpaceShip extends GameObject{
     }
 
     public void moveLeft() {
-        setTranslateX(getTranslateX() - 20);
+        if (!isStop() && getTranslateX()>= 20)
+            setTranslateX(getTranslateX() - 20);
     }
 
     public void moveRight() {
-        setTranslateX(getTranslateX() + 20);
+        if (!isStop())
+            setTranslateX(getTranslateX() + 20);
     }
 
     public void moveUp() {
-        setTranslateY(getTranslateY() - 20);
+        if (!isStop() && getTranslateY() >= 20)
+            setTranslateY(getTranslateY() - 20);
     }
 
     public void moveDown() {
-        setTranslateY(getTranslateY() + 20);
+        if (!isStop())
+            setTranslateY(getTranslateY() + 20);
     }
 
     public Bullet fire(){
-
-        return new Bullet(getTranslateX() + Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "playerBullet", Color.GREEN);
+        if (!isStop())
+            return new Bullet(getTranslateX() + Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "playerBullet", Color.GREEN);
+        return null;
     }
 
 }

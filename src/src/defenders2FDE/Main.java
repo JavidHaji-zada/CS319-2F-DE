@@ -23,8 +23,6 @@ public class Main extends Application {
         primaryStage.setScene(appScene);
 
         primaryStage.setResizable(false);
-        primaryStage.setFullScreen(true);
-        primaryStage.setMaximized(true);
         primaryStage.setTitle("Defenders");
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));

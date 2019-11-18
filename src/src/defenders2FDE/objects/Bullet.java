@@ -7,7 +7,6 @@ public class Bullet extends GameObject {
     double posx;
     double posy;
 
-
     public Bullet(double x, double y, int w, int h, int health, String type, Color color){
         super(x,y,w,h,health,type, color);
         this.posx = x;
@@ -16,12 +15,14 @@ public class Bullet extends GameObject {
 
     @Override
     public void move(){
-        if (type.equals("enemyBullet")){
-            setTranslateX(getTranslateX() - 5);
+        if (!isStop()){
+            if (type.equals("enemyBullet")){
+                setTranslateX(getTranslateX() - 5);
 
-        }else if ( type.equals("playerBullet")){
-            setTranslateX(getTranslateX() + 5);
+            }else if ( type.equals("playerBullet")){
+                setTranslateX(getTranslateX() + 5);
 
+            }
         }
     }
 }
