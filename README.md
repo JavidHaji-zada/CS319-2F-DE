@@ -12,3 +12,6 @@ https://docs.google.com/document/d/1kKQoJHQ-SRHCGXnFIoUxGuASjr9JHOoPJXxz2-hnvKs/
 
 Iteration 2 Analysis Report:
 https://docs.google.com/document/d/1vjIyO8nUmKdiRg4WhTEjl2iplVqS8Cd_t3az_MkCwtw/edit?usp=sharing
+
+Iteration 2 Design Report:
+https://docs.google.com/document/d/1jcgGP9iZ-5cRdj1bX99kk2Sj_AvO29ylzkAXgSkLeQ0/edit?usp=sharing
