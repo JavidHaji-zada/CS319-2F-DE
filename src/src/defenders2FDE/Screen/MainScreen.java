@@ -20,10 +20,9 @@ import javafx.stage.Popup;
 
 public class MainScreen extends Screen {
 
-    private Stage primaryStage;
 
     public MainScreen(Stage primaryStage){
-        this.primaryStage = primaryStage;
+        super(primaryStage);
     }
 
     @Override
@@ -34,7 +33,7 @@ public class MainScreen extends Screen {
         title.setTextFill(Color.WHITE);
         title.setFont(new Font("Arial", 48));
         title.layoutXProperty().bind(widthProperty().subtract(title.widthProperty()).divide(2));
-        title.layoutYProperty().bind(heightProperty().subtract(title.heightProperty()).divide(5));
+        title.layoutYProperty().bind(heightProperty().subtract(title.heightProperty()).divide(3));
 
         // create a label
         Label htpLabel01 = new Label("Key Bindings");
@@ -89,7 +88,7 @@ public class MainScreen extends Screen {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("How to play button working");
-                primaryStage.close();
+                getPrimaryStage().close();
             }
         });
         exitPane.setAlignment(Pos.CENTER);
@@ -151,9 +150,9 @@ public class MainScreen extends Screen {
         modesButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Scene gameScene = new Scene(new ScreenManager().setScreen(new GameScreenDemo(primaryStage)));
+                Scene gameScene = new Scene(new ScreenManager().setScreen(new GameScreenDemo(getPrimaryStage())));
                 gameScene.getRoot().requestFocus();
-                primaryStage.setScene(gameScene);
+                getPrimaryStage().setScene(gameScene);
                 System.out.println("game modes button working");
             }
         });
@@ -174,7 +173,7 @@ public class MainScreen extends Screen {
             public void handle(ActionEvent event) {
                 System.out.println("How to play button working");
                 if (!htpPopup.isShowing())
-                    htpPopup.show(primaryStage);
+                    htpPopup.show(getPrimaryStage());
             }
         });
 
@@ -193,7 +192,7 @@ public class MainScreen extends Screen {
             @Override
             public void handle(ActionEvent event) {
                 if (!creditsPopup.isShowing())
-                    creditsPopup.show(primaryStage);
+                    creditsPopup.show(getPrimaryStage());
             }
         });
         Button closeButton = new Button("Exit");
@@ -201,7 +200,8 @@ public class MainScreen extends Screen {
             @Override
             public void handle(ActionEvent event) {
                 if (!exitPopup.isShowing())
-                    exitPopup.show(primaryStage);
+                    exitPopup.show(getPrimaryStage());
+                getPrimaryStage().close();
             }
         });
 

@@ -14,7 +14,7 @@ public class SplashScreen extends Screen{
     private Stage primaryStage;
 
     public SplashScreen(Stage primaryStage){
-        this.primaryStage = primaryStage;
+        super(primaryStage);
     }
 
     @Override

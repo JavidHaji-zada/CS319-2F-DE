@@ -23,10 +23,8 @@ public class AlienSpaceShip extends GameObject{
     public Bullet fire(){
         if ( new Date().getTime() - lastFiredTime >= 2000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            return new Bullet(getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "enemyBullet", Color.RED);
+            return new Bullet(getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 35, "enemyBullet", Color.RED);
         }
         return null;
     }
-
-
 }

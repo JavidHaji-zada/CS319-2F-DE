@@ -2,6 +2,7 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Main;
+import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.objects.AlienSpaceShip;
 import defenders2FDE.objects.Bullet;
 import defenders2FDE.objects.GameObject;
@@ -10,13 +11,12 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.util.*;
@@ -27,7 +27,6 @@ public class GameScreenDemo extends Screen{
     private Stage primaryStage;
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
-    private double time = 0;
     private int score = 0;
     private boolean isFinished = false;
     private long lastEnemyTime = new Date().getTime();
@@ -35,7 +34,7 @@ public class GameScreenDemo extends Screen{
     private Label scoreLabel;
 
     public GameScreenDemo(Stage primaryStage){
-        this.primaryStage = primaryStage;
+        super(primaryStage);
         score = 0;
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
@@ -56,7 +55,6 @@ public class GameScreenDemo extends Screen{
 
     private void update(){
         addNewEnemy();
-
         gameObjects.forEach((GameObject gameObject) -> {
             gameObject.move();
             List<GameObject> toBeRemoved = new ArrayList<>();
@@ -78,7 +76,6 @@ public class GameScreenDemo extends Screen{
                         toBeRemoved.add(gameObject);
                         score += 100;
                         scoreLabel.setText("Score: " + score );
-
                     }
                 });
             }
@@ -99,6 +96,11 @@ public class GameScreenDemo extends Screen{
                 isFinished = true;
             }
         });
+        if ( isFinished){
+            Scene mainScreen = new Scene(new ScreenManager().setScreen(new MainScreen(primaryStage)));
+            mainScreen.getRoot().requestFocus();
+            primaryStage.setScene(mainScreen);
+        }
     }
 
     @Override
@@ -112,6 +114,8 @@ public class GameScreenDemo extends Screen{
         scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 9 / 10);
         scoreLabel.setLayoutY(Constants.SCREEN_HEIGHT / 20);
         getChildren().add(scoreLabel);
+
+
 
         this.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override

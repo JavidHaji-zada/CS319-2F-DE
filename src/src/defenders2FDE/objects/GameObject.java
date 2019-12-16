@@ -42,4 +42,11 @@ public class GameObject extends Rectangle {
     public void move(){
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }
