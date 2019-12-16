@@ -1,10 +1,12 @@
 package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
+import defenders2FDE.Main;
 import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.Screen.Screen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,13 +22,12 @@ import javafx.stage.Popup;
 
 public class MainScreen extends Screen {
 
-
-    public MainScreen(Stage primaryStage){
+    public MainScreen(Stage primaryStage) {
         super(primaryStage);
     }
 
     @Override
-    public Pane display(){
+    public Pane display() {
         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         Label title = new Label("Defenders");
@@ -58,9 +59,9 @@ public class MainScreen extends Screen {
         Label htpLabel20 = new Label("Pause Game");
         Label htpLabel21 = new Label("ESC");
 
-        Label [] labels = {htpLabel01, htpLabel02, htpLabel03, htpLabel04, htpLabel05, htpLabel06, htpLabel07, htpLabel08,
-                htpLabel09, htpLabel10, htpLabel11, htpLabel12, htpLabel13, htpLabel14, htpLabel15, htpLabel16,
-                htpLabel17, htpLabel18, htpLabel19, htpLabel20, htpLabel21};
+        Label[] labels = { htpLabel01, htpLabel02, htpLabel03, htpLabel04, htpLabel05, htpLabel06, htpLabel07,
+                htpLabel08, htpLabel09, htpLabel10, htpLabel11, htpLabel12, htpLabel13, htpLabel14, htpLabel15,
+                htpLabel16, htpLabel17, htpLabel18, htpLabel19, htpLabel20, htpLabel21 };
 
         GridPane htpGridPane = new GridPane();
         // create a popup
@@ -68,19 +69,19 @@ public class MainScreen extends Screen {
         Popup exitPopup = new Popup();
         Popup creditsPopup = new Popup();
 
-        //------------credits popup
+        // ------------credits popup
         Label creditsLabel = new Label("Büşra Ünver\nCavit Haci-zade\nCelal Bayraktar\nSamir Süleymanlı\nSelen Uysal");
         creditsLabel.setStyle("-fx-background-color: #000000; ");
-        //creditsLabel.setBackground();
-        creditsLabel.setMinSize((Constants.SCREEN_WIDTH)/2, (Constants.SCREEN_HEIGHT)/2);
+        // creditsLabel.setBackground();
+        creditsLabel.setMinSize((Constants.SCREEN_WIDTH) / 2, (Constants.SCREEN_HEIGHT) / 2);
         creditsLabel.setAlignment(Pos.CENTER);
         creditsPopup.getContent().add(creditsLabel);
-        //--------------Exit pop up
+        // --------------Exit pop up
 
         GridPane exitPane = new GridPane();
         Label exitLabel = new Label("Are you sure you want to exit ヾ( ๑´д`๑)ﾂ");
         exitLabel.setStyle("-fx-background-color: #ffffff; ");
-        //Button htpButton = new Button("How to Play");
+        // Button htpButton = new Button("How to Play");
         Button exitButton = new Button("Yes");
         exitButton.setStyle("-fx-background-color: rgb(23, 114, 189); ");
         exitButton.setAlignment(Pos.CENTER);
@@ -92,15 +93,15 @@ public class MainScreen extends Screen {
             }
         });
         exitPane.setAlignment(Pos.CENTER);
-        exitPane.setMinSize((Constants.SCREEN_WIDTH)/2, (Constants.SCREEN_HEIGHT)/2);
-        exitPane.add(exitLabel, 0, 0, 1,1);
-        exitPane.add(exitButton, 0, 1, 1,1);
+        exitPane.setMinSize((Constants.SCREEN_WIDTH) / 2, (Constants.SCREEN_HEIGHT) / 2);
+        exitPane.add(exitLabel, 0, 0, 1, 1);
+        exitPane.add(exitButton, 0, 1, 1, 1);
         exitPopup.getContent().add(exitPane);
 
         int num = 1;
 
-        for (int i = 0; i<21; i++) {
-            if(i%2 == 0)
+        for (int i = 0; i < 21; i++) {
+            if (i % 2 == 0)
                 labels[i].setStyle(" -fx-background-color: white;");
             else
                 labels[i].setStyle(" -fx-background-color: white;");
@@ -109,17 +110,16 @@ public class MainScreen extends Screen {
 
         // set background for how to play popup
         int count = 0;
-        for (int i = 0; i<21; i++) {
-            if(count == 0){
+        for (int i = 0; i < 21; i++) {
+            if (count == 0) {
                 labels[i].setStyle(" -fx-background-color: rgb(235, 232, 63);");
             }
-            if(count == 1){
+            if (count == 1) {
                 labels[i].setStyle(" -fx-background-color: rgb(84, 97, 240);");
             }
-            if ((i+1) % 3 == 0 && count == 1){
+            if ((i + 1) % 3 == 0 && count == 1) {
                 count = 0;
-            }
-            else if ((i+1) % 3 == 0 && count == 0){
+            } else if ((i + 1) % 3 == 0 && count == 0) {
                 count = 1;
             }
         }
@@ -127,16 +127,16 @@ public class MainScreen extends Screen {
         // add the label
         int htprow = 0;
         int htpcol = 0;
-        for (int i = 0; i<21; i++) {
+        for (int i = 0; i < 21; i++) {
             htpGridPane.add(labels[i], htprow, htpcol, 1, 1);
             htprow++;
-            if (((i + 1) % 3 == 0)){
+            if (((i + 1) % 3 == 0)) {
                 htpcol++;
                 htprow = 0;
             }
         }
         htpGridPane.setAlignment(Pos.CENTER);
-        htpGridPane.setMinSize((Constants.SCREEN_WIDTH)/2, (Constants.SCREEN_HEIGHT)/2);
+        htpGridPane.setMinSize((Constants.SCREEN_WIDTH) / 2, (Constants.SCREEN_HEIGHT) / 2);
 
         htpPopup.getContent().add(htpGridPane);
 
@@ -145,19 +145,21 @@ public class MainScreen extends Screen {
         exitPopup.setAutoHide(true);
         creditsPopup.setAutoHide(true);
 
-        //Game Modes button
+        // Game Modes button
         Button modesButton = new Button("Play Game");
         modesButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Scene gameScene = new Scene(new ScreenManager().setScreen(new GameScreenDemo(getPrimaryStage())));
+                GameScreenDemo gameScreenDemo = new GameScreenDemo(getPrimaryStage());
+                gameScreenDemo.setMain(MainScreen.this);
+                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
                 gameScene.getRoot().requestFocus();
                 getPrimaryStage().setScene(gameScene);
                 System.out.println("game modes button working");
             }
         });
 
-        //Shop Button
+        // Shop Button
         Button shopButton = new Button("Shop");
         shopButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -166,7 +168,7 @@ public class MainScreen extends Screen {
             }
         });
 
-        //How to Play Button
+        // How to Play Button
         Button htpButton = new Button("How to Play");
         htpButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -177,7 +179,7 @@ public class MainScreen extends Screen {
             }
         });
 
-        //Highest scores Button
+        // Highest scores Button
         Button highScoreButton = new Button("Highest Scores");
         highScoreButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -186,7 +188,7 @@ public class MainScreen extends Screen {
             }
         });
 
-        //Credits Button
+        // Credits Button
         Button creditsButton = new Button("Credits");
         creditsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -205,7 +207,7 @@ public class MainScreen extends Screen {
             }
         });
 
-        Button[] buttons = {modesButton, shopButton, htpButton, highScoreButton, creditsButton, closeButton};
+        Button[] buttons = { modesButton, shopButton, htpButton, highScoreButton, creditsButton, closeButton };
         GridPane gridPaneButton = new GridPane();
         int b = 0;
         int a = 0;
@@ -216,19 +218,18 @@ public class MainScreen extends Screen {
             button.setMaxWidth(200);
             button.setStyle("-fx-background-color: rgb(23, 114, 189); ");
             button.setAlignment(Pos.CENTER);
+            button.requestFocus();
             gridPaneButton.add(button, a, b, c, d);
             b++;
         }
         gridPaneButton.setVgap(20);
         gridPaneButton.setMinSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
 
-
-        //gridPaneButton.widthProperty()(modesButton, HPos.CENTER);
-        //gridPaneButton.setAlignment(Pos.CENTER);
+        // gridPaneButton.widthProperty()(modesButton, HPos.CENTER);
+        // gridPaneButton.setAlignment(Pos.CENTER);
         getChildren().add(gridPaneButton);
 
-
-        //add title to screen
+        // add title to screen
         getChildren().add(title);
         return this;
     }

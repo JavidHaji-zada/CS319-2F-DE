@@ -7,9 +7,7 @@ import java.util.Date;
 
 public class AlienSpaceShip extends GameObject{
 
-
     private long lastFiredTime = 0;
-
     public AlienSpaceShip(double x, double y, int w, int h, int health, String type, Color color){
         super(x,y,w,h,health, type, color);
     }
