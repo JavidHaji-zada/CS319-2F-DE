@@ -2,38 +2,29 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
-import defenders2FDE.Manager.ScreenManager;
-import defenders2FDE.objects.AlienSpaceShip;
-import defenders2FDE.objects.Bullet;
-import defenders2FDE.objects.GameObject;
-import defenders2FDE.objects.SpaceShip;
 import javafx.animation.AnimationTimer;
-import javafx.application.Platform;
+import javafx.animation.ParallelTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import javafx.util.Duration;
 
 public class GameScreenDemo extends Screen{
 
     private GameManager gameManager;
     private Screen mainScreen;
-    AnimationTimer timer;
+    private AnimationTimer timer;
+    private ParallelTransition parallelTransition;
+
     public GameScreenDemo(Stage primaryStage){
         super(primaryStage);
         gameManager = new GameManager(this, primaryStage);
@@ -55,8 +46,11 @@ public class GameScreenDemo extends Screen{
     @Override
     public Pane display(){
         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
-        setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
-
+        Image image = new Image("defenders2FDE/Assets/images/background.jpg");
+        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+//        setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+        setBackground(new Background(backgroundImage));
         // Header Line
         Line headerLine = new Line(0, Constants.HEADER_Y, Constants.SCREEN_WIDTH, Constants.HEADER_Y);
         headerLine.setStroke(Color.WHITE);

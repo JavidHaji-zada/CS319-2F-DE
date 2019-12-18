@@ -1,23 +1,17 @@
 package defenders2FDE.Manager;
 
 import defenders2FDE.Constants;
-import defenders2FDE.Screen.MainScreen;
 import defenders2FDE.Screen.Screen;
-import defenders2FDE.objects.AlienSpaceShip;
-import defenders2FDE.objects.Bullet;
-import defenders2FDE.objects.GameObject;
-import defenders2FDE.objects.SpaceShip;
+import defenders2FDE.GameObjects.AlienSpaceShip;
+import defenders2FDE.GameObjects.Bullet;
+import defenders2FDE.GameObjects.GameObject;
+import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

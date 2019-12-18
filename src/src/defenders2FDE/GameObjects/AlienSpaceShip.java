@@ -1,4 +1,4 @@
-package defenders2FDE.objects;
+package defenders2FDE.GameObjects;
 
 import defenders2FDE.Constants;
 import javafx.scene.paint.Color;
