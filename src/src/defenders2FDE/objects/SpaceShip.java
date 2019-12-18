@@ -3,10 +3,12 @@ package defenders2FDE.objects;
 import defenders2FDE.Constants;
 import javafx.scene.paint.Color;
 
+import static defenders2FDE.Constants.*;
+
 public class SpaceShip extends GameObject{
 
-    public SpaceShip(double x, double y, int w, int h, int health, String type, Color color){
-        super(x,y,w,h,health, type, color);
+    public SpaceShip(double x, double y){
+        super(x, y, SpaceShipSize, SpaceShipSize, SpaceShipHealth, "Player", 0, Color.DODGERBLUE, SpaceShipSpeed);
     }
 
     @Override
@@ -36,7 +38,7 @@ public class SpaceShip extends GameObject{
 
     public Bullet fire(){
         if (!isStop())
-            return new Bullet(getTranslateX() + Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "playerBullet", Color.GREEN);
+            return new Bullet(getTranslateX() + SpaceShipSize, getTranslateY() + SpaceShipSize / 2 - 5, 10, "PlayerBullet", 50, 5, Color.GREEN);
         return null;
     }
 

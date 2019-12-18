@@ -5,13 +5,15 @@ import javafx.scene.paint.Color;
 
 import java.util.Date;
 
-public class AlienSpaceShip extends GameObject{
+import static defenders2FDE.Constants.*;
+
+public class Alien extends GameObject{
 
 
     private long lastFiredTime = 0;
 
-    public AlienSpaceShip(double x, double y, int w, int h, int health, String type, Color color){
-        super(x,y,w,h,health, type, color);
+    public Alien(double x, double y) {
+        super(x, y, AlienSize, AlienSize, AlienHealth, "Alien", AsteroidCollisionDamage, Color.ANTIQUEWHITE, AlienSpeed);
     }
 
     @Override
@@ -23,7 +25,7 @@ public class AlienSpaceShip extends GameObject{
     public Bullet fire(){
         if ( new Date().getTime() - lastFiredTime >= 2000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            return new Bullet(getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "enemyBullet", Color.RED);
+            return new Bullet(getTranslateX() - AlienSize, getTranslateY() + AlienSize / 2 - 5, 10, "AlienBullet", 20, 5, Color.RED);
         }
         return null;
     }

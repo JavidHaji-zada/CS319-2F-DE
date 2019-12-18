@@ -8,17 +8,20 @@ public class GameObject extends Rectangle {
     private int health;
     private int speed;
     private Color color;
-    public String type;
+    private int collisionDamage;
     private boolean stop;
     private boolean outOfScreen = false;
+    public String type;
 
 
-    public GameObject(double x, double y, int w, int h, int health, String type, Color color){
+    public GameObject(double x, double y, int w, int h, int health, String type, int collisionDamage, Color color, int speed){
         super(w, h, color);
         setTranslateX(x);
         setTranslateY(y);
         this.color = color;
         this.health = health;
+        this.collisionDamage = collisionDamage;
+        this.speed = speed;
         this.type = type;
         stop = false;
     }

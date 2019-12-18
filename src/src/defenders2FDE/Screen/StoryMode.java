@@ -1,7 +1,10 @@
 package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
-import defenders2FDE.objects.*;
+import defenders2FDE.objects.Alien;
+import defenders2FDE.objects.Bullet;
+import defenders2FDE.objects.GameObject;
+import defenders2FDE.objects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -9,13 +12,19 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
-public class GameScreenDemo extends Screen{
+public class StoryMode extends Screen{
 
 
     private Stage primaryStage;
@@ -28,7 +37,7 @@ public class GameScreenDemo extends Screen{
     private SpaceShip player;
     private Label scoreLabel;
 
-    public GameScreenDemo(Stage primaryStage){
+    public StoryMode(Stage primaryStage){
         this.primaryStage = primaryStage;
         score = 0;
         gameObjects = new ArrayList<>();
@@ -54,7 +63,7 @@ public class GameScreenDemo extends Screen{
         gameObjects.forEach((GameObject gameObject) -> {
             gameObject.move();
             List<GameObject> toBeRemoved = new ArrayList<>();
-            if (gameObject.type.equals("Alien")){
+            if (gameObject.type.equals("enemy")){
                 if ( gameObject.isOutOfScreen()){
                     toBeRemoved.add(gameObject);
                 }
@@ -63,8 +72,8 @@ public class GameScreenDemo extends Screen{
                     enemyBullets.add(enemyBullet);
                     getChildren().add(enemyBullet);
                 }
-            } else if (gameObject.type.equals("PlayerBullet")){
-                gameObjects.stream().filter(e-> e.type.equals("Alien")).forEach(enemy -> {
+            } else if (gameObject.type.equals("playerBullet")){
+                gameObjects.stream().filter(e-> e.type.equals("enemy")).forEach(enemy -> {
 
                     // an enemy is down
                     if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
