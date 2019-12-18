@@ -7,15 +7,14 @@ import defenders2FDE.GameObjects.Bullet;
 import defenders2FDE.GameObjects.GameObject;
 import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GameManager {
 
@@ -26,10 +25,14 @@ public class GameManager {
     private long lastEnemyTime = new Date().getTime();
     private SpaceShip player;
     private Label scoreLabel;
+    private Label timerLabel;
     private Screen gameScreen;
     private Screen mainScreen;
     private Stage primaryStage;
-    private AnimationTimer timer;
+    private AnimationTimer animationTimer;
+    private long lastFrameUpdateTime;
+    private int time = 0;
+    private long fraction = 0;
 
     public GameManager(Screen gameScreen, Stage primaryStage) {
         this.gameScreen = gameScreen;
@@ -38,11 +41,22 @@ public class GameManager {
         enemyBullets = new ArrayList<>();
         player = new SpaceShip(Constants.PLAYER_SPACESHIP_IMAGE_PATH, 300,300, 100, "player");
         gameObjects.add(player);
+
+        // setup score label
         scoreLabel = new Label("Score: " + this.score);
         scoreLabel.setTextFill(Color.WHITE);
         scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 9 / 10);
         scoreLabel.setLayoutY(Constants.SCREEN_HEIGHT / 20);
         gameScreen.getChildren().add(scoreLabel);
+
+        // setup timer label
+        timerLabel = new Label("00:00");
+        timerLabel.setTextFill(Color.WHITE);
+        timerLabel.setFont(Font.font("Arial", 32));
+        timerLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        timerLabel.setLayoutX(Constants.SCREEN_WIDTH / 2);
+        gameScreen.getChildren().add(timerLabel);
+
         gameScreen.getChildren().add(player);
     }
 
@@ -50,8 +64,42 @@ public class GameManager {
         mainScreen = screen;
     }
 
-    public void setTimer(AnimationTimer timer) {
-        this.timer = timer;
+    public void setAnimationTimer(AnimationTimer animationTimer) {
+        this.animationTimer = animationTimer;
+    }
+
+    public long getLastFrameUpdateTime() {
+        return lastFrameUpdateTime;
+    }
+
+    public void setLastFrameUpdateTime(long lastFrameUpdateTime) {
+        this.lastFrameUpdateTime = lastFrameUpdateTime;
+    }
+
+    public void updateLabel(){
+        time++;
+        StringBuilder timerStrBuilder = new StringBuilder();
+        int hours = time / 216000;
+        int mins = time / 3600;
+        int secs = time / 60;
+        secs %= 60;
+        if ( hours > 0){
+            if ( hours < 10) {
+                timerStrBuilder.append("0");
+            }
+            timerStrBuilder.append(hours);
+            timerStrBuilder.append(":");
+        }
+        if ( mins < 10)
+            timerStrBuilder.append(0);
+        timerStrBuilder.append(mins);
+        timerStrBuilder.append(":");
+        if (secs < 10) {
+            timerStrBuilder.append(0);
+        }
+        System.out.println("Hours" + hours + " mins " + mins + " secs " + secs + " timer " + time);
+        timerStrBuilder.append(secs);
+        timerLabel.setText(timerStrBuilder.toString());
     }
 
     public AlienSpaceShip addNewEnemy(){
@@ -107,7 +155,7 @@ public class GameManager {
                 enemyBullets.forEach(bullet1 -> bullet1.stop(true));
                 gameObjects.forEach(gameObject -> gameObject.stop(true));
                 isFinished = true;
-                timer.stop();
+                animationTimer.stop();
             }
         });
         if ( isFinished){
@@ -119,6 +167,11 @@ public class GameManager {
     public double getPlayerTranslateY(){
         return player.getTranslateY();
     }
+
+    public double getPlayerTranslateX(){
+        return player.getTranslateX();
+    }
+
 
     public void moveLeft(){
         player.moveLeft();

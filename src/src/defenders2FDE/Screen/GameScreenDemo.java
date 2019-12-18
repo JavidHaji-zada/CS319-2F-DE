@@ -4,10 +4,7 @@ import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
-import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -16,7 +13,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class GameScreenDemo extends Screen{
 
@@ -30,7 +26,11 @@ public class GameScreenDemo extends Screen{
         gameManager = new GameManager(this, primaryStage);
     }
 
-    private void update(){
+    private void update(long now){
+        if ( gameManager.getLastFrameUpdateTime() + 1000 <= now){
+            gameManager.setLastFrameUpdateTime(now);
+            gameManager.updateLabel();
+        }
         Node newEnemy = gameManager.addNewEnemy();
         if ( newEnemy != null){
             getChildren().add(newEnemy);
@@ -64,7 +64,7 @@ public class GameScreenDemo extends Screen{
                         gameManager.moveLeft();
                     }
                 }else if (event.getCode() == KeyCode.D){
-                    if ( gameManager.getPlayerTranslateY() <= Constants.SCREEN_WIDTH - 10) {
+                    if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
                         gameManager.moveRight();
                     }
                 }else if (event.getCode() == KeyCode.W){
@@ -80,7 +80,7 @@ public class GameScreenDemo extends Screen{
                         gameManager.moveLeft();
                     }
                 }else if (event.getCode() == KeyCode.RIGHT){
-                    if ( gameManager.getPlayerTranslateY() <= Constants.SCREEN_WIDTH - 12) {
+                    if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
                         gameManager.moveRight();
                     }
                 }else if (event.getCode() == KeyCode.UP){
@@ -99,10 +99,10 @@ public class GameScreenDemo extends Screen{
          timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                update();
+                update(now);
             }
         };
-         gameManager.setTimer(timer);
+         gameManager.setAnimationTimer(timer);
          timer.start();
          return this;
     }
