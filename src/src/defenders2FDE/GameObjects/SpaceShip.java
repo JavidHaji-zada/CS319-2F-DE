@@ -3,10 +3,15 @@ package defenders2FDE.GameObjects;
 import defenders2FDE.Constants;
 import javafx.scene.paint.Color;
 
+import java.util.Date;
+
 public class SpaceShip extends GameObject{
 
-    public SpaceShip(double x, double y, int w, int h, int health, String type, Color color){
-        super(x,y,w,h,health, type, color);
+    private long lastFireTime = new Date().getTime();
+    public SpaceShip(String path, double x, double y, int health, String type){
+        super( path, x, y, health, type);
+        setFitHeight(50);
+        setFitWidth(50);
     }
 
     @Override
@@ -35,8 +40,12 @@ public class SpaceShip extends GameObject{
     }
 
     public Bullet fire(){
-        if (!isStop())
-            return new Bullet(getTranslateX() + Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 10, "playerBullet", Color.GREEN);
+        long now = new Date().getTime();
+        if (!isStop() && now - lastFireTime >= 500) {
+            lastFireTime = now;
+            String bulletImagePath = Constants.PLAYER_BULLET_IMAGE_PATH;
+            return new Bullet(bulletImagePath, getTranslateX(), getTranslateY() + 25 , 10,  "playerBullet");
+        }
         return null;
     }
 

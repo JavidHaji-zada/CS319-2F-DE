@@ -36,7 +36,7 @@ public class GameManager {
         this.primaryStage = primaryStage;
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
-        player = new SpaceShip(300,300, Constants.SS_WIDTH,Constants.SS_HEIGHT, 100, "player", Color.WHITE);
+        player = new SpaceShip(Constants.PLAYER_SPACESHIP_IMAGE_PATH, 300,300, 100, "player");
         gameObjects.add(player);
         scoreLabel = new Label("Score: " + this.score);
         scoreLabel.setTextFill(Color.WHITE);
@@ -61,7 +61,7 @@ public class GameManager {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.SCREEN_WIDTH, posY, 20, 20, 10, "enemy", Color.BLUE);
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.ENEMY_SPACESHIP_IMAGE_PATH, Constants.SCREEN_WIDTH, posY, 20, "enemy");
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;
         }

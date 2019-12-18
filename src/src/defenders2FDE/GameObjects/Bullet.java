@@ -7,10 +7,12 @@ public class Bullet extends GameObject {
     double posx;
     double posy;
 
-    public Bullet(double x, double y, int w, int h, int health, String type, Color color){
-        super(x,y,w,h,health,type, color);
+    public Bullet(String path, double x, double y, int health, String type){
+        super( path, x, y, health, type);
         this.posx = x;
         this.posy = y;
+        setFitHeight(5);
+        setFitWidth(10);
     }
 
     @Override

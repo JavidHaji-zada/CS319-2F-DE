@@ -12,4 +12,11 @@ public class Constants {
     public static final int BACKGROUND_WIDTH = 2000;
 
     public static final int SS_WIDTH = (int) Screen.getPrimary().getBounds().getMaxX() / 36;
-    public static final int SS_HEIGHT = (int) Screen.getPrimary().getBounds().getMaxX() / 36;}
+    public static final int SS_HEIGHT = (int) Screen.getPrimary().getBounds().getMaxX() / 36;
+
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceship.png";
+    public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alienspaceship.png";
+
+    public static final String PLAYER_BULLET_IMAGE_PATH = "defenders2FDE/Assets/images/playerBullet.JPG";
+    public static final String ENEMY_BULLET_IMAGE_PATH = "defenders2FDE/Assets/images/enemyBullet.JPG";
+}

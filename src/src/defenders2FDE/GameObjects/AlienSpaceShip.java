@@ -8,8 +8,10 @@ import java.util.Date;
 public class AlienSpaceShip extends GameObject{
 
     private long lastFiredTime = 0;
-    public AlienSpaceShip(double x, double y, int w, int h, int health, String type, Color color){
-        super(x,y,w,h,health, type, color);
+    public AlienSpaceShip(String path, double x, double y, int health, String type){
+        super( path, x, y, health, type);
+        setFitHeight(30);
+        setFitWidth(30);
     }
 
     @Override
@@ -21,7 +23,8 @@ public class AlienSpaceShip extends GameObject{
     public Bullet fire(){
         if ( new Date().getTime() - lastFiredTime >= 2000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            return new Bullet(getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10, 10, 35, "enemyBullet", Color.RED);
+            String bulletImagePath = Constants.ENEMY_BULLET_IMAGE_PATH;
+            return new Bullet(bulletImagePath, getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2 - 5, 10,  "enemyBullet");
         }
         return null;
     }

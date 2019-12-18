@@ -1,23 +1,22 @@
 package defenders2FDE.GameObjects;
 
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class GameObject extends Rectangle {
+public class GameObject extends ImageView {
 
     private int health;
     private int speed;
-    private Color color;
     public String type;
     private boolean stop;
     private boolean outOfScreen = false;
 
 
-    public GameObject(double x, double y, int w, int h, int health, String type, Color color){
-        super(w, h, color);
+    public GameObject(String path, double x, double y, int health, String type){
+        super(path);
         setTranslateX(x);
         setTranslateY(y);
-        this.color = color;
         this.health = health;
         this.type = type;
         stop = false;
