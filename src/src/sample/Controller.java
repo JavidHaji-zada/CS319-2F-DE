@@ -1,4 +1,4 @@
-package defenders2FDE;
+package sample;
 
 public class Controller {
 }

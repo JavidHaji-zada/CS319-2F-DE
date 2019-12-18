@@ -1,7 +1,7 @@
-package defenders2FDE.Manager;
+package sample.Manager;
 
 import javafx.scene.layout.Pane;
-import defenders2FDE.Screen.Screen;
+import sample.Screen.Screen;
 
 public class ScreenManager {
 
