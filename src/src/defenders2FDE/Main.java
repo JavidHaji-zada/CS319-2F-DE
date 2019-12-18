@@ -1,5 +1,6 @@
 package defenders2FDE;
 
+import defenders2FDE.Screen.MainScreen;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,16 +10,17 @@ import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.Screen.SplashScreen;
 
 
+
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
         SplashScreen splashScreen = new SplashScreen(primaryStage);
         MainScreen mainScreen = new MainScreen(primaryStage);
         ScreenManager screenManager = new ScreenManager();
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
-
         primaryStage.setScene(appScene);
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Defenders");
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
