@@ -7,7 +7,6 @@ import defenders2FDE.GameObjects.Bullet;
 import defenders2FDE.GameObjects.GameObject;
 import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
-import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.util.*;
 
-public class GameManager {
+public class GameManager{
 
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;

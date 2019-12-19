@@ -1,16 +1,11 @@
 package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
-import defenders2FDE.Main;
 import defenders2FDE.Manager.ScreenManager;
-import defenders2FDE.Screen.Screen;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,12 +28,9 @@ public class MainScreen extends Screen {
     @Override
     public Pane display() {
 
-        // prepare button click sound
-        String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
-        Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
-        mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
 
+
+        // prepare screen
         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         Label title = new Label("Defenders");
@@ -92,7 +84,14 @@ public class MainScreen extends Screen {
         GridPane exitPane = new GridPane();
         Label exitLabel = new Label("Are you sure you want to exit ヾ( ๑´д`๑)ﾂ");
         exitLabel.setStyle("-fx-background-color: #ffffff; ");
-        // Button htpButton = new Button("How to Play");
+
+        // prepare button click sound
+        String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
+        Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
+        mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
+
+
         Button exitButton = new Button("Yes");
         exitButton.setStyle("-fx-background-color: rgb(23, 114, 189); ");
         exitButton.setAlignment(Pos.CENTER);
