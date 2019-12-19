@@ -15,10 +15,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.Popup;
+
+import java.io.File;
 
 public class MainScreen extends Screen {
 
@@ -28,6 +32,13 @@ public class MainScreen extends Screen {
 
     @Override
     public Pane display() {
+
+        // prepare button click sound
+        String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
+        Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
+        mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
+
         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         Label title = new Label("Defenders");
@@ -150,6 +161,7 @@ public class MainScreen extends Screen {
         modesButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 GameScreenDemo gameScreenDemo = new GameScreenDemo(getPrimaryStage());
                 gameScreenDemo.setMain(MainScreen.this);
                 Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
@@ -164,6 +176,7 @@ public class MainScreen extends Screen {
         shopButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 System.out.println("Shop button working");
             }
         });
@@ -173,6 +186,7 @@ public class MainScreen extends Screen {
         htpButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 System.out.println("How to play button working");
                 if (!htpPopup.isShowing())
                     htpPopup.show(getPrimaryStage());
@@ -184,6 +198,7 @@ public class MainScreen extends Screen {
         highScoreButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 System.out.println("Highest Scores button working");
             }
         });
@@ -193,6 +208,7 @@ public class MainScreen extends Screen {
         creditsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 if (!creditsPopup.isShowing())
                     creditsPopup.show(getPrimaryStage());
             }
@@ -201,6 +217,7 @@ public class MainScreen extends Screen {
         closeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                mediaPlayer.play();
                 if (!exitPopup.isShowing())
                     exitPopup.show(getPrimaryStage());
                 getPrimaryStage().close();

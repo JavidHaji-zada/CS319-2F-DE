@@ -44,7 +44,7 @@ public class SpaceShip extends GameObject{
         if (!isStop() && now - lastFireTime >= 250) {
             lastFireTime = now;
             String bulletImagePath = Constants.PLAYER_BULLET_IMAGE_PATH;
-            return new Bullet(bulletImagePath, getTranslateX(), getTranslateY() + 25 , 10,  "playerBullet");
+            return new Bullet(bulletImagePath, getTranslateX() + 50, getTranslateY() + 25 , 10,  "playerBullet");
         }
         return null;
     }
