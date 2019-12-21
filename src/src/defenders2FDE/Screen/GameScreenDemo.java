@@ -66,47 +66,47 @@ public class GameScreenDemo extends Screen{
         getChildren().add(headerLine);
 
 
-
-
-
         // prepare key-presses
         this.setOnKeyPressed(event -> {
             if ( event.getCode() == KeyCode.A){
-                if ( gameManager.getPlayerTranslateY()>=5) {
+                if ( gameManager.getPlayerTranslateY()>=5 && !gameManager.isStop()) {
                     gameManager.moveLeft();
                 }
             }else if (event.getCode() == KeyCode.D){
-                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
+                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108 && !gameManager.isStop()) {
                     gameManager.moveRight();
                 }
             }else if (event.getCode() == KeyCode.W){
-                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12) {
+                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12 && !gameManager.isStop()) {
                     gameManager.moveUp();
                 }
             }else if (event.getCode() == KeyCode.S){
-                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y) {
+                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y && !gameManager.isStop()) {
                     gameManager.moveDown();
                 }
             }else if (event.getCode() == KeyCode.LEFT){
-                if ( gameManager.getPlayerTranslateY() >=5) {
+                if ( gameManager.getPlayerTranslateY() >=5 && !gameManager.isStop()) {
                     gameManager.moveLeft();
                 }
             }else if (event.getCode() == KeyCode.RIGHT){
-                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
+                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108 && !gameManager.isStop()) {
                     gameManager.moveRight();
                 }
             }else if (event.getCode() == KeyCode.UP){
-                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12) {
+                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12 && !gameManager.isStop()) {
                     gameManager.moveUp();
                 }
             }else if (event.getCode() == KeyCode.DOWN){
-                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y) {
+                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y && !gameManager.isStop()) {
                     gameManager.moveDown();
                 }
-            }else if ( event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F){
-                 gameManager.fire();
+            }else if ( (event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F) && !gameManager.isStop()){
+                gameManager.fire();
+            }else if ( event.getCode() == KeyCode.P || event.getCode() == KeyCode.ESCAPE){
+                gameManager.pause();
             }
         });
+
          timer = new AnimationTimer() {
             @Override
             public void handle(long now) {

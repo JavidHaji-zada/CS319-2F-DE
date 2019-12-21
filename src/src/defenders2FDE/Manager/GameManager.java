@@ -8,21 +8,37 @@ import defenders2FDE.GameObjects.GameObject;
 import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventDispatchChain;
+import javafx.event.EventHandler;
+import javafx.event.EventTarget;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.*;
+import java.util.List;
 
-public class GameManager{
+public class GameManager {
 
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
-    private int score = 0;
+    private int score = 50;
     private boolean isFinished = false;
     private long lastEnemyTime = new Date().getTime();
     private SpaceShip player;
+    private Button pauseButton;
     private Label scoreLabel;
     private Label timerLabel;
     private Screen gameScreen;
@@ -32,35 +48,97 @@ public class GameManager{
     private long lastFrameUpdateTime;
     private int time = 0;
     private long fraction = 0;
+    private boolean stop = false;
+    private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
 
+    // constructor
     public GameManager(Screen gameScreen, Stage primaryStage) {
         this.gameScreen = gameScreen;
         this.primaryStage = primaryStage;
+
+        // initialize game objects and enemy bullets
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
-        player = new SpaceShip(Constants.PLAYER_SPACESHIP_IMAGE_PATH, 300,300, 100, "player");
+
+        // create player instance
+        player = new SpaceShip( 300,300, 100, "player");
+        player.setImagePath(Constants.PLAYER_SPACESHIP_IMAGE_PATH);
         gameObjects.add(player);
 
         // setup score label
-        scoreLabel = new Label("Score: " + this.score);
-        scoreLabel.setTextFill(Color.WHITE);
-        scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 9 / 10);
-        scoreLabel.setLayoutY(Constants.SCREEN_HEIGHT / 20);
-        gameScreen.getChildren().add(scoreLabel);
+        setupScoreLabel();
 
         // setup timer label
-        timerLabel = new Label("00:00");
-        timerLabel.setTextFill(Color.WHITE);
-        timerLabel.setFont(Font.font("Arial", 32));
-        timerLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
-        timerLabel.setLayoutX(Constants.SCREEN_WIDTH / 2);
-        gameScreen.getChildren().add(timerLabel);
+        setupTimerLabel();
+
+        // setup pause button
+        setupPauseButton();
 
         gameScreen.getChildren().add(player);
     }
 
     public void setMain(Screen screen) {
         mainScreen = screen;
+    }
+
+    private void setupScoreLabel(){
+        scoreLabel = new Label("Score: " + this.score);
+        scoreLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_SM));
+        scoreLabel.setTextFill(Color.WHITE);
+        scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 8 / 10);
+        scoreLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        gameScreen.getChildren().add(scoreLabel);
+    }
+
+
+    private void setupTimerLabel(){
+        timerLabel = new Label("00:00");
+        timerLabel.setTextFill(Color.WHITE);
+        timerLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_MD));
+        timerLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        timerLabel.setLayoutX(Constants.SCREEN_WIDTH / 2);
+        gameScreen.getChildren().add(timerLabel);
+    }
+
+    private void setupPauseButton(){
+        pauseButton = new Button();
+        ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
+        pauseIcon.setFitHeight(Constants.SS_HEIGHT);
+        pauseIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setBackground(Background.EMPTY);
+        pauseButton.setGraphic(pauseIcon);
+        pauseButton.setLayoutX(Constants.SCREEN_WIDTH * 9 / 10);
+        pauseButton.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        pauseButton.setFocusTraversable(false);
+        pauseButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                pause();
+            }
+        });
+        gameScreen.getChildren().add(pauseButton);
+
+    }
+
+    public void pause(){
+        if ( stop){
+            ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
+            pauseIcon.setFitHeight(Constants.SS_HEIGHT);
+            pauseIcon.setFitWidth(Constants.SS_HEIGHT);
+            pauseButton.setGraphic(pauseIcon);
+            animationTimer.start();
+        }else{
+            ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
+            resumeIcon.setFitHeight(Constants.SS_HEIGHT);
+            resumeIcon.setFitWidth(Constants.SS_HEIGHT);
+            pauseButton.setGraphic(resumeIcon);
+            animationTimer.stop();
+        }
+        stop = !stop;
+    }
+
+    public boolean isStop(){
+        return stop;
     }
 
     public void setAnimationTimer(AnimationTimer animationTimer) {
@@ -96,7 +174,6 @@ public class GameManager{
         if (secs < 10) {
             timerStrBuilder.append(0);
         }
-        System.out.println("Hours" + hours + " mins " + mins + " secs " + secs + " timer " + time);
         timerStrBuilder.append(secs);
         timerLabel.setText(timerStrBuilder.toString());
     }
@@ -108,7 +185,8 @@ public class GameManager{
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.ENEMY_SPACESHIP_IMAGE_PATH, Constants.SCREEN_WIDTH, posY, 20, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.SCREEN_WIDTH, posY, 20, "enemy");
+            alienSpaceShip.setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;
         }
@@ -123,6 +201,10 @@ public class GameManager{
                 if ( gameObject.isOutOfScreen()){
                     toBeRemoved.add(gameObject);
                 }
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+                    isFinished = true;
+                    animationTimer.stop();
+                }
                 Bullet enemyBullet = ((AlienSpaceShip) gameObject).fire();
                 if (enemyBullet != null) {
                     enemyBullets.add(enemyBullet);
@@ -130,7 +212,6 @@ public class GameManager{
                 }
             } else if (gameObject.type.equals("playerBullet")){
                 gameObjects.stream().filter(e-> e.type.equals("enemy")).forEach(enemy -> {
-
                     // an enemy is down
                     if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
                         toBeRemoved.add(enemy);
@@ -151,16 +232,75 @@ public class GameManager{
         enemyBullets.forEach(bullet -> {
             bullet.move();
             if (bullet.getBoundsInParent().intersects(player.getBoundsInParent())) {
-                enemyBullets.forEach(bullet1 -> bullet1.stop(true));
-                gameObjects.forEach(gameObject -> gameObject.stop(true));
                 isFinished = true;
                 animationTimer.stop();
             }
         });
         if ( isFinished){
-            primaryStage.setScene(mainScreen.getScene());
-            primaryStage.getScene().getRoot().requestFocus();
+            enemyBullets.forEach(bullet1 -> bullet1.stop(true));
+            gameObjects.forEach(gameObject -> gameObject.stop(true));
+            if ( isHighScore()){
+                showHighScoreDialog();
+            } else {
+                primaryStage.setScene(mainScreen.getScene());
+                primaryStage.getScene().getRoot().requestFocus();
+            }
         }
+    }
+
+    private boolean isHighScore(){
+        boolean isHighScore = false;
+        for (int i = 0; i < highScores.length;i++){
+            System.out.println("Array" + highScores[i]);
+            System.out.println("Player score " + score);
+            if ( score > highScores[i]){
+                if ( i == 0) {
+                    highScores[i] = score;
+                    isHighScore =  true;
+                    System.out.println("Is high score set tu true");
+                }
+                else{
+                    int tmp = highScores[i];
+                    highScores[i] = score;
+                    highScores[i-1] = tmp;
+                    isHighScore =  true;
+                    System.out.println("Is high score set tu true");
+                }
+            }
+        }
+        System.out.println("Returning ishighscore" + isHighScore);
+        return isHighScore;
+    }
+
+    private void showHighScoreDialog(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Congratulations!");
+        alert.setHeaderText(null);
+        alert.setContentText("Your score entered top 10");
+        ButtonType backToMenu = new ButtonType("Menu");
+        ButtonType exitGame = new ButtonType("Exit");
+//        alert.getButtonTypes().setAll(backToMenu, exitGame);
+        alert.getButtonTypes().add(ButtonType.CANCEL);
+
+        Button menuButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        menuButton.setText("Menu");
+        menuButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(mainScreen.getScene());
+                primaryStage.getScene().getRoot().requestFocus();
+            }
+        });
+
+        Button exitButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+        exitButton.setText("Exit");
+        exitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.close();
+            }
+        });
+        alert.show();
     }
 
     public double getPlayerTranslateY(){

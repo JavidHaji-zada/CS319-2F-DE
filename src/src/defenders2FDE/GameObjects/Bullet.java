@@ -7,8 +7,8 @@ public class Bullet extends GameObject {
     double posx;
     double posy;
 
-    public Bullet(String path, double x, double y, int health, String type){
-        super( path, x, y, health, type);
+    public Bullet(double x, double y, int health, String type){
+        super( x, y, health, type);
         this.posx = x;
         this.posy = y;
         setFitHeight(5);
