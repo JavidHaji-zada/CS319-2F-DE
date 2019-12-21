@@ -3,7 +3,10 @@ package defenders2FDE;
 import defenders2FDE.Screen.MainScreen;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import defenders2FDE.Manager.ScreenManager;
@@ -14,9 +17,9 @@ import defenders2FDE.Screen.SplashScreen;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         SplashScreen splashScreen = new SplashScreen(primaryStage);
-        MainScreen mainScreen = new MainScreen(primaryStage);
+        //MainScreen mainScreen = new MainScreen(primaryStage);
         ScreenManager screenManager = new ScreenManager();
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
         primaryStage.setScene(appScene);
@@ -24,9 +27,12 @@ public class Main extends Application {
         primaryStage.setTitle("Defenders");
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
-        delay.setOnFinished( event -> primaryStage.setScene(new Scene(screenManager.setScreen(mainScreen))));
+        Parent root = FXMLLoader.load(getClass().getResource("Screen/MainScreen.fxml"));
+        Scene mainScene = new Scene(root);
+        delay.setOnFinished( event -> primaryStage.setScene(mainScene));
         delay.play();
     }
+
 
 
     public static void main(String[] args) {

@@ -8,14 +8,18 @@ import defenders2FDE.GameObjects.GameObject;
 import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.*;
 
-public class GameManager{
+public class GameManager {
 
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
@@ -33,7 +37,7 @@ public class GameManager{
     private int time = 0;
     private long fraction = 0;
 
-    public GameManager(Screen gameScreen, Stage primaryStage) {
+    public GameManager(Screen gameScreen, Stage primaryStage)  {
         this.gameScreen = gameScreen;
         this.primaryStage = primaryStage;
         gameObjects = new ArrayList<>();
@@ -115,7 +119,7 @@ public class GameManager{
         return null;
     }
 
-    public void checkCollision(){
+    public void checkCollision() {
         gameObjects.forEach((GameObject gameObject) -> {
             gameObject.move();
             List<GameObject> toBeRemoved = new ArrayList<>();
@@ -158,8 +162,12 @@ public class GameManager{
             }
         });
         if ( isFinished){
+
+
             primaryStage.setScene(mainScreen.getScene());
             primaryStage.getScene().getRoot().requestFocus();
+
+
         }
     }
 
