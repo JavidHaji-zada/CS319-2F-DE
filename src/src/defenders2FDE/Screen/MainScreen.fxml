@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1366.0" minHeight="384.0" minWidth="783.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.MainScreenController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@backgroundMain.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_CENTER" layoutX="104.0" layoutY="33.0" text="DEFENDERS" textFill="WHITE" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0">
+         <font>
+            <Font name="Arial Bold" size="60.0" />
+         </font></Label>
+      <VBox alignment="CENTER" layoutX="202.0" layoutY="122.0" prefHeight="471.0" prefWidth="1280.0" spacing="30.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0">
+         <children>
+            <Button fx:id="gameModesButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: black;" text="GAME MODES" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView disable="true" fitHeight="50.0" fitWidth="200.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 10;">
+                     <image>
+                        <Image url="@pics/b1.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="shopButton" alignment="CENTER" contentDisplay="CENTER" lineSpacing="4.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="SHOP" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.44" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/b2.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="htpButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#pophtp" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="HOW TO PLAY" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="19.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/b3.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="highestScoresButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="HIGHEST SCORES" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="19.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/b4.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="creditsButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Credits" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.43" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/b5.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#popExit" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Exit" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pics/b6.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

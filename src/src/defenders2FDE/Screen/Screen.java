@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public abstract class  Screen extends Pane {
 
-    private Stage primaryStage;
+    public Stage primaryStage;
     public Screen(Stage primaryStage){
         this.primaryStage = primaryStage;
     }

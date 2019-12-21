@@ -15,6 +15,9 @@ import javafx.event.EventTarget;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +25,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -193,7 +197,7 @@ public class GameManager {
         return null;
     }
 
-    public void checkCollision(){
+    public void checkCollision() {
         gameObjects.forEach((GameObject gameObject) -> {
             gameObject.move();
             List<GameObject> toBeRemoved = new ArrayList<>();

@@ -166,7 +166,6 @@ public class MainScreen extends Screen {
                 Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
                 gameScene.getRoot().requestFocus();
                 getPrimaryStage().setScene(gameScene);
-                System.out.println("game modes button working");
             }
         });
 
