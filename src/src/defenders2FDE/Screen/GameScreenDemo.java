@@ -29,10 +29,16 @@ public class GameScreenDemo extends Screen{
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
+    private Stage primaryStage;
 
-    public GameScreenDemo(Stage primaryStage){
-        super(primaryStage);
-        gameManager = new GameManager(this, primaryStage);
+    public GameScreenDemo(){
+        super();
+        gameManager = new GameManager(this);
+    }
+
+    public void setPrimaryStage(Stage primaryStage){
+        this.primaryStage = primaryStage;
+        gameManager.setPrimaryStage(primaryStage);
     }
 
     private void update(long now){

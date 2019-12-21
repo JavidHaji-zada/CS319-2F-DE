@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pics/htp.jpg" />
+            <Image url="@../pics/htp.jpg" />
          </image>
       </ImageView>
       <HBox alignment="TOP_CENTER" minHeight="30.0" minWidth="600.0" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">

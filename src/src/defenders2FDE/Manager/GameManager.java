@@ -31,11 +31,13 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
 public class GameManager {
 
+    private Stage primaryStage;
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
     private int score = 50;
@@ -47,7 +49,6 @@ public class GameManager {
     private Label timerLabel;
     private Screen gameScreen;
     private Screen mainScreen;
-    private Stage primaryStage;
     private AnimationTimer animationTimer;
     private long lastFrameUpdateTime;
     private int time = 0;
@@ -56,9 +57,8 @@ public class GameManager {
     private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
 
     // constructor
-    public GameManager(Screen gameScreen, Stage primaryStage) {
+    public GameManager(Screen gameScreen) {
         this.gameScreen = gameScreen;
-        this.primaryStage = primaryStage;
 
         // initialize game objects and enemy bullets
         gameObjects = new ArrayList<>();
@@ -79,6 +79,10 @@ public class GameManager {
         setupPauseButton();
 
         gameScreen.getChildren().add(player);
+    }
+
+    public void setPrimaryStage(Stage primaryStage){
+        this.primaryStage = primaryStage;
     }
 
     public void setMain(Screen screen) {
@@ -291,8 +295,16 @@ public class GameManager {
         menuButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                primaryStage.setScene(mainScreen.getScene());
-                primaryStage.getScene().getRoot().requestFocus();
+                Parent root = null;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("../Screen/fxml/MainScreen.fxml"));
+                    Scene scene = new Scene(root);
+                    primaryStage.setScene(scene);
+                    System.out.println("A");
+                } catch (IOException e) {
+                    System.out.println("B");
+                    e.printStackTrace();
+                }
             }
         });
 

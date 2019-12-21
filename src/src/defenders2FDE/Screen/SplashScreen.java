@@ -10,11 +10,7 @@ import javafx.stage.Stage;
 
 public class SplashScreen extends Screen{
 
-
-    private Stage primaryStage;
-
-    public SplashScreen(Stage primaryStage){
-        super(primaryStage);
+    public SplashScreen(){
     }
 
     @Override
@@ -26,8 +22,6 @@ public class SplashScreen extends Screen{
          title.setFont(new Font("Arial", 48));
          title.layoutXProperty().bind(widthProperty().subtract(title.widthProperty()).divide(2));
          title.layoutYProperty().bind(heightProperty().subtract(title.heightProperty()).divide(2));
-
-
          getChildren().add(title);
          return this;
     }

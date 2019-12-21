@@ -1,23 +1,22 @@
 package defenders2FDE.Screen;
 
 import defenders2FDE.Manager.ScreenManager;
-import javafx.fxml.FXML;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.application.Platform;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
 public class MainScreenController {
 
+    private Stage primaryStage;
+
     public void pophtp(javafx.event.ActionEvent actionEvent) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("htpPopUp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/htpPopUp.fxml"));
         Stage window = new Stage();
         Scene scene = new Scene(root);
 
@@ -31,6 +30,12 @@ public class MainScreenController {
 
     public void PopGameModes(javafx.event.ActionEvent actionEvent) throws Exception
     {
+//                mediaPlayer.play();
+                GameScreenDemo gameScreenDemo = new GameScreenDemo();
+                gameScreenDemo.setPrimaryStage(primaryStage);
+                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
+                gameScene.getRoot().requestFocus();
+                primaryStage.setScene(gameScene);
         /*
 
         Stage window = new Stage();
@@ -45,9 +50,13 @@ public class MainScreenController {
 
     }
 
+    public void setStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
     public void popExit(javafx.event.ActionEvent actionEvent) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("exitPopUp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/exitPopUp.fxml"));
         Stage window = new Stage();
         Scene scene = new Scene(root);
 

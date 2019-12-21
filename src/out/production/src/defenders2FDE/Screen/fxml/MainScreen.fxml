@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@backgroundMain.jpg" />
+            <Image url="@../backgroundMain.jpg" />
          </image>
       </ImageView>
       <Label alignment="TOP_CENTER" layoutX="104.0" layoutY="33.0" text="DEFENDERS" textFill="WHITE" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0">
@@ -22,7 +22,7 @@
          </font></Label>
       <VBox alignment="CENTER" layoutX="202.0" layoutY="122.0" prefHeight="471.0" prefWidth="1280.0" spacing="30.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0">
          <children>
-            <Button fx:id="gameModesButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: black;" text="GAME MODES" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="gameModesButton" onAction="#PopGameModes" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: black;" text="GAME MODES" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -32,7 +32,7 @@
                <graphic>
                   <ImageView disable="true" fitHeight="50.0" fitWidth="200.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 10;">
                      <image>
-                        <Image url="@pics/b1.jpg" />
+                        <Image url="@../pics/b1.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -44,7 +44,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.44" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pics/b2.jpg" />
+                        <Image url="@../pics/b2.jpg" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -55,7 +55,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pics/b3.jpg" />
+                        <Image url="@../pics/b3.jpg" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -66,7 +66,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pics/b4.jpg" />
+                        <Image url="@../pics/b4.jpg" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -77,7 +77,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.43" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pics/b5.jpg" />
+                        <Image url="@../pics/b5.jpg" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -88,7 +88,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pics/b6.jpg" />
+                        <Image url="@../pics/b6.jpg" />
                      </image>
                   </ImageView>
                </graphic>
