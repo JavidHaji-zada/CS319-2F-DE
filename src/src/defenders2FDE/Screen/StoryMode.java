@@ -2,37 +2,27 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
+import defenders2FDE.Manager.GameManagerStory;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
-import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-import java.io.File;
+public class StoryMode extends Screen{
 
-public class GameScreenDemo extends Screen{
-
-    private GameManager gameManager;
+    private GameManagerStory gameManager;
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
 
-    public GameScreenDemo(Stage primaryStage){
+    public StoryMode(Stage primaryStage){
         super(primaryStage);
-        gameManager = new GameManager(this, primaryStage);
+        gameManager = new GameManagerStory(this, primaryStage);
     }
 
     private void update(long now){
@@ -99,7 +89,8 @@ public class GameScreenDemo extends Screen{
                 if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y) {
                     gameManager.moveDown();
                 }
-            }else if ( event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F){
+            }
+            if ( event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F){
                  gameManager.fire();
             }
         });

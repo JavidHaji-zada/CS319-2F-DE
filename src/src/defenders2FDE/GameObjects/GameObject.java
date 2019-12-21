@@ -11,6 +11,7 @@ public class GameObject extends ImageView {
     public String type;
     private boolean stop;
     private boolean outOfScreen = false;
+    private int collisionDamage;
 
 
     public GameObject(String path, double x, double y, int health, String type){
@@ -47,5 +48,13 @@ public class GameObject extends ImageView {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public int getCollisionDamage() {
+        return collisionDamage;
+    }
+
+    public void setCollisionDamage(int collisionDamage) {
+        this.collisionDamage = collisionDamage;
     }
 }

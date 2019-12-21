@@ -156,12 +156,26 @@ public class MainScreen extends Screen {
         creditsPopup.setAutoHide(true);
 
         // Game Modes button
+//        Button modesButton = new Button("Play Game");
+//        modesButton.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                mediaPlayer.play();
+//                GameScreenDemo gameScreenDemo = new GameScreenDemo(getPrimaryStage());
+//                gameScreenDemo.setMain(MainScreen.this);
+//                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
+//                gameScene.getRoot().requestFocus();
+//                getPrimaryStage().setScene(gameScene);
+//                System.out.println("game modes button working");
+//            }
+//        });
+
         Button modesButton = new Button("Play Game");
         modesButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 mediaPlayer.play();
-                GameScreenDemo gameScreenDemo = new GameScreenDemo(getPrimaryStage());
+                StoryMode gameScreenDemo = new StoryMode(getPrimaryStage());
                 gameScreenDemo.setMain(MainScreen.this);
                 Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
                 gameScene.getRoot().requestFocus();
