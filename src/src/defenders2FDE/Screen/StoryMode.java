@@ -19,10 +19,16 @@ public class StoryMode extends Screen{
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
+    private Stage primaryStage;
 
-    public StoryMode(Stage primaryStage){
-        super(primaryStage);
-        gameManager = new GameManagerStory(this, primaryStage);
+    public StoryMode(){
+        super();
+        gameManager = new GameManagerStory(this);
+    }
+
+    public void setPrimaryStage(Stage primaryStage){
+        this.primaryStage = primaryStage;
+        gameManager.setPrimaryStage(primaryStage);
     }
 
     private void update(long now){

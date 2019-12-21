@@ -13,8 +13,9 @@ public class Astronaut extends GameObject{
     private long lastFiredTime = 0;
 
     public Astronaut(double x, double y){
-        super(ASTRONAUT_IMAGE_PATH, x, y,0, "Astronaut");
+        super(x, y,0, "Astronaut");
         this.setCollisionDamage(0);
+        this.setImagePath(ASTRONAUT_IMAGE_PATH);
         setFitHeight(AstronautSize);
         setFitWidth(AstronautSize);
     }

@@ -36,12 +36,11 @@ public class GameManagerStory {
     private int time = 0;
     private long fraction = 0;
 
-    public GameManagerStory(Screen gameScreen, Stage primaryStage) {
+    public GameManagerStory(Screen gameScreen) {
         this.gameScreen = gameScreen;
-        this.primaryStage = primaryStage;
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
-        player = new SpaceShip(Constants.PLAYER_SPACESHIP_IMAGE_PATH, 300,300, 100, "player");
+        player = new SpaceShip(300,300, 100, "player");
         gameObjects.add(player);
 
         // setup score label
@@ -60,6 +59,10 @@ public class GameManagerStory {
         gameScreen.getChildren().add(timerLabel);
 
         gameScreen.getChildren().add(player);
+    }
+
+    public void setPrimaryStage(Stage primaryStage){
+        this.primaryStage = primaryStage;
     }
 
     public void setMain(Screen screen) {
@@ -126,6 +129,18 @@ public class GameManagerStory {
                 if ( gameObject.isOutOfScreen()){
                     toBeRemoved.add(gameObject);
                 }
+
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+
+                    player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+
+                    if(player.getHealth() == 0)
+                    {
+                        isFinished = true;
+                        animationTimer.stop();
+                    }
+                }
+
                 Bullet enemyBullet = ((AlienSpaceShip) gameObject).fire();
                 if (enemyBullet != null) {
                     enemyBullets.add(enemyBullet);
@@ -136,6 +151,18 @@ public class GameManagerStory {
                 if ( gameObject.isOutOfScreen()){
                     toBeRemoved.add(gameObject);
                 }
+
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+
+                    player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+
+                    if(player.getHealth() == 0)
+                    {
+                        isFinished = true;
+                        animationTimer.stop();
+                    }
+                }
+
                 AlienSpaceShip alienSpaceShip = ((Queen) gameObject).produce();
                 if (alienSpaceShip != null) {
                     gameObjects.add(alienSpaceShip);
@@ -144,7 +171,6 @@ public class GameManagerStory {
             }
             else if (gameObject.type.equals("playerBullet")){
                 gameObjects.stream().filter(e-> e.type.equals("enemy")).forEach(enemy -> {
-
                     // an enemy is down
                     if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
                         toBeRemoved.add(enemy);
@@ -175,13 +201,18 @@ public class GameManagerStory {
         enemyBullets.forEach(bullet -> {
             bullet.move();
             if (bullet.getBoundsInParent().intersects(player.getBoundsInParent())) {
-                enemyBullets.forEach(bullet1 -> bullet1.stop(true));
-                gameObjects.forEach(gameObject -> gameObject.stop(true));
-                isFinished = true;
-                animationTimer.stop();
+                player.setHealth(Math.max(player.getHealth() - bullet.getCollisionDamage(), 0));
+
+                if(player.getHealth() == 0)
+                {
+                    enemyBullets.forEach(bullet1 -> bullet1.stop(true));
+                    gameObjects.forEach(gameObject -> gameObject.stop(true));
+                    isFinished = true;
+                    animationTimer.stop();
+                }
             }
         });
-        if ( isFinished){
+        if (isFinished){
             primaryStage.setScene(mainScreen.getScene());
             primaryStage.getScene().getRoot().requestFocus();
         }

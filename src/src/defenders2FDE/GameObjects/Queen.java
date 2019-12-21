@@ -14,8 +14,9 @@ public class Queen extends GameObject{
     private int speed;
 
     public Queen(double x, double y){
-        super(QUEEN_IMAGE_PATH, x, y, QueenHealth, "Queen");
+        super(x, y, QueenHealth, "Queen");
         this.setCollisionDamage(QueenCollisionDamage);
+        this.setImagePath(QUEEN_IMAGE_PATH);
         setFitHeight(QueenSize);
         setFitWidth(QueenSize);
     }
@@ -38,7 +39,7 @@ public class Queen extends GameObject{
     {
         if ( new Date().getTime() - lastFiredTime >= 3000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            return new AlienSpaceShip(ENEMY_SPACESHIP_IMAGE_PATH, getTranslateX() - QueenSize / 2, getTranslateY() + QueenSize / 2 - AlienSize / 2, SpaceShipHealth, "enemy");
+            return new AlienSpaceShip(getTranslateX() - QueenSize / 2, getTranslateY() + QueenSize / 2 - AlienSize / 2, SpaceShipHealth, "enemy");
         }
         return null;
     }

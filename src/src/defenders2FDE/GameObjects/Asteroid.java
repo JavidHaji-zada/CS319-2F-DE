@@ -13,8 +13,9 @@ public class Asteroid extends GameObject{
     private long lastFiredTime = 0;
 
     public Asteroid(double x, double y){
-        super(ASTEROID_IMAGE_PATH, x, y, AsteroidHealth, "Asteroid");
+        super(x, y, AsteroidHealth, "Asteroid");
         this.setCollisionDamage(AsteroidCollisionDamage);
+        this.setImagePath(ASTEROID_IMAGE_PATH);
         setFitHeight(AsteroidSize);
         setFitWidth(AsteroidSize);
     }

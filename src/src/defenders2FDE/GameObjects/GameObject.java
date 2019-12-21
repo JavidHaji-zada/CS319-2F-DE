@@ -1,5 +1,6 @@
 package defenders2FDE.GameObjects;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -14,8 +15,8 @@ public class GameObject extends ImageView {
     private int collisionDamage;
 
 
-    public GameObject(String path, double x, double y, int health, String type){
-        super(path);
+    public GameObject(double x, double y, int health, String type){
+        super();
         setTranslateX(x);
         setTranslateY(y);
         this.health = health;
@@ -40,6 +41,11 @@ public class GameObject extends ImageView {
     }
 
     public void move(){
+    }
+
+    public void setImagePath(String path){
+        Image objectImage = new Image(path);
+        setImage(objectImage);
     }
 
     public int getHealth() {

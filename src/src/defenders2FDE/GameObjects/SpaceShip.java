@@ -11,8 +11,8 @@ import java.util.Date;
 public class SpaceShip extends GameObject{
 
     private long lastFireTime = new Date().getTime();
-    public SpaceShip(String path, double x, double y, int health, String type){
-        super( path, x, y, health, type);
+    public SpaceShip(double x, double y, int health, String type){
+        super( x, y, health, type);
         setFitHeight(50);
         setFitWidth(50);
     }
@@ -53,7 +53,9 @@ public class SpaceShip extends GameObject{
             mediaPlayer.play();
             lastFireTime = now;
             String bulletImagePath = Constants.PLAYER_BULLET_IMAGE_PATH;
-            return new Bullet(bulletImagePath, getTranslateX() + 50, getTranslateY() + 25 , 10,  "playerBullet");
+            Bullet bullet = new Bullet(getTranslateX() + 50, getTranslateY() + 25 , 10,  "playerBullet");
+            bullet.setImagePath(bulletImagePath);
+            return bullet;
         }
         return null;
     }
