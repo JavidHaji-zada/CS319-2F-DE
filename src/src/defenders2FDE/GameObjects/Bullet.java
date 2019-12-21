@@ -23,7 +23,9 @@ public class Bullet extends GameObject {
 
             }else if ( type.equals("playerBullet")){
                 setTranslateX(getTranslateX() + 5);
-
+            }
+            else if ( type.equals("darwinBullet")){
+                setTranslateX(getTranslateX() - 7);
             }
         }
     }

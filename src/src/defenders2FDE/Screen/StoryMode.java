@@ -2,38 +2,28 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
+import defenders2FDE.Manager.GameManagerStory;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
-import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-import java.io.File;
+public class StoryMode extends Screen{
 
-public class GameScreenDemo extends Screen{
-
-    private GameManager gameManager;
+    private GameManagerStory gameManager;
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
     private Stage primaryStage;
 
-    public GameScreenDemo(){
+    public StoryMode(){
         super();
-        gameManager = new GameManager(this);
+        gameManager = new GameManagerStory(this);
     }
 
     public void setPrimaryStage(Stage primaryStage){
@@ -74,44 +64,42 @@ public class GameScreenDemo extends Screen{
         // prepare key-presses
         this.setOnKeyPressed(event -> {
             if ( event.getCode() == KeyCode.A){
-                if ( gameManager.getPlayerTranslateY()>=5 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY()>=5) {
                     gameManager.moveLeft();
                 }
             }else if (event.getCode() == KeyCode.D){
-                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
                     gameManager.moveRight();
                 }
             }else if (event.getCode() == KeyCode.W){
-                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12) {
                     gameManager.moveUp();
                 }
             }else if (event.getCode() == KeyCode.S){
-                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y) {
                     gameManager.moveDown();
                 }
             }else if (event.getCode() == KeyCode.LEFT){
-                if ( gameManager.getPlayerTranslateY() >=5 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY() >=5) {
                     gameManager.moveLeft();
                 }
             }else if (event.getCode() == KeyCode.RIGHT){
-                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateX() <= Constants.SCREEN_WIDTH - 108) {
                     gameManager.moveRight();
                 }
             }else if (event.getCode() == KeyCode.UP){
-                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12 && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY() > Constants.HEADER_Y + 12) {
                     gameManager.moveUp();
                 }
             }else if (event.getCode() == KeyCode.DOWN){
-                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y && !gameManager.isStop()) {
+                if ( gameManager.getPlayerTranslateY() <= Constants.FOOTER_Y) {
                     gameManager.moveDown();
                 }
-            }else if ( (event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F) && !gameManager.isStop()){
-                gameManager.fire();
-            }else if ( event.getCode() == KeyCode.P || event.getCode() == KeyCode.ESCAPE){
-                gameManager.pause();
+            }
+            if ( event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F){
+                 gameManager.fire();
             }
         });
-
          timer = new AnimationTimer() {
             @Override
             public void handle(long now) {

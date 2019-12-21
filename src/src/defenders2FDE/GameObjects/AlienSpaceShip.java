@@ -8,7 +8,7 @@ import java.util.Date;
 public class AlienSpaceShip extends GameObject{
 
     private long lastFiredTime = 0;
-    public AlienSpaceShip( double x, double y, int health, String type){
+    public AlienSpaceShip(double x, double y, int health, String type){
         super( x, y, health, type);
         setFitHeight(Constants.SS_HEIGHT);
         setFitWidth(Constants.SS_WIDTH);
