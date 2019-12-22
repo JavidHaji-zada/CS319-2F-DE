@@ -2,88 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fxgl_0_5_4_uber.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/META-INF/src.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/pause.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/resume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/backgroundMain.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/exitPopUp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/htpPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/htpPopUp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/htp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/backgroundMain.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/htp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/pause.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/resume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/htpPopUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/htpPopUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/AlienSpaceShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/AlienSpaceShip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Astronaut.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Astronaut.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Darwin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Darwin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/Queen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/SpaceShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/GameObjects/SpaceShip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManagerStory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManagerStory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/SplashScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/SplashScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/AlienSpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/AlienSpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Astronaut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Astronaut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Darwin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Darwin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/GameObjects/SpaceShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManagerStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManagerStory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/StoryMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/StoryMode.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,40 +63,6 @@
         <option value="HTML4 File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ful</find>
-      <find>player.fire</find>
-      <find>fire</find>
-      <find>player</find>
-      <find>gameMod</find>
-      <find>defender</find>
-      <find>random</find>
-      <find>primaryStage</find>
-      <find>ьщму</find>
-      <find>move</find>
-      <find>buttons</find>
-      <find>setFill</find>
-      <find>addnew</find>
-      <find>getCode</find>
-      <find>gamesc</find>
-      <find>gameMaa</find>
-      <find>gamescr</find>
-      <find>syste</find>
-      <find>ishig</find>
-      <find>Arial</find>
-      <find>aler</find>
-      <find>checkColi</find>
-      <find>primary</find>
-      <find>modes</find>
-      <find>primarySta</find>
-      <find>onaction</find>
-      <find>primaryS</find>
-      <find>menu</find>
-      <find>fxml</find>
-      <find>backgroundMain</find>
-    </findStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -256,17 +141,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9a4fe1ba" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9a4fe1ba" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b908a62f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -282,7 +157,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574102628598</updated>
-      <workItem from="1576957603957" duration="3798000" />
+      <workItem from="1576957603957" duration="4068000" />
+      <workItem from="1577029894294" duration="1076000" />
     </task>
     <servers />
   </component>
@@ -303,7 +179,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
