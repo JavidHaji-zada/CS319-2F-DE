@@ -246,9 +246,9 @@ public class GameManagerStory {
         if ( currentTime - lastEnemyTime >= 5000){
             lastEnemyTime = currentTime;
             Random random = new Random();
-            int high = (int) Constants.SCREEN_WIDTH - 400;
-            double posX = 200 + random.nextInt(high);
-            Darwin darwin = new Darwin(posX, Constants.SCREEN_HEIGHT);
+            int high = (int) Constants.SCREEN_HEIGHT - 220;
+            double posY = 100 + random.nextInt(high);
+            Darwin darwin = new Darwin(Constants.SCREEN_WIDTH, posY);
             gameObjects.add(darwin);
             return darwin;
         }

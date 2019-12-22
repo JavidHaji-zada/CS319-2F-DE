@@ -313,6 +313,11 @@ public class StoryMode extends Screen{
         {
             Node newEnemy = gameManager.addNewDarwin();
             addNewEnemy(newEnemy);
+
+            if(numberOfEnemies == 10)
+            {
+
+            }
         }
         else if (stageTracker == 5 && numberOfEnemies < 11)
         {
