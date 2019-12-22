@@ -29,7 +29,7 @@ public class Darwin extends GameObject{
     public Bullet fire(){
         if ( new Date().getTime() - lastFiredTime >= 2000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            Bullet bullet = new Bullet(getTranslateX() - DarwinSize, getTranslateY() + DarwinSize / 2 - 5, 0, "DarwinBullet");
+            Bullet bullet = new Bullet(getTranslateX() - DarwinSize, getTranslateY() + DarwinSize / 2 - 5, 0, "darwinBullet");
             bullet.setCollisionDamage(DarwinBulletCollisionDamage);
             bullet.setImagePath(ENEMY_BULLET_IMAGE_PATH);
             return bullet;
