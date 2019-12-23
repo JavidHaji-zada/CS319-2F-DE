@@ -71,7 +71,6 @@ public class GameScreenDemo extends Screen{
         headerLine.setStroke(Color.WHITE);
         getChildren().add(headerLine);
 
-
         // prepare key-presses
         this.setOnKeyPressed(event -> {
             if ( event.getCode() == KeyCode.A){
