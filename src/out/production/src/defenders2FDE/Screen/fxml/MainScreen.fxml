@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,16 +12,16 @@
    <children>
       <ImageView pickOnBounds="true">
          <image>
-            <Image url="@../../Assets/images/backgroundMain.jpg" />
+            <Image url="@../../Assets/images/bgop1.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="mainButtons" alignment="CENTER" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0">
+      <VBox fx:id="mainButtons" alignment="CENTER" minWidth="1272.0" prefHeight="626.0" prefWidth="1272.0" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="598.0">
          <children>
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" text="DEFENDERS" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="Arial Bold" size="60.0" />
-               </font>
-            </Label>
+            <ImageView fitHeight="196.0" fitWidth="527.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/images/title.png" />
+               </image>
+            </ImageView>
             <Button fx:id="gameModesButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#gameModesPopUp" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: black;" text="GAME MODES" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets />
