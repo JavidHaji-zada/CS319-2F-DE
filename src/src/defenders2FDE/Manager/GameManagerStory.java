@@ -10,10 +10,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -56,6 +53,7 @@ public class GameManagerStory {
     private Button pauseButton;
     private Label scoreLabel;
     private Label timerLabel;
+    private ProgressBar healthBar;
     private Screen gameScreen;
     private Screen mainScreen;
     private AnimationTimer animationTimer;
@@ -86,6 +84,9 @@ public class GameManagerStory {
         // setup pause button
         setupPauseButton();
 
+        // setup health bar
+        setupHealthBar();
+
         gameScreen.getChildren().add(player);
     }
 
@@ -106,6 +107,13 @@ public class GameManagerStory {
         gameScreen.getChildren().add(scoreLabel);
     }
 
+    private void setupHealthBar(){
+        healthBar = new ProgressBar(1);
+        healthBar.setLayoutX(SCREEN_WIDTH * 1 / 10);
+        healthBar.setLayoutY(HEADER_Y / 2 - 16);
+        healthBar.setPrefWidth(SCREEN_WIDTH / 5);
+        gameScreen.getChildren().add(healthBar);
+    }
 
     private void setupTimerLabel(){
         timerLabel = new Label("00:00");
@@ -312,12 +320,13 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())) {
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    healthBar.setProgress((double) player.getHealth() / 100);
                     toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
                         isFinished = true;
-                        animationTimer.stop();
+                        //animationTimer.stop();
                     }
                 }
 
@@ -337,12 +346,13 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    healthBar.setProgress((double) player.getHealth() / 100);
                     toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
                         isFinished = true;
-                        animationTimer.stop();
+                        //animationTimer.stop();
                     }
                 }
 
@@ -362,12 +372,13 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    healthBar.setProgress((double) player.getHealth() / 100);
                     toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
                         isFinished = true;
-                        animationTimer.stop();
+                        //animationTimer.stop();
                     }
                 }
 
@@ -378,7 +389,7 @@ public class GameManagerStory {
                 }
             }
 
-            //Checking collision with Darwin
+            //Checking collision with Asteroid
             if (gameObject.type.equals("Asteroid")) {
                 if (gameObject.isOutOfScreen()) {
                     toBeRemoved.add(gameObject);
@@ -387,13 +398,28 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    healthBar.setProgress((double) player.getHealth() / 100);
                     toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
                         isFinished = true;
-                        animationTimer.stop();
+                        //animationTimer.stop();
                     }
+                }
+            }
+
+            //Checking collision with Astronaut
+            if (gameObject.type.equals("Astronaut")) {
+                if (gameObject.isOutOfScreen()) {
+                    toBeRemoved.add(gameObject);
+                }
+
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+
+                    player.setHealth(Math.min(player.getHealth() + 20, 100));
+                    healthBar.setProgress((double) player.getHealth() / 100);
+                    toBeRemoved.add(gameObject);
                 }
             }
 
@@ -468,6 +494,7 @@ public class GameManagerStory {
             if (bullet.getBoundsInParent().intersects(player.getBoundsInParent())) {
 
                 player.setHealth(Math.max(player.getHealth() - bullet.getCollisionDamage(), 0));
+                healthBar.setProgress((double) player.getHealth() / 100);
 
                 gameScreen.getChildren().remove(bullet);
                 enemyBullets.remove(bullet);

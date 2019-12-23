@@ -125,6 +125,13 @@ public class MainScreenController {
             public void handle(ActionEvent event) {
                 mediaPlayer.play();
                 System.out.println("button working");
+                gamePopup.hide();
+                StoryMode gameScreenDemo = new StoryMode();
+                primaryStage = window;
+                gameScreenDemo.setPrimaryStage(primaryStage);
+                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
+                gameScene.getRoot().requestFocus();
+                primaryStage.setScene(gameScene);
             }
         });
     }
