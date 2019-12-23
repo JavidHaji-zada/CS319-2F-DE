@@ -2,6 +2,11 @@ package defenders2FDE;
 
 import javafx.stage.Screen;
 
+import javax.swing.*;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Constants {
 
     // height and width values
@@ -84,9 +89,34 @@ public class Constants {
     public static final String BUTTON_CLICK_SOUND = "src/defenders2FDE/Assets/sounds/button_click_sound.mp3";
     public static final String PLAYER_FIRE_SOUND = "src/defenders2FDE/Assets/sounds/player_fire_sound.mpeg";
 
+    // file paths
+    public static final String filePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\high_scores.dat";
+    public static final String folderPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender";
+
     // Font
     public static final String FONT_NAME = "ARIAL";
     public static final int FONT_SIZE_MD = 32;
     public static final int FONT_SIZE_SM = 24;
 
+    // static methods
+    public static int[] retrieveHighScores() throws IOException {
+        BufferedReader abc = new BufferedReader(new FileReader(filePath));
+        List<Integer> scores = new ArrayList<Integer>();
+        String line;
+        while ((line = abc.readLine()) != null) {
+            int index = line.indexOf(": ");
+            int score = Integer.parseInt(line.substring(index + 2));
+            scores.add(score);
+            System.out.println("Score " + score);
+        }
+        abc.close();
+
+        // If you want to convert to a int[]
+        int size = scores.size();
+        int[] data = new int[size];
+        for (int i = 0; i < size; i++) {
+            data[i] = scores.get(i);
+        }
+        return data;
+    }
 }

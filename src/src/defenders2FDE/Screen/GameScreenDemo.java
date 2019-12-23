@@ -22,6 +22,7 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 public class GameScreenDemo extends Screen{
 
@@ -31,9 +32,9 @@ public class GameScreenDemo extends Screen{
     private ParallelTransition parallelTransition;
     private Stage primaryStage;
 
-    public GameScreenDemo(){
+    public GameScreenDemo() throws IOException {
         super();
-        gameManager = new GameManager(this);
+        gameManager = new GameManager(this,1);
     }
 
     public void setPrimaryStage(Stage primaryStage){
