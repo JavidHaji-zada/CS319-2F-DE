@@ -2,49 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$1.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$2.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$3.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Manager/GameManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo$1.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/GameScreenDemo.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$6.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen$7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreen.fxml" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/Screen.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/Screen.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/SplashScreen.class" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/SplashScreen.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/exitPopUp.fxml" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/htpPopUp.fxml" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/htpPopUp.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Main.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreen.fxml" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreen.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/backgroundMain.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/backgroundMain.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.fxml" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/htpPopUp.fxml" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/htpPopUp.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b1.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b1.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b2.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b2.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b3.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b3.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b4.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b4.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b5.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b5.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/b6.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/b6.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/pics/htp.jpg" afterPath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/htp.jpg" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/backgroundMain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/creditsbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/exitbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/htp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/creditsScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/credits.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/gameModes.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/highScores.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/creditsbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/exitbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/creditsScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/credits.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/gameModes.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/highScores.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,52 +82,15 @@
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="HTML4 File" />
+        <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ful</find>
-      <find>player.fire</find>
-      <find>fire</find>
-      <find>player</find>
-      <find>gameMod</find>
-      <find>defender</find>
-      <find>random</find>
-      <find>primaryStage</find>
-      <find>ьщму</find>
-      <find>move</find>
-      <find>buttons</find>
-      <find>setFill</find>
-      <find>addnew</find>
-      <find>getCode</find>
-      <find>gamesc</find>
-      <find>gameMaa</find>
-      <find>gamescr</find>
-      <find>syste</find>
-      <find>ishig</find>
-      <find>Arial</find>
-      <find>aler</find>
-      <find>checkColi</find>
-      <find>primary</find>
-      <find>modes</find>
-      <find>primarySta</find>
-      <find>onaction</find>
-      <find>primaryS</find>
-      <find>menu</find>
-      <find>fxml</find>
-      <find>backgroundMain</find>
-    </findStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -149,134 +100,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Screen.java" />
-        <option value="$PROJECT_DIR$/src/sample/Constants.java" />
-        <option value="$PROJECT_DIR$/src/sample/Manager/ScreenManager.java" />
-        <option value="$PROJECT_DIR$/src/sample/Screen/Screen.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/Screen/MainScreen.java" />
-        <option value="$PROJECT_DIR$/src/sample/Screen/SplashScreen.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/MainScreen.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/objects/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/objects/SpaceShip.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/objects/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/objects/AlienSpaceShip.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/GameObjects/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/GameObjects/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/GameObjects/SpaceShip.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/GameObjects/AlienSpaceShip.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Constants.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreen.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Main.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/GameManager.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java" />
-        <option value="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" />
-      </list>
-    </option>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+  <component name="ProjectId" id="1VNuj2j1Jlu8ebDaqJLCChApWKc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-              <item name="Manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-              <item name="Screen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="defenders2FDE" type="462c0819:PsiDirectoryNode" />
-              <item name="Screen" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
@@ -344,21 +174,18 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@53d6a3fa" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@22395c96" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@53d6a3fa" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3827949d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@22395c96" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e8107803" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
         </treeState>
       </serviceView>
     </option>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -385,480 +212,36 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2334419" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28664497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2228145" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995657" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#325#326#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="82" lean-forward="false" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#325#326#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="82" lean-forward="false" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../2018-Spring/CS 102/Lab/private/cs102/lab04/Balloon Burst Game/game/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../2018-Spring/CS 102/Lab/private/cs102/lab04/Balloon Burst Game/game/balloon.game/Balloon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../2018-Spring/CS 102/Lab/private/cs102/lab04/Balloon Burst Game/game/balloon.game/BalloonBurstGamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloWorld.txt" />
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/input/KeyCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" column="40" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/MainScreen.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Assets/images/playerBullet.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Manager/ScreenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#208#209#0" expanded="false" />
-            <element signature="e#247#248#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Assets/images/background.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Iterable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/GameObjects/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/GameObjects/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/GameObjects/SpaceShip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/GameObjects/AlienSpaceShip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.desktop/java/awt/event/KeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/layout/Region.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="148" column="31" lean-forward="false" selection-start-line="148" selection-start-column="31" selection-end-line="148" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="397" column="55" lean-forward="false" selection-start-line="397" selection-start-column="55" selection-end-line="397" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/css/Styleable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.base/javafx/event/EventTarget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="80" column="39" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/layout/Pane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/GameScreenDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="62" column="69" lean-forward="true" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4568#4708#0" expanded="true" />
-            <element signature="e#4707#4708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Manager/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="299" column="97" lean-forward="false" selection-start-line="299" selection-start-column="97" selection-end-line="299" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2570#2571#0" expanded="true" />
-            <element signature="e#2618#2619#0" expanded="true" />
-            <element signature="e#11390#11391#0" expanded="true" />
-            <element signature="e#11442#11443#0" expanded="true" />
-            <element signature="e#11524#11525#0" expanded="true" />
-            <element signature="e#11569#11570#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="104" column="36" lean-forward="false" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Assets/images/backgroundMain.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1776#1777#0" expanded="true" />
-            <element signature="e#1824#1825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Assets/images/b2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Assets/images/b1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Screen/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/defenders2FDE/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="90" lean-forward="false" selection-start-line="26" selection-start-column="90" selection-end-line="26" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

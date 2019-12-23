@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import defenders2FDE.Manager.ScreenManager;
 import defenders2FDE.Screen.SplashScreen;
@@ -23,6 +24,7 @@ public class Main extends Application {
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
         primaryStage.setScene(appScene);
         primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Defenders");
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
@@ -34,8 +36,6 @@ public class Main extends Application {
         delay.setOnFinished( event -> primaryStage.setScene(mainScene));
         delay.play();
     }
-
-
 
     public static void main(String[] args) {
         launch(args);

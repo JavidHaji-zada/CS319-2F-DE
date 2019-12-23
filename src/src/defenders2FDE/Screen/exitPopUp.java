@@ -14,5 +14,14 @@ public class exitPopUp {
     {
         Platform.exit();
     }
+    @FXML
+    Button backButton;
+    public void goBack(javafx.event.ActionEvent actionEvent) throws Exception{
+        Stage window;
+        window = (Stage) backButton.getScene().getWindow();
+        //Pane root = FXMLLoader.load(getClass().getResource("UserMenu.fxml"));
+        //window.setScene(new Scene(root));
+        window.close();
+    }
 
 }
