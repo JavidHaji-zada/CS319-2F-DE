@@ -16,7 +16,7 @@
             <Image url="@../../Assets/images/backgroundMain.jpg" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" fillWidth="false" prefHeight="471.0" prefWidth="1280.0" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0">
+      <VBox fx:id="mainButtons" alignment="CENTER" fillWidth="false" layoutX="774.0" layoutY="232.0" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0">
          <children>
             <Label alignment="TOP_CENTER" contentDisplay="TOP" text="DEFENDERS" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                <font>

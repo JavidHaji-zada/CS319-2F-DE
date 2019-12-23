@@ -24,6 +24,7 @@ import java.io.File;
 
 public class MainScreenController {
 
+    public VBox mainButtons;
     //creating objects we're gonna use for game modes pop up
     Popup gamePopup = new Popup();
     VBox verBox = new VBox();
@@ -180,6 +181,10 @@ public class MainScreenController {
         window.centerOnScreen();
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
+    }
+
+    public void alignButtonsCenter() {
+        mainButtons.setAlignment(Pos.CENTER);
     }
 }
 

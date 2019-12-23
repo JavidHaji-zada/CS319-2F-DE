@@ -33,6 +33,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen/fxml/MainScreen.fxml"));
         Parent root = (Parent) loader.load();
         MainScreenController controller = (MainScreenController) loader.getController();
+        controller.alignButtonsCenter();
         controller.setStage(primaryStage);
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);
