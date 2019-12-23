@@ -119,6 +119,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Javid Haji-zada/Desktop/Javid/Education/2019-Fall/CS-319/CS319-2F-DE/Code/src/src/defenders2FDE/objects/AlienSpaceShip.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/../SpaceInvadersFX-master" />
     <property name="recentsLimit" value="5" />
@@ -197,11 +198,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574102628598</updated>
+      <workItem from="1576957603957" duration="4068000" />
+      <workItem from="1577029894294" duration="1076000" />
+      <workItem from="1577055273953" duration="632000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
