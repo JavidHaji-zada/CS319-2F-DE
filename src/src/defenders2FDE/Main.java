@@ -35,6 +35,7 @@ public class Main extends Application {
         MainScreenController controller = (MainScreenController) loader.getController();
         controller.setStage(primaryStage);
         Scene mainScene = new Scene(root);
+        primaryStage.setFullScreen(true);
         delay.setOnFinished( event -> primaryStage.setScene(mainScene));
         delay.play();
     }
