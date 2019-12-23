@@ -27,14 +27,15 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Defenders");
         primaryStage.setFullScreen(true);
-        primaryStage.setMaximized(true);
+        //primaryStage.setMaximized(true);
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen/fxml/MainScreen.fxml"));
         Parent root = (Parent) loader.load();
         MainScreenController controller = (MainScreenController) loader.getController();
-        controller.alignButtonsCenter();
+
         controller.setStage(primaryStage);
+        controller.alignButtonsCenter();
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);
         delay.setOnFinished( event -> primaryStage.setScene(mainScene));

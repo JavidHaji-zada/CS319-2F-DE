@@ -23,8 +23,6 @@ import java.lang.*;
 import java.io.File;
 
 public class MainScreenController {
-
-    public VBox mainButtons;
     //creating objects we're gonna use for game modes pop up
     Popup gamePopup = new Popup();
     VBox verBox = new VBox();
@@ -183,8 +181,18 @@ public class MainScreenController {
         window.show();
     }
 
+    @FXML
+    VBox mainButtons;
+    Button highestScoresButton;
     public void alignButtonsCenter() {
+        /*
+        mainButtons.setLayoutX(Constants.SCREEN_WIDTH);
+        mainButtons.setLayoutY(Constants.SCREEN_HEIGHT);
+
+         */
+        mainButtons.prefWidthProperty().bind(primaryStage.widthProperty().multiply(0.68));
         mainButtons.setAlignment(Pos.CENTER);
+
     }
 }
 
