@@ -18,6 +18,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.*;
 
+import java.io.IOException;
 import java.lang.*;
 
 import java.io.File;
@@ -110,7 +111,12 @@ public class MainScreenController {
             public void handle(ActionEvent event) {
                 mediaPlayer.play();
                 gamePopup.hide();
-                GameScreenDemo gameScreenDemo = new GameScreenDemo();
+                GameScreenDemo gameScreenDemo = null;
+                try {
+                    gameScreenDemo = new GameScreenDemo();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 primaryStage = window;
                 gameScreenDemo.setPrimaryStage(primaryStage);
                 Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));

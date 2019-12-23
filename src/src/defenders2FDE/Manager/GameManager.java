@@ -36,12 +36,16 @@ import java.io.*;
 import java.util.*;
 import java.util.List;
 
+import static defenders2FDE.Constants.filePath;
+import static defenders2FDE.Constants.folderPath;
+
 public class GameManager {
 
     private Stage primaryStage;
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
     private int score = 50;
+    private int mode;
     private boolean isFinished = false;
     private long lastEnemyTime = new Date().getTime();
     private SpaceShip player;
@@ -58,9 +62,18 @@ public class GameManager {
     private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
 
     // constructor
-    public GameManager(Screen gameScreen) {
+    public GameManager(Screen gameScreen, int mode) throws IOException {
         this.gameScreen = gameScreen;
+        this.mode = mode; // 1- story mode 2- single endless
 
+        // retrieve high scores list
+        if ( mode == 1){
+            try {
+                highScores = Constants.retrieveHighScores();
+            }catch (Exception e){
+                highScores = new int[0];
+            }
+        }
         // initialize game objects and enemy bullets
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
@@ -271,16 +284,21 @@ public class GameManager {
         }
     }
 
-    private void saveNewHighScoreList() throws IOException {
-        String filePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\high_scores.dat";
-        System.out.println("FilePath\n" + filePath);
+    public void saveNewHighScoreList() throws IOException {
+        File defenderFolder = new File(folderPath);
+        defenderFolder.mkdir();
         File highScoresFile = new File(filePath);
         highScoresFile.createNewFile();
         FileOutputStream highScoreData = new FileOutputStream(filePath);
-            PrintWriter pw = new PrintWriter(highScoreData);
-            for (int highScore : highScores )
+        PrintWriter pw = new PrintWriter(highScoreData);
+        if (highScores.length == 0){
+            pw.println("Javid: " + score);
+        }
+        else {
+            for (int highScore : highScores)
                 pw.println("Javid: " + highScore);
-            pw.close();
+        }
+        pw.close();
     }
 
     private boolean isHighScore(){
