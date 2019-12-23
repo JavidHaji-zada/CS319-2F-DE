@@ -28,10 +28,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.List;
 
@@ -249,34 +250,57 @@ public class GameManager {
             gameObjects.forEach(gameObject -> gameObject.stop(true));
             if ( isHighScore()){
                 showHighScoreDialog();
+                try {
+                    saveNewHighScoreList();
+                } catch (FileNotFoundException e) {
+                    System.out.println("File not found");
+                } catch (IOException e) {
+                    System.out.println("IOException");
+                    e.printStackTrace();
+                }
             } else {
-                primaryStage.setScene(mainScreen.getScene());
-                primaryStage.getScene().getRoot().requestFocus();
+                Parent root = null;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("../Screen/fxml/MainScreen.fxml"));
+                    Scene scene = new Scene(root);
+                    primaryStage.setScene(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
+    private void saveNewHighScoreList() throws IOException {
+        String filePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\high_scores.dat";
+        System.out.println("FilePath\n" + filePath);
+        File highScoresFile = new File(filePath);
+        highScoresFile.createNewFile();
+        FileOutputStream highScoreData = new FileOutputStream(filePath);
+            PrintWriter pw = new PrintWriter(highScoreData);
+            for (int highScore : highScores )
+                pw.println("Javid: " + highScore);
+            pw.close();
+    }
+
     private boolean isHighScore(){
         boolean isHighScore = false;
+        if ( highScores.length == 0)
+            isHighScore = true;
         for (int i = 0; i < highScores.length;i++){
-            System.out.println("Array" + highScores[i]);
-            System.out.println("Player score " + score);
             if ( score > highScores[i]){
                 if ( i == 0) {
                     highScores[i] = score;
                     isHighScore =  true;
-                    System.out.println("Is high score set tu true");
                 }
                 else{
                     int tmp = highScores[i];
                     highScores[i] = score;
                     highScores[i-1] = tmp;
                     isHighScore =  true;
-                    System.out.println("Is high score set tu true");
                 }
             }
         }
-        System.out.println("Returning ishighscore" + isHighScore);
         return isHighScore;
     }
 
@@ -300,9 +324,7 @@ public class GameManager {
                     root = FXMLLoader.load(getClass().getResource("../Screen/fxml/MainScreen.fxml"));
                     Scene scene = new Scene(root);
                     primaryStage.setScene(scene);
-                    System.out.println("A");
                 } catch (IOException e) {
-                    System.out.println("B");
                     e.printStackTrace();
                 }
             }

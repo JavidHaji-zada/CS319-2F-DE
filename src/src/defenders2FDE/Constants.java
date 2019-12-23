@@ -67,7 +67,7 @@ public class Constants {
 
     // image paths
     public static final String GAME_BACKGROUND_IMAGE_PATH = "defenders2FDE/Assets/images/background.jpg";
-    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceship.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceShip2.png";
     public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alienspaceship.png";
 
     public static final String ASTEROID_IMAGE_PATH = "defenders2FDE/Assets/images/asteroid.png";
