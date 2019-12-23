@@ -5,14 +5,17 @@ import javafx.scene.paint.Color;
 
 import java.util.Date;
 
+import static defenders2FDE.Constants.*;
+
 public class AlienSpaceShip extends GameObject{
 
     private long lastFiredTime = 0;
     public AlienSpaceShip(double x, double y, int health, String type){
         super( x, y, health, type);
-        setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
-        setFitHeight(Constants.SS_HEIGHT);
-        setFitWidth(Constants.SS_WIDTH);
+        setImagePath(ENEMY_SPACESHIP_IMAGE_PATH);
+        setFitHeight(SS_HEIGHT);
+        setFitWidth(SS_WIDTH);
+        setCollisionDamage(AlienCollisionDamage);
     }
 
     @Override
@@ -24,9 +27,8 @@ public class AlienSpaceShip extends GameObject{
     public Bullet fire(){
         if ( new Date().getTime() - lastFiredTime >= 2000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            String bulletImagePath = Constants.ENEMY_BULLET_IMAGE_PATH;
-            Bullet bullet = new Bullet( getTranslateX() - Constants.SS_WIDTH, getTranslateY() + Constants.SS_HEIGHT / 2, 10,  "enemyBullet");
-            bullet.setImagePath(bulletImagePath);
+            Bullet bullet = new Bullet( getTranslateX() - SS_WIDTH, getTranslateY() + SS_HEIGHT / 2, 10,  "enemyBullet");
+            bullet.setImagePath(ENEMY_BULLET_IMAGE_PATH);
             return bullet;
         }
         return null;

@@ -381,6 +381,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8b58d970" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8b58d970" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5aecb6b0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@22395c96" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
@@ -410,9 +416,13 @@
       <workItem from="1576957603957" duration="4068000" />
       <workItem from="1577029894294" duration="1076000" />
       <workItem from="1577055273953" duration="632000" />
+      <workItem from="1577110532053" duration="1496000" />
+      <workItem from="1577116152600" duration="6310000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />

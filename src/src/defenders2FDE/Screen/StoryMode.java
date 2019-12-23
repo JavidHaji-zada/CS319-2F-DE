@@ -314,6 +314,7 @@ public class StoryMode extends Screen{
             Node newEnemy = gameManager.addNewDarwin();
             addNewEnemy(newEnemy);
 
+            //First Contact with Darwin
             if(numberOfEnemies == 10)
             {
 
