@@ -14,8 +14,8 @@ public class Darwin extends GameObject{
 
     public Darwin(double x, double y){
         super(x,y, DarwinHealth, "Darwin");
-        this.setCollisionDamage(DarwinCollisionDamage);
-        this.setImagePath(DARWIN_IMAGE_PATH);
+        setCollisionDamage(DarwinCollisionDamage);
+        setImagePath(DARWIN_IMAGE_PATH);
         setFitHeight(DarwinSize);
         setFitWidth(DarwinSize);
     }

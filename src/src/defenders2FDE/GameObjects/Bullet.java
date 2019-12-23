@@ -3,7 +3,7 @@ package defenders2FDE.GameObjects;
 import defenders2FDE.Constants;
 import javafx.scene.paint.Color;
 
-import static defenders2FDE.Constants.DarwinBulletCollisionDamage;
+import static defenders2FDE.Constants.*;
 
 public class Bullet extends GameObject {
 
@@ -38,9 +38,9 @@ public class Bullet extends GameObject {
         if(this.type.equals("darwinBullet"))
             return DarwinBulletCollisionDamage;
         else if(this.type.equals("enemyBullet"))
-            return DarwinBulletCollisionDamage;
+            return AlienBulletCollisionDamage;
         else if(this.type.equals("playerBullet"))
-            return DarwinBulletCollisionDamage;
+            return PlayerBulletCollisionDamage;
 
         return 0;
     }

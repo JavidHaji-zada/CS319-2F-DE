@@ -25,7 +25,7 @@ public class Constants {
     public static final int DarwinSize = 5 * ScreenSizePercent;
     public static final int AsteroidSize = 3 * ScreenSizePercent;
 
-    public static final int AstronautSize = ScreenSizePercent;
+    public static final int AstronautSize = 3 * ScreenSizePercent;
 
     //Speed
     public static final double SpaceShipSpeed = 20;

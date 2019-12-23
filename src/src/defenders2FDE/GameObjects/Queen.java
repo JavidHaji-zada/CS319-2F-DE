@@ -15,8 +15,8 @@ public class Queen extends GameObject{
 
     public Queen(double x, double y){
         super(x, y, QueenHealth, "Queen");
-        this.setCollisionDamage(QueenCollisionDamage);
-        this.setImagePath(QUEEN_IMAGE_PATH);
+        setCollisionDamage(QueenCollisionDamage);
+        setImagePath(QUEEN_IMAGE_PATH);
         setFitHeight(QueenSize);
         setFitWidth(QueenSize);
     }

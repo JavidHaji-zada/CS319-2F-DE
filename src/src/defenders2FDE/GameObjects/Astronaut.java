@@ -14,16 +14,16 @@ public class Astronaut extends GameObject{
 
     public Astronaut(double x, double y){
         super(x, y,0, "Astronaut");
-        this.setCollisionDamage(0);
-        this.setImagePath(ASTRONAUT_IMAGE_PATH);
+        setCollisionDamage(0);
+        setImagePath(ASTRONAUT_IMAGE_PATH);
         setFitHeight(AstronautSize);
         setFitWidth(AstronautSize);
     }
 
     @Override
     public void move(){
-        if ( !isStop())
-            setTranslateY(getTranslateY() + AstronautSpeed);
+        //if ( !isStop())
+        //    setTranslateY(getTranslateY() + AstronautSpeed);
     }
 
 }

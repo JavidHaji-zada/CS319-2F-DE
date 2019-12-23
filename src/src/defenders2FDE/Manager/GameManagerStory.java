@@ -263,7 +263,9 @@ public class GameManagerStory {
             Random random = new Random();
             int high = (int) Constants.SCREEN_WIDTH - 400;
             double posX = 200 + random.nextInt(high);
-            Astronaut astronaut = new Astronaut(posX, 0);
+            high = (int) Constants.SCREEN_HEIGHT - 220;
+            double posY = 100 + random.nextInt(high);
+            Astronaut astronaut = new Astronaut(posX, posY);
             gameObjects.add(astronaut);
             return astronaut;
         }
@@ -310,6 +312,7 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())) {
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
@@ -334,6 +337,7 @@ public class GameManagerStory {
                 if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
 
                     player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    toBeRemoved.add(gameObject);
 
                     if(player.getHealth() == 0)
                     {
@@ -346,6 +350,50 @@ public class GameManagerStory {
                 if (alienSpaceShip != null) {
                     gameObjects.add(alienSpaceShip);
                     gameScreen.getChildren().add(alienSpaceShip);
+                }
+            }
+
+            //Checking collision with Darwin
+            if (gameObject.type.equals("Darwin")) {
+                if (gameObject.isOutOfScreen()) {
+                    toBeRemoved.add(gameObject);
+                }
+
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+
+                    player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    toBeRemoved.add(gameObject);
+
+                    if(player.getHealth() == 0)
+                    {
+                        isFinished = true;
+                        animationTimer.stop();
+                    }
+                }
+
+                Bullet bullet = ((Darwin) gameObject).fire();
+                if (bullet != null) {
+                    enemyBullets.add(bullet);
+                    gameScreen.getChildren().add(bullet);
+                }
+            }
+
+            //Checking collision with Darwin
+            if (gameObject.type.equals("Asteroid")) {
+                if (gameObject.isOutOfScreen()) {
+                    toBeRemoved.add(gameObject);
+                }
+
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
+
+                    player.setHealth(Math.max(player.getHealth() - gameObject.getCollisionDamage(), 0));
+                    toBeRemoved.add(gameObject);
+
+                    if(player.getHealth() == 0)
+                    {
+                        isFinished = true;
+                        animationTimer.stop();
+                    }
                 }
             }
 
@@ -386,6 +434,25 @@ public class GameManagerStory {
                         }
                     }
                 });
+
+                gameObjects.stream().filter(e-> e.type.equals("Darwin")).forEach(enemy -> {
+
+                    enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
+
+                    if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
+
+                        // Health of the Queen is decreased
+                        enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
+
+                        if(enemy.getHealth() == 0)
+                        {
+                            toBeRemoved.add(enemy);
+                            toBeRemoved.add(gameObject);
+                            score += DarwinPoints;
+                            scoreLabel.setText("Score: " + score );
+                        }
+                    }
+                });
             }
             try {
                 gameObjects.removeAll(toBeRemoved);
@@ -399,20 +466,37 @@ public class GameManagerStory {
         enemyBullets.forEach(bullet -> {
             bullet.move();
             if (bullet.getBoundsInParent().intersects(player.getBoundsInParent())) {
+
                 player.setHealth(Math.max(player.getHealth() - bullet.getCollisionDamage(), 0));
+
+                gameScreen.getChildren().remove(bullet);
+                enemyBullets.remove(bullet);
+
+                System.out.println("Bullet damage : " + bullet.getCollisionDamage());
+                System.out.println("Player health : " + player.getHealth());
 
                 if(player.getHealth() == 0)
                 {
-                    enemyBullets.forEach(bullet1 -> bullet1.stop(true));
-                    gameObjects.forEach(gameObject -> gameObject.stop(true));
                     isFinished = true;
-                    animationTimer.stop();
                 }
             }
         });
+
         if (isFinished){
-            primaryStage.setScene(mainScreen.getScene());
-            primaryStage.getScene().getRoot().requestFocus();
+            animationTimer.stop();
+            enemyBullets.forEach(bullet1 -> bullet1.stop(true));
+            gameObjects.forEach(gameObject -> gameObject.stop(true));
+
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("../Screen/fxml/MainScreen.fxml"));
+                Scene scene = new Scene(root);
+                primaryStage.setScene(scene);
+                System.out.println("A");
+            } catch (IOException e) {
+                System.out.println("B");
+                e.printStackTrace();
+            }
         }
     }
 
@@ -425,7 +509,7 @@ public class GameManagerStory {
                 if ( i == 0) {
                     highScores[i] = score;
                     isHighScore =  true;
-                    System.out.println("Is high score set tu true");
+                    System.out.println("Is high score set to true");
                 }
                 else{
                     int tmp = highScores[i];
@@ -436,7 +520,7 @@ public class GameManagerStory {
                 }
             }
         }
-        System.out.println("Returning ishighscore" + isHighScore);
+        System.out.println("Returning ishighscore " + isHighScore);
         return isHighScore;
     }
 
