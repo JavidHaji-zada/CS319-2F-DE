@@ -59,7 +59,7 @@ public class GameManager {
     private int time = 0;
     private long fraction = 0;
     private boolean stop = false;
-    private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
+    private int[] highScores;
 
     // constructor
     public GameManager(Screen gameScreen, int mode) throws IOException {
