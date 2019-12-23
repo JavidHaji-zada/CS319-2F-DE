@@ -13,12 +13,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventDispatchChain;
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,8 +36,7 @@ import java.io.*;
 import java.util.*;
 import java.util.List;
 
-import static defenders2FDE.Constants.filePath;
-import static defenders2FDE.Constants.folderPath;
+import static defenders2FDE.Constants.*;
 
 public class GameManager {
 
@@ -53,6 +51,7 @@ public class GameManager {
     private Button pauseButton;
     private Label scoreLabel;
     private Label timerLabel;
+    private ProgressBar healthBar;
     private Screen gameScreen;
     private Screen mainScreen;
     private AnimationTimer animationTimer;
@@ -60,7 +59,7 @@ public class GameManager {
     private int time = 0;
     private long fraction = 0;
     private boolean stop = false;
-    private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
+    private int[] highScores;
 
     // constructor
     public GameManager(Screen gameScreen, int mode) throws IOException {
@@ -81,8 +80,11 @@ public class GameManager {
 
         // create player instance
         player = new SpaceShip( 300,300, 100, "player");
-        player.setImagePath(Constants.PLAYER_SPACESHIP_IMAGE_PATH);
+        player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH);
         gameObjects.add(player);
+
+        // setup health bar
+        setupHealthBar();
 
         // setup score label
         setupScoreLabel();
@@ -106,20 +108,28 @@ public class GameManager {
 
     private void setupScoreLabel(){
         scoreLabel = new Label("Score: " + this.score);
-        scoreLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_SM));
+        scoreLabel.setFont(Font.font(FONT_NAME, FONT_SIZE_SM));
         scoreLabel.setTextFill(Color.WHITE);
-        scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 8 / 10);
-        scoreLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        scoreLabel.setLayoutX(SCREEN_WIDTH * 8 / 10);
+        scoreLabel.setLayoutY(HEADER_Y / 2 - 16);
         gameScreen.getChildren().add(scoreLabel);
+    }
+
+    private void setupHealthBar(){
+        healthBar = new ProgressBar(1);
+        healthBar.setLayoutX(SCREEN_WIDTH * 1 / 10);
+        healthBar.setLayoutY(HEADER_Y / 2 - 16);
+        healthBar.setPrefWidth(SCREEN_WIDTH / 5);
+        gameScreen.getChildren().add(healthBar);
     }
 
 
     private void setupTimerLabel(){
         timerLabel = new Label("00:00");
         timerLabel.setTextFill(Color.WHITE);
-        timerLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_MD));
-        timerLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
-        timerLabel.setLayoutX(Constants.SCREEN_WIDTH / 2);
+        timerLabel.setFont(Font.font(FONT_NAME, FONT_SIZE_MD));
+        timerLabel.setLayoutY(HEADER_Y / 2 - 16);
+        timerLabel.setLayoutX(SCREEN_WIDTH / 2);
         gameScreen.getChildren().add(timerLabel);
     }
 
@@ -130,8 +140,8 @@ public class GameManager {
         pauseIcon.setFitWidth(Constants.SS_HEIGHT);
         pauseButton.setBackground(Background.EMPTY);
         pauseButton.setGraphic(pauseIcon);
-        pauseButton.setLayoutX(Constants.SCREEN_WIDTH * 9 / 10);
-        pauseButton.setLayoutY(Constants.HEADER_Y / 2 - 16);
+        pauseButton.setLayoutX(SCREEN_WIDTH * 9 / 10);
+        pauseButton.setLayoutY(HEADER_Y / 2 - 16);
         pauseButton.setFocusTraversable(false);
         pauseButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -208,7 +218,7 @@ public class GameManager {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.SCREEN_WIDTH, posY, 20, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY, 20, "enemy");
             alienSpaceShip.setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;
@@ -224,9 +234,15 @@ public class GameManager {
                 if ( gameObject.isOutOfScreen()){
                     toBeRemoved.add(gameObject);
                 }
-                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())){
-                    isFinished = true;
-                    animationTimer.stop();
+                if (gameObject.getBoundsInParent().intersects(player.getBoundsInParent())) {
+
+                    player.setHealth(Math.max(0, player.getHealth() - gameObject.getCollisionDamage()));
+                    healthBar.setProgress((double) player.getHealth() / 100);
+
+                    toBeRemoved.add(gameObject);
+
+                    if(player.getHealth() == 0)
+                        isFinished = true;
                 }
                 Bullet enemyBullet = ((AlienSpaceShip) gameObject).fire();
                 if (enemyBullet != null) {
@@ -255,11 +271,20 @@ public class GameManager {
         enemyBullets.forEach(bullet -> {
             bullet.move();
             if (bullet.getBoundsInParent().intersects(player.getBoundsInParent())) {
-                isFinished = true;
-                animationTimer.stop();
+
+                player.setHealth(Math.max(0, player.getHealth() - bullet.getCollisionDamage()));
+                healthBar.setProgress((double) player.getHealth() / 100);
+
+                gameScreen.getChildren().remove(bullet);
+                enemyBullets.remove(bullet);
+
+                if(player.getHealth() == 0)
+                    isFinished = true;
+
             }
         });
-        if ( isFinished){
+        if (isFinished){
+            animationTimer.stop();
             enemyBullets.forEach(bullet1 -> bullet1.stop(true));
             gameObjects.forEach(gameObject -> gameObject.stop(true));
             if ( isHighScore()){

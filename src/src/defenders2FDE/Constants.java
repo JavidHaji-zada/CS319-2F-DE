@@ -99,8 +99,6 @@ public class Constants {
     public static final int FONT_SIZE_SM = 24;
 
     // static methods
-
-
     public static int[] retrieveHighScores() throws IOException {
         BufferedReader abc = new BufferedReader(new FileReader(filePath));
         List<Integer> scores = new ArrayList<Integer>();
