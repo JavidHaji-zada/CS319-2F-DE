@@ -26,6 +26,8 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Defenders");
+        primaryStage.setFullScreen(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen/fxml/MainScreen.fxml"));

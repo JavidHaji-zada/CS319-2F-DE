@@ -3,34 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/b6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/backgroundMain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/creditsbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/exitbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Assets/images/htp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/META-INF/src.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/MainScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/creditsScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/StoryMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/backgroundMain.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/credits.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/gameModes.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/fxml/highScores.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/creditsbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Assets/images/exitbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/b6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/defenders2FDE/Screen/pics/htp.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/creditsScene.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/exitPopUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/credits.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/exitPopUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/gameModes.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/defenders2FDE/Screen/fxml/highScores.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +97,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="src" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />

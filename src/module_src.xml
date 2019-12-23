@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_src" default="compile.module.src">
+  <dirname property="module.src.basedir" file="${ant.file.module_src}"/>
+  
+  <property name="module.jdk.home.src" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.src" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.src" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.src" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="src.output.dir" value="${module.src.basedir}/out/production/src"/>
+  <property name="src.testoutput.dir" value="${module.src.basedir}/out/test/src"/>
+  
+  <path id="src.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="src.module.production.classpath">
+    <path refid="${module.jdk.classpath.src}"/>
+    <path refid="library.fxgl-0.5.4-uber.classpath"/>
+  </path>
+  
+  <path id="src.runtime.production.module.classpath">
+    <pathelement location="${src.output.dir}"/>
+    <path refid="library.fxgl-0.5.4-uber.classpath"/>
+  </path>
+  
+  <path id="src.module.classpath">
+    <path refid="${module.jdk.classpath.src}"/>
+    <pathelement location="${src.output.dir}"/>
+    <path refid="library.fxgl-0.5.4-uber.classpath"/>
+  </path>
+  
+  <path id="src.runtime.module.classpath">
+    <pathelement location="${src.testoutput.dir}"/>
+    <pathelement location="${src.output.dir}"/>
+    <path refid="library.fxgl-0.5.4-uber.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.src">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.src">
+    <patternset refid="excluded.from.module.src"/>
+  </patternset>
+  
+  <path id="src.module.sourcepath">
+    <dirset dir="${module.src.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.src" depends="compile.module.src.production,compile.module.src.tests" description="Compile module src"/>
+  
+  <target name="compile.module.src.production" depends="register.custom.compilers" description="Compile module src; production classes">
+    <mkdir dir="${src.output.dir}"/>
+    <javac2 destdir="${src.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.src}/javac">
+      <compilerarg line="${compiler.args.src}"/>
+      <bootclasspath refid="src.module.bootclasspath"/>
+      <classpath refid="src.module.production.classpath"/>
+      <src refid="src.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.src"/>
+    </javac2>
+    
+    <copy todir="${src.output.dir}">
+      <fileset dir="${module.src.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.src.tests" depends="register.custom.compilers,compile.module.src.production" description="compile module src; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.src" description="cleanup module">
+    <delete dir="${src.output.dir}"/>
+    <delete dir="${src.testoutput.dir}"/>
+  </target>
+</project>
