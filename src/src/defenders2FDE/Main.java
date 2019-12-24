@@ -4,8 +4,10 @@ import defenders2FDE.Screen.MainScreenController;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -19,7 +21,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         SplashScreen splashScreen = new SplashScreen();
-        //MainScreen mainScreen = new MainScreen(primaryStage);
         ScreenManager screenManager = new ScreenManager();
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
         primaryStage.setScene(appScene);
@@ -35,7 +36,6 @@ public class Main extends Application {
         MainScreenController controller = (MainScreenController) loader.getController();
 
         controller.setStage(primaryStage);
-        controller.alignButtonsCenter();
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);
         delay.setOnFinished( event -> primaryStage.setScene(mainScene));

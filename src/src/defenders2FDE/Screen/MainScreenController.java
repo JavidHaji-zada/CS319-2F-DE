@@ -120,7 +120,6 @@ public class MainScreenController {
                 Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
                 gameScene.getRoot().requestFocus();
                 primaryStage.setScene(gameScene);
-                System.out.println("button working");
             }
         });
 
@@ -170,13 +169,16 @@ public class MainScreenController {
     }
 
     //high scores scene
+    @FXML
+    Button highestScoresButton;
     public void PopHighScores(javafx.event.ActionEvent actionEvent) throws Exception
     {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/credits.fxml"));
+        Stage window = (Stage) highestScoresButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/highScores.fxml"));
         Scene creditsScene = new Scene(root);
-        primaryStage.setScene(creditsScene);
+        window.setScene(creditsScene);
     }
 
     //Exit dialog
@@ -194,21 +196,6 @@ public class MainScreenController {
         window.centerOnScreen();
         window.initStyle(StageStyle.UNDECORATED);
         window.show();
-    }
-
-    @FXML
-    VBox mainButtons;
-    @FXML
-    Button highestScoresButton;
-    public void alignButtonsCenter() {
-        /*
-        mainButtons.setLayoutX(Constants.SCREEN_WIDTH);
-        mainButtons.setLayoutY(Constants.SCREEN_HEIGHT);
-
-         */
-        mainButtons.prefWidthProperty().bind(primaryStage.widthProperty().multiply(0.68));
-        mainButtons.setAlignment(Pos.CENTER);
-
     }
 }
 

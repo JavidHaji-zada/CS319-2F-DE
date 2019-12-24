@@ -70,7 +70,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="creditsButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#PopCredits" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Credits" textFill="WHITE">
+            <Button fx:id="creditsButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#PopCredits" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="CREDITS" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="22.0" />
                </font>
@@ -81,7 +81,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#popExit" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Exit" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#popExit" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="EXIT" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="22.0" />
                </font>
