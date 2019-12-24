@@ -1,224 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.shopCont">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints maxHeight="262.0" minHeight="0.0" prefHeight="75.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="534.0" minHeight="10.0" prefHeight="355.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="437.0" minHeight="10.0" prefHeight="368.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.ShopController">
    <children>
-      <HBox alignment="TOP_RIGHT" prefWidth="266.0" GridPane.columnIndex="2">
+      <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="903.0" prefWidth="1007.0" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="262.0" minHeight="0.0" prefHeight="75.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="534.0" minHeight="10.0" prefHeight="355.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="437.0" minHeight="10.0" prefHeight="368.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label alignment="CENTER_RIGHT" styleClass="label-header" text="Coin: " textFill="RED">
+            <HBox alignment="TOP_RIGHT" prefWidth="266.0" GridPane.columnIndex="2">
+               <children>
+                  <Label alignment="CENTER_RIGHT" styleClass="label-header" text="Coin: " textFill="#ff9500">
+                     <font>
+                        <Font name="Bauhaus 93" size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="coinAmount" alignment="CENTER_RIGHT" styleClass="label-header" text="15000" textFill="#ff9500">
+                     <font>
+                        <Font name="Bauhaus 93" size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="0.73" contrast="1.0" hue="-1.0" saturation="1.0" />
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag1" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel1" text="1000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton1" id="buyButton1" mnemonicParsing="false" onAction="#buyButton1Clicked" prefHeight="31.0" prefWidth="278.0" text="Buy" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship_2.png" />
+                     </image>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag2" alignment="CENTER" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel2" alignment="CENTER" styleClass="label-bright" text="2000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton2" id="buyButton2" mnemonicParsing="false" onAction="#buyButton2Clicked" prefHeight="31.0" prefWidth="272.0" text="Buy" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship_3.png" />
+                     </image>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag3" alignment="CENTER" styleClass="label-bright" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel3" alignment="CENTER_RIGHT" styleClass="label-bright" text="3000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton3" id="buyButton3" mnemonicParsing="false" onAction="#buyButton3Clicked" prefHeight="31.0" prefWidth="271.0" text="Buy" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship_4.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.12" contrast="-0.12" hue="1.0" saturation="0.34">
+                           <input>
+                              <Lighting diffuseConstant="1.22" specularConstant="0.28" specularExponent="20.49">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant color="#d70a0a" />
+                                 </light>
+                              </Lighting>
+                           </input>
+                        </ColorAdjust>
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag4" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel4" text="4000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton4" id="buyButton4" mnemonicParsing="false" onAction="#buyButton4Clicked" prefHeight="31.0" prefWidth="320.0" text="Buy" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship_5.png" />
+                     </image>
+                     <effect>
+                        <Bloom threshold="0.0">
+                           <input>
+                              <Blend mode="ADD">
+                                 <topInput>
+                                    <ColorAdjust hue="-0.1" saturation="1.0" />
+                                 </topInput>
+                              </Blend>
+                           </input>
+                        </Bloom>
+                     </effect>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag5" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel5" text="5000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton5" id="buyButton5" mnemonicParsing="false" onAction="#buyButton5Clicked" prefHeight="31.0" prefWidth="300.0" text="Buy" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Assets/images/spaceship_6.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="priceTag6" text="Price: ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel6" text="6000">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buyButton6" id="buyButton6" mnemonicParsing="false" onAction="#buyButton6Clicked" prefHeight="31.0" prefWidth="329.0" text="Buy" />
+               </children>
+            </VBox>
+            <Button fx:id="menuButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#menuButtonClicked" prefHeight="51.0" prefWidth="268.0" text="Back to Menu" GridPane.valignment="TOP">
                <font>
-                  <Font name="Bauhaus 93" size="36.0" />
+                  <Font size="32.0" />
                </font>
-            </Label>
-            <Label fx:id="coinAmount" alignment="CENTER_RIGHT" styleClass="label-header" text="15000" textFill="RED">
-               <font>
-                  <Font name="Bauhaus 93" size="36.0" />
-               </font>
-            </Label>
+            </Button>
          </children>
-      </HBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="0.73" contrast="1.0" hue="-1.0" saturation="1.0" />
-               </effect>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag1" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel1" text="1000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton1" mnemonicParsing="false" onAction="#buyButton1Clicked" prefHeight="31.0" prefWidth="278.0" text="Buy" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-               <effect>
-                  <SepiaTone />
-               </effect>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag2" alignment="CENTER" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel2" alignment="CENTER" styleClass="label-bright" text="2000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton2" mnemonicParsing="false" onAction="#buyButton2Clicked" prefHeight="31.0" prefWidth="272.0" text="Buy" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag3" alignment="CENTER" styleClass="label-bright" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel3" alignment="CENTER_RIGHT" styleClass="label-bright" text="3000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton3" mnemonicParsing="false" onAction="#buyButton3Clicked" prefHeight="31.0" prefWidth="271.0" text="Buy" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="-0.12" contrast="-0.12" hue="1.0" saturation="0.34">
-                     <input>
-                        <Lighting diffuseConstant="1.22" specularConstant="0.28" specularExponent="20.49">
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant color="#d70a0a" />
-                           </light>
-                        </Lighting>
-                     </input>
-                  </ColorAdjust>
-               </effect>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag4" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel4" text="4000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton4" mnemonicParsing="false" onAction="#buyButton4Clicked" prefHeight="31.0" prefWidth="320.0" text="Buy" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-               <effect>
-                  <Bloom threshold="0.0">
-                     <input>
-                        <Blend mode="ADD">
-                           <topInput>
-                              <ColorAdjust hue="-0.1" saturation="1.0" />
-                           </topInput>
-                        </Blend>
-                     </input>
-                  </Bloom>
-               </effect>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag5" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel5" text="5000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton5" mnemonicParsing="false" onAction="#buyButton5Clicked" prefHeight="31.0" prefWidth="300.0" text="Buy" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-         <children>
-            <ImageView fitHeight="209.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../new_shop/new_shop/src/icons/Spaceship-PNG-File.png" />
-               </image>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="priceTag6" text="Price: ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLabel6" text="6000">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <Button fx:id="buyButton6" mnemonicParsing="false" onAction="#buyButton6Clicked" prefHeight="31.0" prefWidth="329.0" text="Buy" />
-         </children>
-      </VBox>
-      <Button fx:id="menuButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#menuButtonClicked" prefHeight="51.0" prefWidth="268.0" text="Back to Menu" GridPane.valignment="TOP">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Button>
+      </GridPane>
    </children>
-</GridPane>
+   <stylesheets>
+      <URL value="@DarkTheme.css" />
+      <URL value="@DarkTheme.css" />
+   </stylesheets>
+</AnchorPane>

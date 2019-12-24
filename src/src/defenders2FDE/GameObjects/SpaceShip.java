@@ -8,13 +8,16 @@ import javafx.scene.paint.Color;
 import java.io.File;
 import java.util.Date;
 
+/**
+ * @author      2FDE
+ */
 public class SpaceShip extends GameObject{
 
     private long lastFireTime = new Date().getTime();
     public SpaceShip(double x, double y, int health, String type){
         super( x, y, health, type);
-        setFitHeight(50);
-        setFitWidth(50);
+        setFitHeight(100);
+        setFitWidth(100);
     }
 
     @Override
@@ -53,7 +56,7 @@ public class SpaceShip extends GameObject{
             mediaPlayer.play();
             lastFireTime = now;
             String bulletImagePath = Constants.PLAYER_BULLET_IMAGE_PATH;
-            Bullet bullet = new Bullet(getTranslateX() + 50, getTranslateY() + 25 , 10,  "playerBullet");
+            Bullet bullet = new Bullet(getTranslateX() + 75, getTranslateY() + 50 , 10,  "playerBullet");
             bullet.setImagePath(bulletImagePath);
             return bullet;
         }

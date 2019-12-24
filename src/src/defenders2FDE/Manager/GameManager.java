@@ -1,7 +1,6 @@
 package defenders2FDE.Manager;
 
 import defenders2FDE.Constants;
-import defenders2FDE.Screen.MainScreenController;
 import defenders2FDE.Screen.Screen;
 import defenders2FDE.GameObjects.AlienSpaceShip;
 import defenders2FDE.GameObjects.Bullet;
@@ -10,9 +9,7 @@ import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventDispatchChain;
 import javafx.event.EventHandler;
-import javafx.event.EventTarget;
 import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,29 +18,27 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.*;
 import java.util.List;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class GameManager {
 
     private Stage primaryStage;
+    private DataManager dataManager;
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
-    private int score = 50;
+    private int score = 0;
     private int mode;
     private boolean isFinished = false;
     private long lastEnemyTime = new Date().getTime();
@@ -65,22 +60,32 @@ public class GameManager {
     public GameManager(Screen gameScreen, int mode) throws IOException {
         this.gameScreen = gameScreen;
         this.mode = mode; // 1- story mode 2- single endless
+        
+        // create DataManager instance
+        dataManager = new DataManager();
+        highScores = dataManager.getHighScores();
 
-        // retrieve high scores list
-        if ( mode == 1){
-            try {
-                highScores = Constants.retrieveHighScores();
-            }catch (Exception e){
-                highScores = new int[0];
-            }
-        }
         // initialize game objects and enemy bullets
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
 
         // create player instance
         player = new SpaceShip( 300,300, 100, "player");
-        player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH);
+        int[] items = dataManager.getItems();
+        System.out.println("Current item " + items[0]);
+        if ( items[0] == 1){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_1);
+        }else if ( items[0] == 2){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_2);
+        }else if ( items[0] == 3){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_3);
+        }else if ( items[0] == 4){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_4);
+        }else if ( items[0] == 5){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_5);
+        }else if ( items[0] == 6){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_6);
+        }
         gameObjects.add(player);
 
         // setup health bar
@@ -146,7 +151,11 @@ public class GameManager {
         pauseButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                pause();
+                if (stop){
+                    resume();
+                }else{
+                    pause();
+                }
             }
         });
         gameScreen.getChildren().add(pauseButton);
@@ -154,20 +163,21 @@ public class GameManager {
     }
 
     public void pause(){
-        if ( stop){
-            ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
-            pauseIcon.setFitHeight(Constants.SS_HEIGHT);
-            pauseIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(pauseIcon);
-            animationTimer.start();
-        }else{
-            ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
-            resumeIcon.setFitHeight(Constants.SS_HEIGHT);
-            resumeIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(resumeIcon);
-            animationTimer.stop();
-        }
-        stop = !stop;
+        ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
+        resumeIcon.setFitHeight(Constants.SS_HEIGHT);
+        resumeIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setGraphic(resumeIcon);
+        animationTimer.stop();
+        stop = true;
+    }
+
+    public void resume(){
+        ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
+        pauseIcon.setFitHeight(Constants.SS_HEIGHT);
+        pauseIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setGraphic(pauseIcon);
+        animationTimer.start();
+        stop = false;
     }
 
     public boolean isStop(){
@@ -287,10 +297,15 @@ public class GameManager {
             animationTimer.stop();
             enemyBullets.forEach(bullet1 -> bullet1.stop(true));
             gameObjects.forEach(gameObject -> gameObject.stop(true));
-            if ( isHighScore()){
+            try {
+                dataManager.setCoin(score);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if ( dataManager.isHighScore(score)){
                 showHighScoreDialog();
                 try {
-                    saveNewHighScoreList();
+                    dataManager.saveNewHighScoreList();
                 } catch (FileNotFoundException e) {
                     System.out.println("File not found");
                 } catch (IOException e) {
@@ -308,44 +323,6 @@ public class GameManager {
                 }
             }
         }
-    }
-
-    public void saveNewHighScoreList() throws IOException {
-        File defenderFolder = new File(folderPath);
-        defenderFolder.mkdir();
-        File highScoresFile = new File(filePath);
-        highScoresFile.createNewFile();
-        FileOutputStream highScoreData = new FileOutputStream(filePath);
-        PrintWriter pw = new PrintWriter(highScoreData);
-        if (highScores.length == 0){
-            pw.println("Javid: " + score);
-        }
-        else {
-            for (int highScore : highScores)
-                pw.println("Javid: " + highScore);
-        }
-        pw.close();
-    }
-
-    private boolean isHighScore(){
-        boolean isHighScore = false;
-        if ( highScores.length == 0)
-            isHighScore = true;
-        for (int i = 0; i < highScores.length;i++){
-            if ( score > highScores[i]){
-                if ( i == 0) {
-                    highScores[i] = score;
-                    isHighScore =  true;
-                }
-                else{
-                    int tmp = highScores[i];
-                    highScores[i] = score;
-                    highScores[i-1] = tmp;
-                    isHighScore =  true;
-                }
-            }
-        }
-        return isHighScore;
     }
 
     private void showHighScoreDialog(){

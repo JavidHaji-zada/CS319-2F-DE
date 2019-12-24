@@ -28,6 +28,9 @@ import java.util.*;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class GameManagerStory {
 
 //    private List<GameObject> gameObjects;
@@ -80,7 +83,7 @@ public class GameManagerStory {
 
         // create player instance
         player = new SpaceShip( 300,300, 100, "player");
-        player.setImagePath(Constants.PLAYER_SPACESHIP_IMAGE_PATH);
+        player.setImagePath(Constants.PLAYER_SPACESHIP_IMAGE_PATH_1);
         gameObjects.add(player);
 
         // setup score label

@@ -6,6 +6,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * @author      2FDE
+ */
 public class GameObject extends ImageView {
 
     private int health;

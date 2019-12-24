@@ -5,6 +5,9 @@ import javafx.scene.paint.Color;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class Bullet extends GameObject {
 
     double posx;

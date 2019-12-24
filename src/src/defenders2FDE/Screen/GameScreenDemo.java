@@ -110,7 +110,11 @@ public class GameScreenDemo extends Screen{
             }else if ( (event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F) && !gameManager.isStop()){
                 gameManager.fire();
             }else if ( event.getCode() == KeyCode.P || event.getCode() == KeyCode.ESCAPE){
-                gameManager.pause();
+                if ( gameManager.isStop()){
+                    gameManager.resume();
+                }else{
+                    gameManager.pause();
+                }
             }
         });
 

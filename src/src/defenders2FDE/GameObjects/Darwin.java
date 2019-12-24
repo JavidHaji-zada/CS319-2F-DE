@@ -7,6 +7,9 @@ import java.util.Date;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class Darwin extends GameObject{
 
 
