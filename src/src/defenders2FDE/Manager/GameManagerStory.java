@@ -3,6 +3,7 @@ package defenders2FDE.Manager;
 import defenders2FDE.Constants;
 import defenders2FDE.GameObjects.*;
 import defenders2FDE.Screen.Screen;
+import defenders2FDE.Screen.StoryMode;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -15,10 +16,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -49,7 +53,7 @@ public class GameManagerStory {
     private long lastEnemyTime = new Date().getTime();
     private SpaceShip player;
     private Button pauseButton;
-    private Label scoreLabel;
+    //private Label scoreLabel;
     private Label timerLabel;
     private ProgressBar healthBar;
     private Screen gameScreen;
@@ -62,6 +66,10 @@ public class GameManagerStory {
     private long fraction = 0;
     private boolean stop = false;
     private int[] highScores = new int[]{100,200,300,400,500,600,700, 800,900,1000};
+
+    String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
+    Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
 
     public GameManagerStory(Screen gameScreen) {
         this.gameScreen = gameScreen;
@@ -76,7 +84,7 @@ public class GameManagerStory {
         gameObjects.add(player);
 
         // setup score label
-        setupScoreLabel();
+        // setupScoreLabel();
 
         // setup timer label
         setupTimerLabel();
@@ -98,14 +106,14 @@ public class GameManagerStory {
         mainScreen = screen;
     }
 
-    private void setupScoreLabel(){
+    /*private void setupScoreLabel(){
         scoreLabel = new Label("Score: " + this.score);
         scoreLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_SM));
         scoreLabel.setTextFill(Color.WHITE);
         scoreLabel.setLayoutX(Constants.SCREEN_WIDTH * 8 / 10);
         scoreLabel.setLayoutY(Constants.HEADER_Y / 2 - 16);
         gameScreen.getChildren().add(scoreLabel);
-    }
+    }*/
 
     private void setupHealthBar(){
         healthBar = new ProgressBar(1);
@@ -145,19 +153,8 @@ public class GameManagerStory {
     }
 
     public void pause(){
-        if (stop){
-            ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
-            pauseIcon.setFitHeight(Constants.SS_HEIGHT);
-            pauseIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(pauseIcon);
-            animationTimer.start();
-        }else{
-            ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
-            resumeIcon.setFitHeight(Constants.SS_HEIGHT);
-            resumeIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(resumeIcon);
-            animationTimer.stop();
-        }
+        showPauseDialog();
+        animationTimer.stop();
         stop = !stop;
     }
 
@@ -202,7 +199,7 @@ public class GameManagerStory {
         timerLabel.setText(timerStrBuilder.toString());
     }
 
-    //Newly Added
+
     public GameObject addNewAlien(){
         long currentTime = new Date().getTime();
         if ( currentTime - lastEnemyTime >= 5000){
@@ -218,7 +215,7 @@ public class GameManagerStory {
         return null;
     }
 
-    //Newly Added
+
     public GameObject addNewQueen() {
         long currentTime = new Date().getTime();
         if ( currentTime - lastEnemyTime >= 5000){
@@ -280,7 +277,6 @@ public class GameManagerStory {
         return null;
     }
 
-    //Newly Added
     public boolean isAllEnemiesDead()
     {
         for(int i = 0; i < gameObjects.size(); i++)
@@ -303,7 +299,6 @@ public class GameManagerStory {
     }
 
 
-    //Newly Added
     public void checkCollision(){
         gameObjects.forEach((GameObject gameObject) -> {
 
@@ -439,7 +434,7 @@ public class GameManagerStory {
                         {
                             toBeRemoved.add(enemy);
                             score += AlienPoints;
-                            scoreLabel.setText("Score: " + score );
+                            //scoreLabel.setText("Score: " + score );
                         }
                     }
                 });
@@ -457,7 +452,7 @@ public class GameManagerStory {
                             toBeRemoved.add(enemy);
                             toBeRemoved.add(gameObject);
                             score += QueenPoints;
-                            scoreLabel.setText("Score: " + score );
+                            //scoreLabel.setText("Score: " + score );
                         }
                     }
                 });
@@ -475,7 +470,7 @@ public class GameManagerStory {
                             toBeRemoved.add(enemy);
                             toBeRemoved.add(gameObject);
                             score += DarwinPoints;
-                            scoreLabel.setText("Score: " + score );
+                            //scoreLabel.setText("Score: " + score );
                         }
                     }
                 });
@@ -527,43 +522,35 @@ public class GameManagerStory {
         }
     }
 
-    private boolean isHighScore(){
-        boolean isHighScore = false;
-        for (int i = 0; i < highScores.length;i++){
-            System.out.println("Array" + highScores[i]);
-            System.out.println("Player score " + score);
-            if ( score > highScores[i]){
-                if ( i == 0) {
-                    highScores[i] = score;
-                    isHighScore =  true;
-                    System.out.println("Is high score set to true");
-                }
-                else{
-                    int tmp = highScores[i];
-                    highScores[i] = score;
-                    highScores[i-1] = tmp;
-                    isHighScore =  true;
-                    System.out.println("Is high score set tu true");
-                }
-            }
-        }
-        System.out.println("Returning ishighscore " + isHighScore);
-        return isHighScore;
-    }
-
-    private void showHighScoreDialog(){
+    public void showCongratulations(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Congratulations!");
+        alert.setTitle("CONGRATULATIONS!");
         alert.setHeaderText(null);
-        alert.setContentText("Your score entered top 10");
-        ButtonType backToMenu = new ButtonType("Menu");
-        ButtonType exitGame = new ButtonType("Exit");
-//        alert.getButtonTypes().setAll(backToMenu, exitGame);
+        alert.setContentText("You finished the story mode successfully!");
+
         alert.getButtonTypes().add(ButtonType.CANCEL);
 
-        Button menuButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-        menuButton.setText("Menu");
-        menuButton.setOnAction(new EventHandler<ActionEvent>() {
+        Button restart = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        restart.setText("Restart");
+        restart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mediaPlayer.play();
+                System.out.println("button working");
+                StoryMode gameScreenDemo = new StoryMode();
+                //primaryStage = window;
+                gameScreenDemo.setPrimaryStage(primaryStage);
+                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
+                gameScene.getRoot().requestFocus();
+                primaryStage.setScene(gameScene);
+
+                alert.close();
+            }
+        });
+
+        Button exitButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+        exitButton.setText("Go Back to Menu");
+        exitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Parent root = null;
@@ -576,15 +563,65 @@ public class GameManagerStory {
                     System.out.println("B");
                     e.printStackTrace();
                 }
+
+                alert.close();
+            }
+        });
+        alert.show();
+    }
+
+    public void showPauseDialog(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Paused");
+        alert.setHeaderText(null);
+
+        alert.getButtonTypes().add(ButtonType.CANCEL);
+        alert.getButtonTypes().add(ButtonType.APPLY);
+
+        Button resume = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        resume.setText("Resume");
+        resume.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                animationTimer.start();
+                stop = !stop;
+                alert.close();
+            }
+        });
+
+        Button restart = (Button) alert.getDialogPane().lookupButton(ButtonType.APPLY);
+        restart.setText("Restart");
+        restart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mediaPlayer.play();
+                StoryMode gameScreenDemo = new StoryMode();
+                gameScreenDemo.setPrimaryStage(primaryStage);
+                Scene gameScene = new Scene(new ScreenManager().setScreen(gameScreenDemo));
+                gameScene.getRoot().requestFocus();
+                primaryStage.setScene(gameScene);
+
+                alert.close();
             }
         });
 
         Button exitButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        exitButton.setText("Exit");
+        exitButton.setText("Exit the Game");
         exitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                primaryStage.close();
+                Parent root = null;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("../Screen/fxml/MainScreen.fxml"));
+                    Scene scene = new Scene(root);
+                    primaryStage.setScene(scene);
+                    System.out.println("A");
+                } catch (IOException e) {
+                    System.out.println("B");
+                    e.printStackTrace();
+                }
+
+                alert.close();
             }
         });
         alert.show();
@@ -653,7 +690,5 @@ public class GameManagerStory {
     {
         return time;
     }
-
-
 
 }

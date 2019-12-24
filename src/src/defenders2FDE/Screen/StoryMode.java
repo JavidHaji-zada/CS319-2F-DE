@@ -3,6 +3,7 @@ package defenders2FDE.Screen;
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
 import defenders2FDE.Manager.GameManagerStory;
+import defenders2FDE.Manager.GameManagers;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
 import javafx.scene.Node;
@@ -13,9 +14,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class StoryMode extends Screen{
 
-    private GameManagerStory gameManager;
+    private GameManagers gameManager;
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
@@ -28,11 +31,15 @@ public class StoryMode extends Screen{
 
     private int numberOfEnemies = 0;
 
-    private int stageTracker = 1;
+    private int stageTracker = 5;
 
     public StoryMode(){
         super();
-        gameManager = new GameManagerStory(this);
+        try {
+            gameManager = new GameManagers(this, 2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setPrimaryStage(Stage primaryStage){
@@ -51,8 +58,6 @@ public class StoryMode extends Screen{
         //********************************************************************
         //                S T A G E   1   S T A R T S
         //********************************************************************
-
-
 
         //First Stage - Aliens
         if(stageTracker == 1 && numberOfEnemies < 5)
@@ -336,7 +341,7 @@ public class StoryMode extends Screen{
                 gameManager.stageMessage(endOfFourthStage, "FIFTH STAGE!");
             }
 
-            if (gameManager.getTimeSs() > endOfFourthStage + 250)
+            if (gameManager.getTimeSs() >= endOfFourthStage + 250)
             {
                 Node newEnemy = gameManager.addNewAlien();
                 addNewEnemy(newEnemy);
@@ -456,8 +461,8 @@ public class StoryMode extends Screen{
         //Game Finished
         else if(stageTracker == 5 && gameManager.isAllEnemiesDead())
         {
-
-
+            gameManager.showCongratulations();
+            stageTracker = 6;
         }
 
     }

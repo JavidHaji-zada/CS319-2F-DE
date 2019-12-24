@@ -14,6 +14,8 @@ public class GameObject extends ImageView {
     private boolean stop;
     private boolean outOfScreen = false;
     private int collisionDamage;
+    private int mode;
+    private String direction;
 
 
     public GameObject(double x, double y, int health, String type){
@@ -64,4 +66,21 @@ public class GameObject extends ImageView {
     public void setCollisionDamage(int collisionDamage) {
         this.collisionDamage = collisionDamage;
     }
+
+    public void setMode(int mode)
+    {
+        this.mode = mode;
+    }
+
+    public int getMode() { return mode; }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void updateDirection() { }
 }

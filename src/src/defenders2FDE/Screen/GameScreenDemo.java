@@ -2,6 +2,7 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
+import defenders2FDE.Manager.GameManagers;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
 import javafx.beans.binding.BooleanBinding;
@@ -26,7 +27,7 @@ import java.io.IOException;
 
 public class GameScreenDemo extends Screen{
 
-    private GameManager gameManager;
+    private GameManagers gameManager;
     private Screen mainScreen;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
@@ -34,7 +35,7 @@ public class GameScreenDemo extends Screen{
 
     public GameScreenDemo() throws IOException {
         super();
-        gameManager = new GameManager(this,1);
+        gameManager = new GameManagers(this,1);
     }
 
     public void setPrimaryStage(Stage primaryStage){
@@ -47,7 +48,7 @@ public class GameScreenDemo extends Screen{
             gameManager.setLastFrameUpdateTime(now);
             gameManager.updateLabel();
         }
-        Node newEnemy = gameManager.addNewEnemy();
+        Node newEnemy = gameManager.addNewAlien();
         if ( newEnemy != null){
             getChildren().add(newEnemy);
         }

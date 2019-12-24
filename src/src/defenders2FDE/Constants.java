@@ -36,7 +36,7 @@ public class Constants {
     public static final double SpaceShipSpeed = 20;
     public static final double AlienSpeed = 1;
     public static final double QueenSpeed = 0.7;
-    public static final double DarwinSpeed = 1.5;
+    public static final double DarwinSpeed = 1.2;
     public static final double AsteroidSpeed = 10;
 
     public static final double AstronautSpeed = 5;
