@@ -33,8 +33,7 @@ public class Main extends Application {
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen/fxml/MainScreen.fxml"));
         Parent root = (Parent) loader.load();
-        MainScreenController controller = (MainScreenController) loader.getController();
-
+        MainScreenController controller = loader.getController();
         controller.setStage(primaryStage);
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);

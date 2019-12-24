@@ -1,7 +1,6 @@
 package defenders2FDE.Manager;
 
 import defenders2FDE.Constants;
-import defenders2FDE.Screen.MainScreenController;
 import defenders2FDE.Screen.Screen;
 import defenders2FDE.GameObjects.AlienSpaceShip;
 import defenders2FDE.GameObjects.Bullet;
@@ -10,9 +9,7 @@ import defenders2FDE.GameObjects.SpaceShip;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventDispatchChain;
 import javafx.event.EventHandler;
-import javafx.event.EventTarget;
 import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,17 +18,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.*;
 import java.util.List;
@@ -66,9 +57,7 @@ public class GameManager {
     public GameManager(Screen gameScreen, int mode) throws IOException {
         this.gameScreen = gameScreen;
         this.mode = mode; // 1- story mode 2- single endless
-
-
-
+        
         // create DataManager instance
         dataManager = new DataManager();
         highScores = dataManager.getHighScores();
@@ -79,7 +68,21 @@ public class GameManager {
 
         // create player instance
         player = new SpaceShip( 300,300, 100, "player");
-        player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH);
+        int[] items = dataManager.getItems();
+        System.out.println("Current item " + items[0]);
+        if ( items[0] == 1){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_1);
+        }else if ( items[0] == 2){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_2);
+        }else if ( items[0] == 3){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_3);
+        }else if ( items[0] == 4){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_4);
+        }else if ( items[0] == 5){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_5);
+        }else if ( items[0] == 6){
+            player.setImagePath(PLAYER_SPACESHIP_IMAGE_PATH_6);
+        }
         gameObjects.add(player);
 
         // setup health bar
@@ -291,6 +294,11 @@ public class GameManager {
             animationTimer.stop();
             enemyBullets.forEach(bullet1 -> bullet1.stop(true));
             gameObjects.forEach(gameObject -> gameObject.stop(true));
+            try {
+                dataManager.setCoin(score);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if ( dataManager.isHighScore(score)){
                 showHighScoreDialog();
                 try {

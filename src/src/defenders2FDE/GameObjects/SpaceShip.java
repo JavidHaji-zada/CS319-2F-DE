@@ -53,7 +53,7 @@ public class SpaceShip extends GameObject{
             mediaPlayer.play();
             lastFireTime = now;
             String bulletImagePath = Constants.PLAYER_BULLET_IMAGE_PATH;
-            Bullet bullet = new Bullet(getTranslateX() + 50, getTranslateY() + 25 , 10,  "playerBullet");
+            Bullet bullet = new Bullet(getTranslateX() + 75, getTranslateY() + 50 , 10,  "playerBullet");
             bullet.setImagePath(bulletImagePath);
             return bullet;
         }

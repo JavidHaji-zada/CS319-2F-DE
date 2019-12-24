@@ -72,7 +72,12 @@ public class Constants {
 
     // image paths
     public static final String GAME_BACKGROUND_IMAGE_PATH = "defenders2FDE/Assets/images/background.jpg";
-    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceship.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_1 = "defenders2FDE/Assets/images/spaceship_1.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_2 = "defenders2FDE/Assets/images/spaceship_2.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_3 = "defenders2FDE/Assets/images/spaceship_3.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_4 = "defenders2FDE/Assets/images/spaceship_4.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_5 = "defenders2FDE/Assets/images/spaceship_5.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH_6 = "defenders2FDE/Assets/images/spaceship_6.png";
     public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alien.png";
 
     public static final String ASTEROID_IMAGE_PATH = "defenders2FDE/Assets/images/asteroid.png";
@@ -90,7 +95,9 @@ public class Constants {
     public static final String PLAYER_FIRE_SOUND = "src/defenders2FDE/Assets/sounds/player_fire_sound.mpeg";
 
     // file paths
-    public static final String filePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\high_scores.dat";
+    public static final String highScoreFilePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\high_scores.dat";
+    public static final String coinFilePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\coin.dat";
+    public static final String shopFilePath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender\\items.dat";
     public static final String folderPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "\\Defender";
 
     // Font

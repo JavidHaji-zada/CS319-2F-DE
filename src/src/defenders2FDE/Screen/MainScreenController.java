@@ -149,7 +149,10 @@ public class MainScreenController {
         mediaPlayer.play();
 
         Stage window = (Stage) shopButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/shop.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/shop.fxml"));
+        Parent root = loader.load();
+        ShopController shopController = loader.getController();
+        shopController.initializeShopController();
         Scene shopScene = new Scene(root);
         window.setFullScreen(true);
         window.setScene(shopScene);
