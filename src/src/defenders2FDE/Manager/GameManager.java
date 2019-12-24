@@ -217,7 +217,7 @@ public class GameManager {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY, 20, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY);
             alienSpaceShip.setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;

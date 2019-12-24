@@ -8,6 +8,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -19,10 +20,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import static defenders2FDE.Constants.*;
 
@@ -57,6 +55,8 @@ public class GameManagerStory {
     private Screen gameScreen;
     private Screen mainScreen;
     private AnimationTimer animationTimer;
+    private Label messageLabel;
+    private boolean isShown = false;
     private long lastFrameUpdateTime;
     private int time = 0;
     private long fraction = 0;
@@ -210,7 +210,7 @@ public class GameManagerStory {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.SCREEN_WIDTH, posY, 50, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(Constants.SCREEN_WIDTH, posY);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;
         }
@@ -236,7 +236,7 @@ public class GameManagerStory {
 
     public GameObject addNewAsteroid() {
         long currentTime = new Date().getTime();
-        if ( currentTime - lastEnemyTime >= 5000){
+        if ( currentTime - lastEnemyTime >= 3000){
             lastEnemyTime = currentTime;
             Random random = new Random();
             int high = (int) Constants.SCREEN_WIDTH - 400;
@@ -266,7 +266,7 @@ public class GameManagerStory {
 
     public GameObject addNewAstronaut() {
         long currentTime = new Date().getTime();
-        if ( currentTime - lastEnemyTime >= 5000){
+        if ( currentTime - lastEnemyTime >= 3000){
             lastEnemyTime = currentTime;
             Random random = new Random();
             int high = (int) Constants.SCREEN_WIDTH - 400;
@@ -285,6 +285,8 @@ public class GameManagerStory {
     {
         for(int i = 0; i < gameObjects.size(); i++)
         {
+            System.out.println("The type of " + i + "th enemy is " + gameObjects.get(i).type);
+
             if(gameObjects.get(i).type.equals("enemy"))
                 return false;
 
@@ -431,11 +433,11 @@ public class GameManagerStory {
 
                         // Health of the Alien is decreased and the Alien is dead
                         enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
+                        toBeRemoved.add(gameObject);
 
                         if(enemy.getHealth() == 0)
                         {
                             toBeRemoved.add(enemy);
-                            toBeRemoved.add(gameObject);
                             score += AlienPoints;
                             scoreLabel.setText("Score: " + score );
                         }
@@ -444,12 +446,11 @@ public class GameManagerStory {
 
                 gameObjects.stream().filter(e-> e.type.equals("Queen")).forEach(enemy -> {
 
-                    enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
-
                     if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
 
                         // Health of the Queen is decreased
                         enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
+                        toBeRemoved.add(gameObject);
 
                         if(enemy.getHealth() == 0)
                         {
@@ -463,12 +464,11 @@ public class GameManagerStory {
 
                 gameObjects.stream().filter(e-> e.type.equals("Darwin")).forEach(enemy -> {
 
-                    enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
-
                     if (gameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())){
 
                         // Health of the Queen is decreased
                         enemy.setHealth(Math.max(enemy.getHealth() - PlayerBulletCollisionDamage, 0));
+                        toBeRemoved.add(gameObject);
 
                         if(enemy.getHealth() == 0)
                         {
@@ -622,4 +622,38 @@ public class GameManagerStory {
             gameScreen.getChildren().add(bullet);
         }
     }
+
+    public void stageMessage(int start, String message)
+    {
+        System.out.println("enters");
+
+        if(time >= start && !isShown)
+        {
+            isShown = true;
+            messageLabel = new Label(message);
+            messageLabel.setTextFill(Color.WHITE);
+            messageLabel.setFont(Font.font(Constants.FONT_NAME, Constants.FONT_SIZE_MD * 2.5));
+            messageLabel.setAlignment(Pos.CENTER);
+            messageLabel.setPrefWidth(SCREEN_WIDTH * 5 / 10);
+            messageLabel.setPrefHeight(SCREEN_HEIGHT * 3 / 10);
+            messageLabel.setLayoutX(SCREEN_WIDTH * 5 / 20);
+            messageLabel.setLayoutY(SCREEN_HEIGHT * 7 / 20);
+
+            gameScreen.getChildren().add(messageLabel);
+        }
+
+        if(time >= start + 150 && isShown)
+        {
+            gameScreen.getChildren().remove(messageLabel);
+            isShown = false;
+        }
+    }
+
+    public int getTimeSs()
+    {
+        return time;
+    }
+
+
+
 }
