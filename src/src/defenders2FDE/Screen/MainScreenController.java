@@ -142,16 +142,17 @@ public class MainScreenController {
     }
 
     //Shop feature popup
+    @FXML
+    Button shopButton;
     public void PopShop(javafx.event.ActionEvent actionEvent) throws Exception
     {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/credits.fxml"));
-        Scene creditsScene = new Scene(root);
-        primaryStage.setScene(creditsScene);
 
-         */
+        Stage window = (Stage) shopButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/shop.fxml"));
+        Scene shopScene = new Scene(root);
+        window.setScene(shopScene);
     }
 
     //credits scene
@@ -196,6 +197,7 @@ public class MainScreenController {
 
     @FXML
     VBox mainButtons;
+    @FXML
     Button highestScoresButton;
     public void alignButtonsCenter() {
         /*

@@ -31,7 +31,7 @@ public class Queen extends GameObject{
     {
         if ( new Date().getTime() - lastFiredTime >= 3000 && !isStop()) {
             lastFiredTime = new Date().getTime();
-            return new AlienSpaceShip(getTranslateX() - QueenSize / 2, getTranslateY() + QueenSize / 2 - AlienSize / 2, SpaceShipHealth, "enemy");
+            return new AlienSpaceShip(getTranslateX() - QueenSize / 2, getTranslateY() + QueenSize / 2 - AlienSize / 2);
         }
         return null;
     }

@@ -1,6 +1,7 @@
 package defenders2FDE.Manager;
 
 import defenders2FDE.Constants;
+import defenders2FDE.Screen.MainScreenController;
 import defenders2FDE.Screen.Screen;
 import defenders2FDE.GameObjects.AlienSpaceShip;
 import defenders2FDE.GameObjects.Bullet;
@@ -222,7 +223,7 @@ public class GameManager {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY, 20, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY);
             alienSpaceShip.setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;

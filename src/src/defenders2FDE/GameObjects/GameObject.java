@@ -1,5 +1,6 @@
 package defenders2FDE.GameObjects;
 
+import defenders2FDE.Constants;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -25,7 +26,7 @@ public class GameObject extends ImageView {
     }
 
     public boolean isOutOfScreen() {
-        return getTranslateX() <=0;
+        return getTranslateX() <=0 || getTranslateY() > Constants.SCREEN_HEIGHT;
     }
 
     public void setOutOfScreen(boolean outOfScreen) {

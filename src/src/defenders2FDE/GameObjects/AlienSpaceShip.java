@@ -10,8 +10,8 @@ import static defenders2FDE.Constants.*;
 public class AlienSpaceShip extends GameObject{
 
     private long lastFiredTime = 0;
-    public AlienSpaceShip(double x, double y, int health, String type){
-        super( x, y, health, type);
+    public AlienSpaceShip(double x, double y){
+        super( x, y, AlienHealth, "enemy");
         setImagePath(ENEMY_SPACESHIP_IMAGE_PATH);
         setFitHeight(SS_HEIGHT);
         setFitWidth(SS_WIDTH);
