@@ -11,6 +11,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -178,6 +179,7 @@ public class MainScreenController {
     {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
+
         Stage window = (Stage) highestScoresButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("fxml/highScores.fxml"));
         Scene creditsScene = new Scene(root);

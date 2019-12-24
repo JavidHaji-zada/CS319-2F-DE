@@ -24,6 +24,9 @@ import java.util.*;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class GameManagerStory {
 
 //    private List<GameObject> gameObjects;

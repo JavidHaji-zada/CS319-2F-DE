@@ -31,7 +31,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="backButton" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#goBack" opacity="0.58" prefHeight="40.0" prefWidth="80.0" text="GO BACK" textAlignment="CENTER">
+                  <Button fx:id="backButton" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#goBack" opacity="0.58" prefHeight="40.0" prefWidth="80.0" text="CANCEL" textAlignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>

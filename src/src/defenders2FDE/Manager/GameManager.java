@@ -29,6 +29,9 @@ import java.util.List;
 
 import static defenders2FDE.Constants.*;
 
+/**
+ * @author      2FDE
+ */
 public class GameManager {
 
     private Stage primaryStage;

@@ -8,6 +8,9 @@ import javafx.scene.paint.Color;
 import java.io.File;
 import java.util.Date;
 
+/**
+ * @author      2FDE
+ */
 public class SpaceShip extends GameObject{
 
     private long lastFireTime = new Date().getTime();
