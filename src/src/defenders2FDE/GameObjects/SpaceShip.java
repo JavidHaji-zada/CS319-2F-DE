@@ -13,8 +13,8 @@ public class SpaceShip extends GameObject{
     private long lastFireTime = new Date().getTime();
     public SpaceShip(double x, double y, int health, String type){
         super( x, y, health, type);
-        setFitHeight(50);
-        setFitWidth(50);
+        setFitHeight(100);
+        setFitWidth(100);
     }
 
     @Override

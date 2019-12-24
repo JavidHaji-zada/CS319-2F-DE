@@ -21,6 +21,11 @@ public class StoryMode extends Screen{
     private ParallelTransition parallelTransition;
     private Stage primaryStage;
 
+    private int endOfFirstStage;
+    private int endOfSecondStage;
+    private int endOfThirdStage;
+    private int endOfFourthStage;
+
     private int numberOfEnemies = 0;
 
     private int stageTracker = 1;
@@ -47,17 +52,24 @@ public class StoryMode extends Screen{
         //                S T A G E   1   S T A R T S
         //********************************************************************
 
+
+
         //First Stage - Aliens
         if(stageTracker == 1 && numberOfEnemies < 5)
         {
+            if(gameManager.getTimeSs() >= 100) {
+                gameManager.stageMessage(100, "FIRST STAGE!");
+            }
+
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
 
             //First Contact with Alien
             if(numberOfEnemies == 1)
             {
-
+                //gameManager.meetAlien();
             }
+
         }
         //First Stage - End
         else if(stageTracker == 1 && gameManager.isAllEnemiesDead())
@@ -66,6 +78,8 @@ public class StoryMode extends Screen{
 
             numberOfEnemies = 0;
             stageTracker++;
+
+            endOfFirstStage = gameManager.getTimeSs();
         }
 
         //********************************************************************
@@ -73,13 +87,21 @@ public class StoryMode extends Screen{
         //********************************************************************
 
         //Second Stage - Aliens
-        else if(stageTracker == 2 && numberOfEnemies < 7)
+        else if(stageTracker == 2 && numberOfEnemies < 4)
         {
-            Node newEnemy = gameManager.addNewAlien();
-            addNewEnemy(newEnemy);
+            if(gameManager.getTimeSs() >= endOfFirstStage + 50)
+            {
+                gameManager.stageMessage(endOfFirstStage, "SECOND STAGE!");
+            }
+
+            if (gameManager.getTimeSs() >= endOfFirstStage + 250)
+            {
+                Node newEnemy = gameManager.addNewAlien();
+                addNewEnemy(newEnemy);
+            }
         }
         //Second Stage - Queens
-        else if(stageTracker == 2 && numberOfEnemies < 10)
+        else if(stageTracker == 2 && numberOfEnemies < 7)
         {
             System.out.println("if 4");
 
@@ -87,7 +109,7 @@ public class StoryMode extends Screen{
             addNewEnemy(newEnemy);
 
             //First Contact with Queen
-            if(numberOfEnemies == 7)
+            if(numberOfEnemies == 5)
             {
 
             }
@@ -100,67 +122,87 @@ public class StoryMode extends Screen{
 
             numberOfEnemies = 0;
             stageTracker++;
+
+            endOfSecondStage = gameManager.getTimeSs();
         }
 
         //********************************************************************
         //                S T A G E   3   S T A R T S
         //********************************************************************
 
-        //Third Stage - First 4 Aliens
-        else if(stageTracker == 3 && numberOfEnemies < 4)
+        //Third Stage - First 2 Aliens
+        else if(stageTracker == 3 && numberOfEnemies < 2)
         {
-            Node newEnemy = gameManager.addNewAlien();
-            addNewEnemy(newEnemy);
+            if(gameManager.getTimeSs() >= endOfSecondStage + 50)
+            {
+                gameManager.stageMessage(endOfSecondStage, "THIRD STAGE!");
+            }
+
+            if (gameManager.getTimeSs() >= endOfSecondStage + 250)
+            {
+                Node newEnemy = gameManager.addNewAlien();
+                addNewEnemy(newEnemy);
+            }
         }
         //Third Stage - First Asteroid
-        else if(stageTracker == 3 && numberOfEnemies < 5)
+        else if(stageTracker == 3 && numberOfEnemies < 3)
         {
             System.out.println("if 2");
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
 
             //First Contact with Asteroid
-            if(numberOfEnemies == 4)
+            if(numberOfEnemies == 3)
             {
 
             }
         }
 
-        //Third Stage - Second 4 Aliens
-        else if(stageTracker == 3 && numberOfEnemies < 9)
+        //Third Stage - Second 1 Aliens
+        else if(stageTracker == 3 && numberOfEnemies < 4)
         {
+
+            System.out.println("if 3");
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
         //Third Stage - Second Asteroid
-        else if(stageTracker == 3 && numberOfEnemies < 10)
+        else if(stageTracker == 3 && numberOfEnemies < 5)
         {
+            System.out.println("if 4");
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        //Third Stage - Third 4 Aliens
-        else if(stageTracker == 3 && numberOfEnemies < 14)
+        //Third Stage - Third 2 Aliens
+        else if(stageTracker == 3 && numberOfEnemies < 7)
         {
+            System.out.println("if 5");
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
         //Third Stage - Third Asteroid
-        else if(stageTracker == 3 && numberOfEnemies < 15)
+        else if(stageTracker == 3 && numberOfEnemies < 8)
         {
+            System.out.println("if 6");
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        //Third Stage - Last 3 Aliens
-        else if(stageTracker == 3 && numberOfEnemies < 18)
+        //Third Stage - Last 2 Aliens
+        else if(stageTracker == 3 && numberOfEnemies < 10)
         {
+            System.out.println("if 7    " + gameManager.isAllEnemiesDead());
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
         //Third Stage - End
         else if(stageTracker == 3 && gameManager.isAllEnemiesDead())
         {
+            System.out.println("End of Stage 3");
+
             numberOfEnemies = 0;
             stageTracker++;
+
+            endOfThirdStage = gameManager.getTimeSs();
         }
 
 
@@ -168,32 +210,63 @@ public class StoryMode extends Screen{
         //                S T A G E   4   S T A R T S
         //********************************************************************
 
+        else if(stageTracker == 4 && numberOfEnemies < 1)
+        {
+            System.out.println("Start of Stage 4");
+            System.out.println(gameManager.getTimeSs() + "  " + endOfThirdStage);
+
+            if(gameManager.getTimeSs() >= endOfThirdStage + 50)
+            {
+                gameManager.stageMessage(endOfThirdStage, "FOURTH STAGE!");
+            }
+
+            if (gameManager.getTimeSs() >= endOfThirdStage + 250)
+            {
+                Node newEnemy = gameManager.addNewAlien();
+                addNewEnemy(newEnemy);
+            }
+        }
         else if(stageTracker == 4 && numberOfEnemies < 2)
         {
-            Node newEnemy = gameManager.addNewAlien();
+            Node newEnemy = gameManager.addNewQueen();
             addNewEnemy(newEnemy);
         }
         else if(stageTracker == 4 && numberOfEnemies < 3)
         {
-            Node newEnemy = gameManager.addNewQueen();
+            Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
         else if(stageTracker == 4 && numberOfEnemies < 4)
         {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 6)
-        {
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
-        else if(stageTracker == 4 && numberOfEnemies < 7)
+        else if(stageTracker == 4 && numberOfEnemies < 5)
         {
             Node newEnemy = gameManager.addNewQueen();
             addNewEnemy(newEnemy);
         }
+        else if(stageTracker == 4 && numberOfEnemies < 6)
+        {
+            Node newEnemy = gameManager.addNewAsteroid();
+            addNewEnemy(newEnemy);
+        }
+        else if(stageTracker == 4 && numberOfEnemies < 7)
+        {
+            Node newEnemy = gameManager.addNewAlien();
+            addNewEnemy(newEnemy);
+        }
         else if(stageTracker == 4 && numberOfEnemies < 8)
+        {
+            Node newEnemy = gameManager.addNewAstronaut();
+            addNewEnemy(newEnemy);
+        }
+        else if(stageTracker == 4 && numberOfEnemies < 9)
+        {
+            Node newEnemy = gameManager.addNewQueen();
+            addNewEnemy(newEnemy);
+        }
+        else if(stageTracker == 4 && numberOfEnemies < 10)
         {
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
@@ -218,47 +291,27 @@ public class StoryMode extends Screen{
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        else if(stageTracker == 4 && numberOfEnemies < 17)
+        else if(stageTracker == 4 && numberOfEnemies < 15)
         {
             Node newEnemy = gameManager.addNewAlien();
+            addNewEnemy(newEnemy);
+        }
+        else if(stageTracker == 4 && numberOfEnemies < 16)
+        {
+            Node newEnemy = gameManager.addNewAstronaut();
+            addNewEnemy(newEnemy);
+        }
+        else if(stageTracker == 4 && numberOfEnemies < 17)
+        {
+            Node newEnemy = gameManager.addNewQueen();
             addNewEnemy(newEnemy);
         }
         else if(stageTracker == 4 && numberOfEnemies < 18)
         {
-            Node newEnemy = gameManager.addNewAstronaut();
+            Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
         else if(stageTracker == 4 && numberOfEnemies < 19)
-        {
-            Node newEnemy = gameManager.addNewQueen();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 20)
-        {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 23)
-        {
-            Node newEnemy = gameManager.addNewAlien();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 24)
-        {
-            Node newEnemy = gameManager.addNewAstronaut();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 25)
-        {
-            Node newEnemy = gameManager.addNewQueen();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 26)
-        {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if(stageTracker == 4 && numberOfEnemies < 28)
         {
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
@@ -268,6 +321,8 @@ public class StoryMode extends Screen{
         {
             numberOfEnemies = 0;
             stageTracker++;
+
+            endOfFourthStage = gameManager.getTimeSs();
         }
 
         //********************************************************************
@@ -276,8 +331,16 @@ public class StoryMode extends Screen{
 
         else if (stageTracker == 5 && numberOfEnemies < 2)
         {
-            Node newEnemy = gameManager.addNewAlien();
-            addNewEnemy(newEnemy);
+            if(gameManager.getTimeSs() >= endOfFourthStage + 50)
+            {
+                gameManager.stageMessage(endOfFourthStage, "FIFTH STAGE!");
+            }
+
+            if (gameManager.getTimeSs() > endOfFourthStage + 250)
+            {
+                Node newEnemy = gameManager.addNewAlien();
+                addNewEnemy(newEnemy);
+            }
         }
         else if (stageTracker == 5 && numberOfEnemies < 3)
         {
@@ -289,65 +352,75 @@ public class StoryMode extends Screen{
             Node newEnemy = gameManager.addNewAstronaut();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 6)
+        else if (stageTracker == 5 && numberOfEnemies < 5)
         {
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 7)
+        else if (stageTracker == 5 && numberOfEnemies < 6)
         {
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 8)
+        else if (stageTracker == 5 && numberOfEnemies < 7)
         {
             Node newEnemy = gameManager.addNewQueen();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 9)
+        else if (stageTracker == 5 && numberOfEnemies < 8)
         {
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 10)
+        else if (stageTracker == 5 && numberOfEnemies < 9)
         {
             Node newEnemy = gameManager.addNewDarwin();
             addNewEnemy(newEnemy);
 
             //First Contact with Darwin
-            if(numberOfEnemies == 10)
+            if(numberOfEnemies == 9)
             {
 
             }
         }
-        else if (stageTracker == 5 && numberOfEnemies < 11)
+        else if (stageTracker == 5 && numberOfEnemies < 10)
         {
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 12)
+        else if (stageTracker == 5 && numberOfEnemies < 11)
         {
             Node newEnemy = gameManager.addNewAstronaut();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 15)
+        else if (stageTracker == 5 && numberOfEnemies < 12)
         {
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 16)
+        else if (stageTracker == 5 && numberOfEnemies < 13)
         {
             Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 17)
+        else if (stageTracker == 5 && numberOfEnemies < 15)
         {
             Node newEnemy = gameManager.addNewQueen();
             addNewEnemy(newEnemy);
         }
+        else if (stageTracker == 5 && numberOfEnemies < 16)
+        {
+            Node newEnemy = gameManager.addNewDarwin();
+            addNewEnemy(newEnemy);
+        }
+        else if (stageTracker == 5 && numberOfEnemies < 17)
+        {
+            Node newEnemy = gameManager.addNewAstronaut();
+            addNewEnemy(newEnemy);
+        }
         else if (stageTracker == 5 && numberOfEnemies < 18)
         {
-            Node newEnemy = gameManager.addNewAsteroid();
+            Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
         else if (stageTracker == 5 && numberOfEnemies < 19)
@@ -357,65 +430,25 @@ public class StoryMode extends Screen{
         }
         else if (stageTracker == 5 && numberOfEnemies < 20)
         {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 21)
-        {
             Node newEnemy = gameManager.addNewAstronaut();
             addNewEnemy(newEnemy);
         }
-        else if (stageTracker == 5 && numberOfEnemies < 23)
+        else if (stageTracker == 5 && numberOfEnemies < 22)
         {
-            Node newEnemy = gameManager.addNewAlien();
+            Node newEnemy = gameManager.addNewAsteroid();
             addNewEnemy(newEnemy);
         }
         else if (stageTracker == 5 && numberOfEnemies < 24)
         {
-            Node newEnemy = gameManager.addNewAstronaut();
+            Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
         }
         else if (stageTracker == 5 && numberOfEnemies < 25)
         {
-            Node newEnemy = gameManager.addNewQueen();
+            Node newEnemy = gameManager.addNewAstronaut();
             addNewEnemy(newEnemy);
         }
         else if (stageTracker == 5 && numberOfEnemies < 26)
-        {
-            Node newEnemy = gameManager.addNewDarwin();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 27)
-        {
-            Node newEnemy = gameManager.addNewAstronaut();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 30)
-        {
-            Node newEnemy = gameManager.addNewAlien();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 31)
-        {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 32)
-        {
-            Node newEnemy = gameManager.addNewQueen();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 33)
-        {
-            Node newEnemy = gameManager.addNewAsteroid();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 34)
-        {
-            Node newEnemy = gameManager.addNewAstronaut();
-            addNewEnemy(newEnemy);
-        }
-        else if (stageTracker == 5 && numberOfEnemies < 37)
         {
             Node newEnemy = gameManager.addNewAlien();
             addNewEnemy(newEnemy);
@@ -423,6 +456,7 @@ public class StoryMode extends Screen{
         //Game Finished
         else if(stageTracker == 5 && gameManager.isAllEnemiesDead())
         {
+
 
         }
 

@@ -146,27 +146,32 @@ public class GameManager {
         pauseButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                pause();
+                if ( stop){
+                    resume();
+                }else{
+                    pause();
+                }
             }
         });
         gameScreen.getChildren().add(pauseButton);
 
     }
 
+    public void resume(){
+        ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
+        resumeIcon.setFitHeight(Constants.SS_HEIGHT);
+        resumeIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setGraphic(resumeIcon);
+        animationTimer.stop();
+        stop = !stop;
+    }
+
     public void pause(){
-        if ( stop){
-            ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
-            pauseIcon.setFitHeight(Constants.SS_HEIGHT);
-            pauseIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(pauseIcon);
-            animationTimer.start();
-        }else{
-            ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
-            resumeIcon.setFitHeight(Constants.SS_HEIGHT);
-            resumeIcon.setFitWidth(Constants.SS_HEIGHT);
-            pauseButton.setGraphic(resumeIcon);
-            animationTimer.stop();
-        }
+        ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
+        pauseIcon.setFitHeight(Constants.SS_HEIGHT);
+        pauseIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setGraphic(pauseIcon);
+        animationTimer.start();
         stop = !stop;
     }
 
@@ -218,7 +223,7 @@ public class GameManager {
             Random random = new Random();
             int high = (int) Constants.SCREEN_HEIGHT - 220;
             double posY = 100 + random.nextInt(high);
-            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY, 20, "enemy");
+            AlienSpaceShip alienSpaceShip = new AlienSpaceShip(SCREEN_WIDTH, posY);
             alienSpaceShip.setImagePath(Constants.ENEMY_SPACESHIP_IMAGE_PATH);
             gameObjects.add(alienSpaceShip);
             return alienSpaceShip;
