@@ -28,11 +28,7 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Defenders");
-<<<<<<< HEAD
         //primaryStage.setFullScreen(true);
-
-=======
->>>>>>> e1c39c0efc9b48bf7b1ee21c836dee762805f4b9
         //primaryStage.setMaximized(true);
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
@@ -43,7 +39,7 @@ public class Main extends Application {
         controller.setStage(primaryStage);
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);
-//        delay.setOnFinished( event -> primaryStage.setScene(mainScene));
+        delay.setOnFinished( event -> primaryStage.setScene(mainScene));
         delay.play();
     }
 
