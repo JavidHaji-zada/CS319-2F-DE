@@ -701,6 +701,10 @@ public class GameManager {
     }
 
     public void showPauseDialog(){
+        ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
+        resumeIcon.setFitHeight(Constants.SS_HEIGHT);
+        resumeIcon.setFitWidth(Constants.SS_HEIGHT);
+        pauseButton.setGraphic(resumeIcon);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Game Paused");
         alert.setHeaderText(null);
