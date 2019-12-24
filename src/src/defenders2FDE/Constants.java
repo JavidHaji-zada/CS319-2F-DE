@@ -21,7 +21,7 @@ public class Constants {
     public static final int SS_WIDTH = (int) Screen.getPrimary().getBounds().getMaxX() / 48;
     public static final int SS_HEIGHT = (int) Screen.getPrimary().getBounds().getMaxX() / 48;
 
-    public static final int ScreenSizePercent = (int) Screen.getPrimary().getBounds().getMaxX() / 100;
+    public static final int ScreenSizePercent = (int) Screen.getPrimary().getBounds().getMaxX() / 50;
 
     //Size
     public static final int SpaceShipSize = 4 * ScreenSizePercent;
@@ -73,7 +73,7 @@ public class Constants {
     // image paths
     public static final String GAME_BACKGROUND_IMAGE_PATH = "defenders2FDE/Assets/images/background.jpg";
     public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceShip2.png";
-    public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alienspaceship.png";
+    public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alien.png";
 
     public static final String ASTEROID_IMAGE_PATH = "defenders2FDE/Assets/images/asteroid.png";
     public static final String ASTRONAUT_IMAGE_PATH = "defenders2FDE/Assets/images/astronaut.png";
