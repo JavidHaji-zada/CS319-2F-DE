@@ -1,6 +1,7 @@
 package defenders2FDE.Manager;
 
 import defenders2FDE.Constants;
+import defenders2FDE.Screen.MainScreenController;
 import defenders2FDE.Screen.Screen;
 import defenders2FDE.GameObjects.AlienSpaceShip;
 import defenders2FDE.GameObjects.Bullet;
