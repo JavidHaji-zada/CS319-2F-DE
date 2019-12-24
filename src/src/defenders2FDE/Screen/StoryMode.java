@@ -2,10 +2,7 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
-import defenders2FDE.Manager.GameManagerStory;
-import defenders2FDE.Manager.GameManagers;
 import javafx.animation.AnimationTimer;
-import javafx.animation.ParallelTransition;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -18,10 +15,8 @@ import java.io.IOException;
 
 public class StoryMode extends Screen{
 
-    private GameManagers gameManager;
-    private Screen mainScreen;
+    private GameManager gameManager;
     private AnimationTimer timer;
-    private ParallelTransition parallelTransition;
     private Stage primaryStage;
 
     private int endOfFirstStage;
@@ -31,12 +26,12 @@ public class StoryMode extends Screen{
 
     private int numberOfEnemies = 0;
 
-    private int stageTracker = 5;
+    private int stageTracker = 1;
 
     public StoryMode(){
         super();
         try {
-            gameManager = new GameManagers(this, 2);
+            gameManager = new GameManager(this, 2);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -475,11 +470,6 @@ public class StoryMode extends Screen{
         }
     }
 
-    public void setMain(Screen screen) {
-        mainScreen = screen;
-        gameManager.setMain(screen);
-    }
-
     @Override
     public Pane display(){
         setPrefSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
@@ -530,7 +520,7 @@ public class StoryMode extends Screen{
             }else if ( (event.getCode() == KeyCode.SPACE || event.getCode() == KeyCode.F) && !gameManager.isStop()){
                 gameManager.fire();
             }else if ( event.getCode() == KeyCode.P || event.getCode() == KeyCode.ESCAPE){
-                gameManager.pause();
+                gameManager.openPauseDialog();
             }
         });
 

@@ -3,9 +3,6 @@ package defenders2FDE;
 import javafx.stage.Screen;
 
 import javax.swing.*;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Constants {
 

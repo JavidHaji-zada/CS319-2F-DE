@@ -4,13 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.SepiaTone?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.ShopController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.controller.ShopController">
    <children>
       <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="903.0" prefWidth="1007.0" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -61,9 +54,6 @@
                      <image>
                         <Image url="@../../Assets/images/spaceship.png" />
                      </image>
-                     <effect>
-                        <ColorAdjust brightness="0.73" contrast="1.0" hue="-1.0" saturation="1.0" />
-                     </effect>
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -79,7 +69,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton1" id="buyButton1" mnemonicParsing="false" onAction="#buyButton1Clicked" prefHeight="31.0" prefWidth="278.0" text="Buy" />
+                  <Button id="buyButton1" fx:id="buyButton1" mnemonicParsing="false" onAction="#buyButton1Clicked" prefHeight="31.0" prefWidth="278.0" text="Buy" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -88,9 +78,6 @@
                      <image>
                         <Image url="@../../Assets/images/spaceship_2.png" />
                      </image>
-                     <effect>
-                        <SepiaTone />
-                     </effect>
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -106,7 +93,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton2" id="buyButton2" mnemonicParsing="false" onAction="#buyButton2Clicked" prefHeight="31.0" prefWidth="272.0" text="Buy" />
+                  <Button id="buyButton2" fx:id="buyButton2" mnemonicParsing="false" onAction="#buyButton2Clicked" prefHeight="31.0" prefWidth="272.0" text="Buy" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -115,9 +102,6 @@
                      <image>
                         <Image url="@../../Assets/images/spaceship_3.png" />
                      </image>
-                     <effect>
-                        <Bloom />
-                     </effect>
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -133,7 +117,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton3" id="buyButton3" mnemonicParsing="false" onAction="#buyButton3Clicked" prefHeight="31.0" prefWidth="271.0" text="Buy" />
+                  <Button id="buyButton3" fx:id="buyButton3" mnemonicParsing="false" onAction="#buyButton3Clicked" prefHeight="31.0" prefWidth="271.0" text="Buy" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
@@ -142,20 +126,6 @@
                      <image>
                         <Image url="@../../Assets/images/spaceship_4.png" />
                      </image>
-                     <effect>
-                        <ColorAdjust brightness="-0.12" contrast="-0.12" hue="1.0" saturation="0.34">
-                           <input>
-                              <Lighting diffuseConstant="1.22" specularConstant="0.28" specularExponent="20.49">
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                                 <light>
-                                    <Light.Distant color="#d70a0a" />
-                                 </light>
-                              </Lighting>
-                           </input>
-                        </ColorAdjust>
-                     </effect>
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -171,7 +141,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton4" id="buyButton4" mnemonicParsing="false" onAction="#buyButton4Clicked" prefHeight="31.0" prefWidth="320.0" text="Buy" />
+                  <Button id="buyButton4" fx:id="buyButton4" mnemonicParsing="false" onAction="#buyButton4Clicked" prefHeight="31.0" prefWidth="320.0" text="Buy" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -180,17 +150,6 @@
                      <image>
                         <Image url="@../../Assets/images/spaceship_5.png" />
                      </image>
-                     <effect>
-                        <Bloom threshold="0.0">
-                           <input>
-                              <Blend mode="ADD">
-                                 <topInput>
-                                    <ColorAdjust hue="-0.1" saturation="1.0" />
-                                 </topInput>
-                              </Blend>
-                           </input>
-                        </Bloom>
-                     </effect>
                   </ImageView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -206,7 +165,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton5" id="buyButton5" mnemonicParsing="false" onAction="#buyButton5Clicked" prefHeight="31.0" prefWidth="300.0" text="Buy" />
+                  <Button id="buyButton5" fx:id="buyButton5" mnemonicParsing="false" onAction="#buyButton5Clicked" prefHeight="31.0" prefWidth="300.0" text="Buy" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -230,7 +189,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="buyButton6" id="buyButton6" mnemonicParsing="false" onAction="#buyButton6Clicked" prefHeight="31.0" prefWidth="329.0" text="Buy" />
+                  <Button id="buyButton6" fx:id="buyButton6" mnemonicParsing="false" onAction="#buyButton6Clicked" prefHeight="31.0" prefWidth="329.0" text="Buy" />
                </children>
             </VBox>
             <Button fx:id="menuButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#menuButtonClicked" prefHeight="51.0" prefWidth="268.0" text="Back to Menu" GridPane.valignment="TOP">

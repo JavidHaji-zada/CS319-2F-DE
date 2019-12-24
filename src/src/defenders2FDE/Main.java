@@ -1,13 +1,11 @@
 package defenders2FDE;
 
-import defenders2FDE.Screen.MainScreenController;
+import defenders2FDE.Screen.controller.MainScreenController;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;

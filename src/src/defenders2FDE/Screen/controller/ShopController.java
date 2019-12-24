@@ -1,4 +1,4 @@
-package defenders2FDE.Screen;
+package defenders2FDE.Screen.controller;
 
 import defenders2FDE.Manager.DataManager;
 import javafx.fxml.FXML;
@@ -231,7 +231,7 @@ public class ShopController {
 
     public void buyButton6Clicked(){
         if ( items[6] == 0){
-            if ( coin >= 2000){
+            if ( coin >= 6000){
                 items[6] = 1;
                 items[0] = 5;
                 try {
@@ -259,7 +259,7 @@ public class ShopController {
     public void menuButtonClicked() throws Exception{
         Stage window;
         window = (Stage) menuButton.getScene().getWindow();
-        Pane root = FXMLLoader.load(getClass().getResource("fxml/MainScreen.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("../fxml/MainScreen.fxml"));
         window.setScene(new Scene(root));
     }
 }

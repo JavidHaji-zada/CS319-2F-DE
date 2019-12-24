@@ -27,31 +27,48 @@ public class DataManager {
 
     // private methods
     private int[] retrieveHighScores() throws IOException {
-        BufferedReader abc = new BufferedReader(new FileReader(highScoreFilePath));
-        List<Integer> scores = new ArrayList<Integer>();
-        String line;
-        while ((line = abc.readLine()) != null) {
-            int index = line.indexOf(": ");
-            int score = Integer.parseInt(line.substring(index + 2));
-            scores.add(score);
-        }
-        abc.close();
+        File defenderFolder = new File(folderPath);
+        defenderFolder.mkdir();
+        File file = new File(highScoreFilePath);
 
-        // convert to a int[]
-        int size = scores.size();
-        int[] data = new int[size];
-        for (int i = 0; i < size; i++) {
-            data[i] = scores.get(i);
+        if ( file.exists()) {
+            BufferedReader abc = new BufferedReader(new FileReader(highScoreFilePath));
+            List<Integer> scores = new ArrayList<Integer>();
+            String line;
+            while ((line = abc.readLine()) != null) {
+                int index = line.indexOf(": ");
+                int score = Integer.parseInt(line.substring(index + 2));
+                scores.add(score);
+            }
+            abc.close();
+
+            // convert to a int[]
+            int size = scores.size();
+            int[] data = new int[size];
+            for (int i = 0; i < size; i++) {
+                data[i] = scores.get(i);
+            }
+            return data;
         }
-        return data;
+        return new int[]{};
     }
 
     private int retrieveCoin() throws IOException {
-        BufferedReader abc = new BufferedReader(new FileReader(coinFilePath));
-        return Integer.parseInt(abc.readLine());
+        File defenderFolder = new File(folderPath);
+        defenderFolder.mkdir();
+        defenderFolder.mkdir();
+        File file = new File(coinFilePath);
+
+        if ( file.exists()) {
+            BufferedReader abc = new BufferedReader(new FileReader(coinFilePath));
+            return Integer.parseInt(abc.readLine());
+        }
+        return 0;
     }
 
     private int[] retrieveShopData() throws IOException {
+        File defenderFolder = new File(folderPath);
+        defenderFolder.mkdir();
         File file = new File(shopFilePath);
         if (file.exists()) {
             BufferedReader abc = new BufferedReader(new FileReader(shopFilePath));

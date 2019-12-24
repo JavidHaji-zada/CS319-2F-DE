@@ -1,7 +1,9 @@
-package defenders2FDE.Screen;
+package defenders2FDE.Screen.controller;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.ScreenManager;
+import defenders2FDE.Screen.GameScreenDemo;
+import defenders2FDE.Screen.StoryMode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,7 +13,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -26,19 +27,19 @@ import java.io.File;
 
 public class MainScreenController {
     //creating objects we're gonna use for game modes pop up
-    Popup gamePopup = new Popup();
-    VBox verBox = new VBox();
-    HBox forButtons = new HBox();
-    Label modesPrompt = new Label("Which mode do you want to play?");
-    Button endlessButton = new Button("Endless Mode");
-    Button storyButton = new Button("Story Mode");
+    private Popup gamePopup = new Popup();
+    private VBox verBox = new VBox();
+    private HBox forButtons = new HBox();
+    private Label modesPrompt = new Label("Which mode do you want to play?");
+    private Button endlessButton = new Button("Endless Mode");
+    private Button storyButton = new Button("Story Mode");
     @FXML
     Button gameModesButton;
 
     // prepare button click sound
-    String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
-    Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
-    MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
+    private String buttonSoundPath = Constants.BUTTON_CLICK_SOUND;
+    private Media buttonSound = new Media(new File(buttonSoundPath).toURI().toString());
+    private MediaPlayer mediaPlayer = new MediaPlayer(buttonSound);
     //mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
 
     //create stage
@@ -52,7 +53,7 @@ public class MainScreenController {
     {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/htpPopUp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/htpPopUp.fxml"));
         Stage window = new Stage();
         Scene scene = new Scene(root);
 
@@ -150,7 +151,7 @@ public class MainScreenController {
         mediaPlayer.play();
 
         Stage window = (Stage) shopButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/shop.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/shop.fxml"));
         Parent root = loader.load();
         ShopController shopController = loader.getController();
         shopController.initializeShopController();
@@ -167,7 +168,7 @@ public class MainScreenController {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
         Stage window = (Stage) creditsButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/creditsScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/creditsScreen.fxml"));
         Scene creditsScene = new Scene(root);
         window.setScene(creditsScene);
     }
@@ -181,7 +182,7 @@ public class MainScreenController {
         mediaPlayer.play();
 
         Stage window = (Stage) highestScoresButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/highScores.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/highScores.fxml"));
         Scene creditsScene = new Scene(root);
         window.setScene(creditsScene);
     }
@@ -191,7 +192,7 @@ public class MainScreenController {
     {
         mediaPlayer.setOnEndOfMedia(mediaPlayer::stop);
         mediaPlayer.play();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/exitPopUp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/exitPopUp.fxml"));
         Stage window = new Stage();
         Scene scene = new Scene(root);
 

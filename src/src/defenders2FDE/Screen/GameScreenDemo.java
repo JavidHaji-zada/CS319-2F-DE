@@ -2,40 +2,28 @@ package defenders2FDE.Screen;
 
 import defenders2FDE.Constants;
 import defenders2FDE.Manager.GameManager;
-import defenders2FDE.Manager.GameManagers;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ParallelTransition;
-import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class GameScreenDemo extends Screen{
 
-    private GameManagers gameManager;
-    private Screen mainScreen;
+    private GameManager gameManager;
     private AnimationTimer timer;
     private ParallelTransition parallelTransition;
     private Stage primaryStage;
 
     public GameScreenDemo() throws IOException {
         super();
-        gameManager = new GameManagers(this,1);
+        gameManager = new GameManager(this,1);
     }
 
     public void setPrimaryStage(Stage primaryStage){
@@ -53,11 +41,6 @@ public class GameScreenDemo extends Screen{
             getChildren().add(newEnemy);
         }
         gameManager.checkCollision();
-    }
-
-    public void setMain(Screen screen) {
-        mainScreen = screen;
-        gameManager.setMain(screen);
     }
 
     @Override
@@ -113,7 +96,7 @@ public class GameScreenDemo extends Screen{
                 if ( gameManager.isStop()){
                     gameManager.resume();
                 }else{
-                    gameManager.pause();
+                    gameManager.openPauseDialog();
                 }
             }
         });
