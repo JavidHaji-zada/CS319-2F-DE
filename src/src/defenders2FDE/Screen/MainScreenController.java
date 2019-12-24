@@ -152,6 +152,7 @@ public class MainScreenController {
         Stage window = (Stage) shopButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("fxml/shop.fxml"));
         Scene shopScene = new Scene(root);
+        window.setFullScreen(true);
         window.setScene(shopScene);
     }
 

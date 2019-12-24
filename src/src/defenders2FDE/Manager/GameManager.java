@@ -41,9 +41,10 @@ import static defenders2FDE.Constants.*;
 public class GameManager {
 
     private Stage primaryStage;
+    private DataManager dataManager;
     private List<GameObject> gameObjects;
     private List<GameObject> enemyBullets;
-    private int score = 50;
+    private int score = 0;
     private int mode;
     private boolean isFinished = false;
     private long lastEnemyTime = new Date().getTime();
@@ -66,14 +67,12 @@ public class GameManager {
         this.gameScreen = gameScreen;
         this.mode = mode; // 1- story mode 2- single endless
 
-        // retrieve high scores list
-        if ( mode == 1){
-            try {
-                highScores = Constants.retrieveHighScores();
-            }catch (Exception e){
-                highScores = new int[0];
-            }
-        }
+
+
+        // create DataManager instance
+        dataManager = new DataManager();
+        highScores = dataManager.getHighScores();
+
         // initialize game objects and enemy bullets
         gameObjects = new ArrayList<>();
         enemyBullets = new ArrayList<>();
@@ -146,7 +145,7 @@ public class GameManager {
         pauseButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if ( stop){
+                if (stop){
                     resume();
                 }else{
                     pause();
@@ -157,22 +156,22 @@ public class GameManager {
 
     }
 
-    public void resume(){
+    public void pause(){
         ImageView resumeIcon = new ImageView(new Image(Constants.RESUME_IMAGE_PATH));
         resumeIcon.setFitHeight(Constants.SS_HEIGHT);
         resumeIcon.setFitWidth(Constants.SS_HEIGHT);
         pauseButton.setGraphic(resumeIcon);
         animationTimer.stop();
-        stop = !stop;
+        stop = true;
     }
 
-    public void pause(){
+    public void resume(){
         ImageView pauseIcon = new ImageView(new Image(Constants.PAUSE_IMAGE_PATH));
         pauseIcon.setFitHeight(Constants.SS_HEIGHT);
         pauseIcon.setFitWidth(Constants.SS_HEIGHT);
         pauseButton.setGraphic(pauseIcon);
         animationTimer.start();
-        stop = !stop;
+        stop = false;
     }
 
     public boolean isStop(){
@@ -292,10 +291,10 @@ public class GameManager {
             animationTimer.stop();
             enemyBullets.forEach(bullet1 -> bullet1.stop(true));
             gameObjects.forEach(gameObject -> gameObject.stop(true));
-            if ( isHighScore()){
+            if ( dataManager.isHighScore(score)){
                 showHighScoreDialog();
                 try {
-                    saveNewHighScoreList();
+                    dataManager.saveNewHighScoreList();
                 } catch (FileNotFoundException e) {
                     System.out.println("File not found");
                 } catch (IOException e) {
@@ -313,44 +312,6 @@ public class GameManager {
                 }
             }
         }
-    }
-
-    public void saveNewHighScoreList() throws IOException {
-        File defenderFolder = new File(folderPath);
-        defenderFolder.mkdir();
-        File highScoresFile = new File(filePath);
-        highScoresFile.createNewFile();
-        FileOutputStream highScoreData = new FileOutputStream(filePath);
-        PrintWriter pw = new PrintWriter(highScoreData);
-        if (highScores.length == 0){
-            pw.println("Javid: " + score);
-        }
-        else {
-            for (int highScore : highScores)
-                pw.println("Javid: " + highScore);
-        }
-        pw.close();
-    }
-
-    private boolean isHighScore(){
-        boolean isHighScore = false;
-        if ( highScores.length == 0)
-            isHighScore = true;
-        for (int i = 0; i < highScores.length;i++){
-            if ( score > highScores[i]){
-                if ( i == 0) {
-                    highScores[i] = score;
-                    isHighScore =  true;
-                }
-                else{
-                    int tmp = highScores[i];
-                    highScores[i] = score;
-                    highScores[i-1] = tmp;
-                    isHighScore =  true;
-                }
-            }
-        }
-        return isHighScore;
     }
 
     private void showHighScoreDialog(){

@@ -72,7 +72,7 @@ public class Constants {
 
     // image paths
     public static final String GAME_BACKGROUND_IMAGE_PATH = "defenders2FDE/Assets/images/background.jpg";
-    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceShip2.png";
+    public static final String PLAYER_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/spaceship.png";
     public static final String ENEMY_SPACESHIP_IMAGE_PATH = "defenders2FDE/Assets/images/alien.png";
 
     public static final String ASTEROID_IMAGE_PATH = "defenders2FDE/Assets/images/asteroid.png";
@@ -98,25 +98,4 @@ public class Constants {
     public static final int FONT_SIZE_MD = 32;
     public static final int FONT_SIZE_SM = 24;
 
-    // static methods
-    public static int[] retrieveHighScores() throws IOException {
-        BufferedReader abc = new BufferedReader(new FileReader(filePath));
-        List<Integer> scores = new ArrayList<Integer>();
-        String line;
-        while ((line = abc.readLine()) != null) {
-            int index = line.indexOf(": ");
-            int score = Integer.parseInt(line.substring(index + 2));
-            scores.add(score);
-            System.out.println("Score " + score);
-        }
-        abc.close();
-
-        // If you want to convert to a int[]
-        int size = scores.size();
-        int[] data = new int[size];
-        for (int i = 0; i < size; i++) {
-            data[i] = scores.get(i);
-        }
-        return data;
-    }
 }

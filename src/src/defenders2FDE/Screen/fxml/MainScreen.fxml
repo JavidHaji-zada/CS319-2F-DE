@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.MainScreenController">
+<AnchorPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="defenders2FDE.Screen.MainScreenController">
    <children>
-      <ImageView pickOnBounds="true">
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
          <image>
             <Image url="@../../Assets/images/bgop1.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="mainButtons" alignment="CENTER" minWidth="1272.0" prefHeight="626.0" prefWidth="1272.0" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="598.0">
+      <VBox fx:id="mainButtons" alignment="CENTER" minWidth="1080.0" prefHeight="1080.0" prefWidth="1920.0" spacing="35.0" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="196.0" fitWidth="527.0" pickOnBounds="true" preserveRatio="true">
                <image>

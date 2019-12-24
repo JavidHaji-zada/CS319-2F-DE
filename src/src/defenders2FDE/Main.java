@@ -24,9 +24,10 @@ public class Main extends Application {
         Scene appScene = new Scene(screenManager.setScreen(splashScreen));
         primaryStage.setScene(appScene);
         primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Defenders");
-        //primaryStage.setMaximized(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
         PauseTransition delay = new PauseTransition(Duration.seconds(1.5));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen/fxml/MainScreen.fxml"));
@@ -37,7 +38,7 @@ public class Main extends Application {
         controller.alignButtonsCenter();
         Scene mainScene = new Scene(root);
         primaryStage.setFullScreen(true);
-//        delay.setOnFinished( event -> primaryStage.setScene(mainScene));
+        delay.setOnFinished( event -> primaryStage.setScene(mainScene));
         delay.play();
     }
 
